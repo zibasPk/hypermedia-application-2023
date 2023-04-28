@@ -1,4 +1,10 @@
+<script lang="ts" setup>
+// composable
+
+</script>
+
 <template>
-    <h1 class="shadow-sm bg-red"> mela mela</h1>
+  <PageWrapper class="flex-1 flex">
+    <div class="bg-red">ciaociao</div>
+  </PageWrapper>
 </template>
-  
