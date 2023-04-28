@@ -1,3 +1,8 @@
 <template>
-  <h1 class="shadow-sm bg-white"> mela mela</h1>
+  <div>
+    <div class="bg-red">ciao1</div>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+  </div>
 </template>
