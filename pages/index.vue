@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 // composable
-
 </script>
 
 <template>
