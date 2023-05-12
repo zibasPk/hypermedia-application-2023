@@ -1,25 +1,41 @@
-# Hypermedia
+# Hypermedia 
 
-# Hypermedia
-
-## ER
-
+<!--
+|o	o|	Zero or one
+||	||	Exactly one
+}o	o{	Zero or more (no upper limit)
+}|	|{	One or more (no upper limit) 
+-->
 ```mermaid
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    CUSTOMER {
+erDiagram 
+    team_member {
+        int memberCode PK
         string name
-        string custNumber
-        string sector
+        string surname
+        int age
+        string role
     }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
+    curriculum {
+        int memberCode PK
     }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
+    area {
+        int areaCode PK
+        string name
+        string description
+        int data1
+        int data2
+        int data3
     }
+    project {
+        int projectCode PK
+        string description
+        int data1
+        int data2
+        int data3
+    }
+
+    team_member ||--|| curriculum : has
+    team_member ||--|{ project : supervises
+    area }|--|{ project: has
+
 ```
