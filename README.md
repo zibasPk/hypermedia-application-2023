@@ -1,4 +1,4 @@
-# Hypermedia Always Just Breaking Requirements
+# Hypermedia All JavaScript, But Really (TypeScript)
 
 <!--
 |o	o|	Zero or one
