@@ -2,11 +2,13 @@
     Home page
 -->
 <script>
-import Navbar from "../components/Navbar.vue"
+import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 
   export default {
     components: {
-      Navbar
+      Navbar,
+      Footer
     }
   }
 </script>
@@ -15,4 +17,5 @@ import Navbar from "../components/Navbar.vue"
 <template>
   <Navbar />
   <main>ciao</main>
+  <Footer />
 </template>
