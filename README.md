@@ -9,29 +9,26 @@
 ```mermaid
 erDiagram 
     team_member {
-        int memberCode PK
+        int member_code PK
         string name
         string surname
         int age
         string role
     }
     curriculum {
-        int memberCode PK
+        int member_code PK
     }
     area {
-        int areaCode PK
+        int area_code PK
         string name
         string description
         int data1
-        int data2
-        int data3
     }
     project {
-        int projectCode PK
+        int project_code PK
+        int supervisor
         string description
         int data1
-        int data2
-        int data3
     }
 
     team_member ||--|| curriculum : has
