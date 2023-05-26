@@ -3,9 +3,7 @@
 -->
 <template>
   <main>
-    <div>
-      These are the projects for area {{ route.params.group }}
-    </div>
+    <div>These are the projects for area {{ route.params.group }}</div>
   </main>
 </template>
 

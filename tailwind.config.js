@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'secondary': '#1A202C',
-        'secondarytext': '#A0ABC0',
-      }
+        secondary: "#1A202C",
+        secondarytext: "#A0ABC0",
+      },
     },
   },
   plugins: [],

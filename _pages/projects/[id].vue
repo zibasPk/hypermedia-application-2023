@@ -3,12 +3,10 @@
 -->
 <template>
   <main>
-    <div>
-      This is project {{ route.params.id }}
-    </div>
+    <div>This is project {{ route.params.id }}</div>
   </main>
 </template>
 
 <script setup>
-  const route = useRoute();
+const route = useRoute();
 </script>

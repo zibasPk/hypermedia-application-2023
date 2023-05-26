@@ -3,9 +3,7 @@
 -->
 <template>
   <main>
-    <div>
-      This is area page {{ route.params.group }}
-    </div>
+    <div>This is area page {{ route.params.group }}</div>
   </main>
 </template>
 
