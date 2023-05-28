@@ -27,8 +27,10 @@ erDiagram
     }
     project {
         int project_code PK
-        int supervisor
+        string name
         string description
+        int supervisor
+        int relevance
         int data1
     }
 
