@@ -2,7 +2,7 @@
     Default layout used by all the page
 -->
 <template>
-  <div>
-    <slot />
-  </div>
+  <Navbar />
+  <slot />
+  <Footer />
 </template>
