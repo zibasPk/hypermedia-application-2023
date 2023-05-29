@@ -7,7 +7,9 @@ export default defineEventHandler(async (event) => {
 
   const { data, error } = await client
     .from("project")
-    .select("project_code,name, description, relevance, supervisor (member_code, name, surname,age,role)")
+    .select(
+      "project_code,name, description, relevance, supervisor (member_code, name, surname,age,role)"
+    )
     .eq("project_code", id)
     .limit(1)
     .single();

@@ -3,14 +3,12 @@
 -->
 <template>
   <main>
-    <div>
-      This is project {{ route.params.id }} with descr: 
-    </div>
+    <div>This is project {{ route.params.id }} with descr:</div>
     <span>
       {{ project.description }}
     </span>
     <span>
-      this project is supervised by: 
+      this project is supervised by:
       {{ project.supervisor.name }} {{ project.supervisor.surname }}
     </span>
   </main>
