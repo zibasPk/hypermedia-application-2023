@@ -1,7 +1,8 @@
 <template>
   <main>
     <div>
-      <ImageGridItem content="button"></ImageGridItem>
+      <FilledButton content="diocane"/>
+      <OutlineButton content="diocane2"/>
     </div>
   </main>
 </template>
