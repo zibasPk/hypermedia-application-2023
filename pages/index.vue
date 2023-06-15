@@ -1,10 +1,10 @@
 <!--
     Home page
 -->
-<script setup></script>
-
 <template>
   <main>
-    <div>ciao</div>
+    
+    <StandardSlotted /> 
+
   </main>
 </template>
