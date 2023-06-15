@@ -14,8 +14,8 @@ const items: Item[] = [
 </script>
 
 <template>
-  <footer class="shadow bg-secondary">
-    <div class="w-full max-w-screen-xl mx-auto py-10 p-20">
+  <footer class="shadow bg-primary">
+    <div class="w-full mx-auto py-10 p-20">
       <div class="sm:flex sm:items-center sm:justify-between">
         <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
           <img

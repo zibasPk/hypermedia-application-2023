@@ -1,23 +1,30 @@
 <script setup lang="ts">
-const props = defineProps(["content"]);
+const props = defineProps({
+  buttontext: { type: String, required: true },
+  buttonlink: { type: String, required: true },
+  maintext: { type: String, required: true },
+  maindesc: { type: String, required: true },
+  rendermaindesc: { type: Boolean, required: false, default: true },
+});
 </script>
 
 <template>
-  <div class="grid grid-rows-3 w-48 h-44">
+  <div class="grid w-48 h-44 m-1">
     <div class="flex items-center space-x-4">
       <img
-        class="w-10 h-10 rounded-full"
+        class="w-[64px] h-[64px] rounded"
         src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
         alt=""
       />
-      <div class="font-medium dark:text-white">
-        <div>Jese Leos</div>
-      </div>
+      <p class="font-bold">{{ maintext }}</p>
     </div>
-
-    <div>text</div>
-    <div class="m-1 w-full h-full">
-      <FilledButton :content="props.content" classes="w-full" link="/" />
+    <p v-if="rendermaindesc">{{ maindesc }}</p>
+    <div class="w-full h-full">
+      <FilledButton
+        :content="props.buttontext"
+        classes="w-full"
+        :link="buttonlink"
+      />
     </div>
   </div>
 </template>
