@@ -1,5 +1,7 @@
 <template>
-	<main>
-	<FilledButton content="button" link="https://google.com"/>
+  <main>
+    <div>
+      <ImageGridItem content="button"></ImageGridItem>
+    </div>
   </main>
 </template>
