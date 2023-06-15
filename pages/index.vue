@@ -1,12 +1,3 @@
 <template>
-  <main>
-    <div>
-      <ImageGridItem
-        buttontext="button"
-        buttonlink="acs"
-        maintext="akn"
-        maindesc="kjasd"
-      ></ImageGridItem>
-    </div>
-  </main>
+  <main>ciao</main>
 </template>
