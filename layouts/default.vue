@@ -3,6 +3,6 @@
 -->
 <template>
   <Navbar />
-  <slot />
+  <slot /><StandardSlotted/>
   <Footer />
 </template>
