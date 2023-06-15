@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import FilledButton from "../components/FilledButton.vue";
 
 interface element {
   text: string;
@@ -53,9 +54,9 @@ function toggle(toShow: element) {
 </script>
 
 <template>
-  <nav class="bg-white border-black border-solid border-b">
+  <nav class="bg-primary border-black border-solid border-b">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      class="max-w-screen-xl grid grid-flow-col grid-cols-[1fr,4fr,1fr] items-center justify-between mx-auto p-4"
     >
       <a href="#" class="flex items-center">
         <img
@@ -89,15 +90,15 @@ function toggle(toShow: element) {
           ></path>
         </svg>
       </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <div class="mr-0 ml-auto hidden w-full md:block md:w-auto" id="navbar-dropdown">
         <ul
-          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white md:"
+          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
           <li v-for="element in elements">
             <a
               v-if="element.dropdownElements.length == 0"
               :href="element.link"
-              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md: md:"
+              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
               aria-current="page"
             >
               {{ element.text }}
@@ -105,7 +106,7 @@ function toggle(toShow: element) {
             <button
               v-if="element.dropdownElements.length != 0"
               @click="toggle(element)"
-              class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto md: md:"
+              class="text-white flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: md:"
             >
               {{ element.text }}
               <svg
@@ -141,6 +142,9 @@ function toggle(toShow: element) {
           </li>
         </ul>
       </div>
+      <FilledButton content="Get in Touch" classes="bg-secondary border-secondary"/>
     </div>
   </nav>
+
+
 </template>
