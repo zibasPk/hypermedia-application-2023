@@ -20,7 +20,7 @@ const props = defineProps({
     </div>
     <p v-if="rendermaindesc">{{ maindesc }}</p>
     <div class="w-full h-full">
-      <FilledButton
+      <OutlineButton
         :content="props.buttontext"
         classes="w-full"
         :link="buttonlink"
