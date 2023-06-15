@@ -48,7 +48,6 @@ function toggle(toShow: element) {
     e.toggled.value = false;
   });
   toShow.toggled.value = !init;
-  console.log("ciao");
 }
 </script>
 

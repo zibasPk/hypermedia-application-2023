@@ -1,7 +1,12 @@
 <template>
   <main>
     <div>
-      <ImageGridItem content="button"></ImageGridItem>
+      <ImageGridItem
+        buttontext="button"
+        buttonlink="acs"
+        maintext="akn"
+        maindesc="kjasd"
+      ></ImageGridItem>
     </div>
   </main>
 </template>
