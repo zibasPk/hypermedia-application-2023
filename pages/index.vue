@@ -1,8 +1,8 @@
 <template>
   <main>
     <div>
-      <FilledButton content="diocane"/>
-      <OutlineButton content="diocane2"/>
+      <FilledButton content="FilledButton"/>
+      <OutlineButton content="OutlineButton"/>
     </div>
   </main>
 </template>
