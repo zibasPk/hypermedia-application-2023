@@ -1,10 +1,6 @@
-<!--
-    Home page
--->
 <template>
-  <main>
-    
-    <StandardSlotted /> 
-
-  </main>
+	<h1>Here are many child components!</h1>
+	<ButtonCounter />
+	<ButtonCounter />
+	<ButtonCounter />
 </template>
