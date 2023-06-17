@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps({
-  buttontext: { type: Array<String>, required: true },
+  buttontext: { type: String, required: true },
   buttonlink: { type: String, required: true },
   maintext: { type: String, required: true },
   maindesc: { type: String, required: true },
