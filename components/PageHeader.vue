@@ -10,8 +10,8 @@ const props = defineProps({
 
 <template>
   <div class="relative text-center align-center justify-center w-screen max-h-screen overflow-hidden">
-    <img :src="image.src" :alt="image.alt" />
-    <div class="absolute top-1/2  w-full">
+    <img class="w-full" :src="image.src" :alt="image.alt" />
+    <div class="absolute top-1/2  w-full max-w-full">
       <slot></slot>
     </div>
   </div>
