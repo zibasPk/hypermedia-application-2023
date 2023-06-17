@@ -38,6 +38,7 @@ if (props.centered) {
   flexStyle = "flex flex-col items-center justify-center";
   textStyle += " text-center";
 }
+textStyle += " " + props.additionalTextClasses;
 flexStyle += " " + props.width;
 </script>
 
