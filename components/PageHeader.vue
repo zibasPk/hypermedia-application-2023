@@ -14,15 +14,16 @@ let containerStyle =
 </script>
 
 <template>
-  <div class="bg-black">
+  <div class="w-fit min-h-fit h-[calc(100vh-75px)]">
     <div
       style="
         background-image: url('https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp');
         background-size: cover;
       "
-      class="relative text-center align-center justify-center w-screen max-h-screen overflow-hidden opacity-40"
+      class="relative flex h-full text-center align-center justify-center w-screen max-h-screen"
     >
-      <div class="m-auto w-full max-w-full">
+      <div class="bg-black/60 absolute top-0 left-0 w-full h-full"></div>
+      <div class="m-auto z-20">
         <slot></slot>
       </div>
     </div>
