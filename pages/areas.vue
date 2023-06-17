@@ -13,6 +13,7 @@ const backgroundImageHeader = {
           text="ciao"
           buttonText="Go To Projects"
           centered
+          additionalTextClasses="text-secondarytext"
         >
         </TitleTextItem>
       </PageHeader>

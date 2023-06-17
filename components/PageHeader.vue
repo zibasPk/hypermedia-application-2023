@@ -6,23 +6,22 @@ const props = defineProps({
     required: true,
   },
 });
-let containerStyle =
-  "bg-[url('" +
-  props.image.src +
-  "')]" +
-  "relative text-center align-center justify-center w-screen max-h-screen overflow-hidden";
+let containerStyle = `
+background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('${props.image.src}');
+        background-size: cover;
+`;
 </script>
 
 <template>
   <div class="w-fit min-h-fit h-[calc(100vh-75px)]">
     <div
-      style="
-        background-image: url('https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp');
-        background-size: cover;
-      "
+      :style="containerStyle"
       class="relative flex h-full text-center align-center justify-center w-screen max-h-screen"
     >
-      <div class="bg-black/60 absolute top-0 left-0 w-full h-full"></div>
       <div class="m-auto z-20">
         <slot></slot>
       </div>

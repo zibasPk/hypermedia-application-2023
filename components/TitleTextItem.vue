@@ -19,30 +19,34 @@ const props = defineProps({
   centered: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   width: {
     type: String,
     required: false,
-    default: "w-full"
-    
-  } 
+    default: "w-full",
+  },
+  additionalTextClasses: {
+    type: String,
+    required: false,
+  },
 });
 
 let flexStyle = "flex flex-col";
 let textStyle = "text-xl py-10";
-if(props.centered) {
- flexStyle = "flex flex-col items-center justify-center";
- textStyle += " text-center";
+if (props.centered) {
+  flexStyle = "flex flex-col items-center justify-center";
+  textStyle += " text-center";
 }
 flexStyle += " " + props.width;
-
 </script>
 
 <template>
   <div :class="flexStyle">
-    <h1 class="text-4xl font-bold">{{ props.title }}</h1>
-    <p :class="textStyle" >{{ props.text }}</p>
+    <h1 class="text-4xl font-bold" :class="additionalTextClasses">
+      {{ props.title }}
+    </h1>
+    <p :class="textStyle">{{ props.text }}</p>
     <FilledButton
       v-if="buttonText"
       :content="props.buttonText"
