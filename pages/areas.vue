@@ -7,7 +7,15 @@ const backgroundImageHeader = {
 <template>
   <main>
     <StandardSlotted>
-      <PageHeader :image="backgroundImageHeader"></PageHeader>
+      <PageHeader :image="backgroundImageHeader">
+        <TitleTextItem
+          title="Our project portfolio"
+          text="ciao"
+          buttonText="Go To Projects"
+          centered
+        >
+        </TitleTextItem>
+      </PageHeader>
     </StandardSlotted>
   </main>
 </template>
