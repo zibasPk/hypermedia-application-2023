@@ -14,6 +14,8 @@ useHead({
 </script>
 <template>
   <Navbar />
-  <slot />
+  <div class="flex flex-col gap-8">
+    <slot />
+  </div>
   <Footer />
 </template>
