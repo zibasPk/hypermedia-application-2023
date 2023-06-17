@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ImageInfo from '~/utils/Image';
+
 const props = defineProps({
   content: {
     type: Array<{
@@ -7,6 +9,7 @@ const props = defineProps({
       maintext: { type: String; required: true };
       maindesc: { type: String; required: true };
       rendermaindesc: { type: Boolean; required: false; default: true };
+      image: {type: ImageInfo; required: false};
     }>,
     required: true,
   },

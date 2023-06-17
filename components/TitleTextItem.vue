@@ -24,7 +24,6 @@ const props = defineProps({
   width: {
     type: String,
     required: false,
-    default: "w-full",
   },
   additionalTextClasses: {
     type: String,
@@ -32,14 +31,16 @@ const props = defineProps({
   },
 });
 
-let flexStyle = "flex flex-col";
-let textStyle = "text-xl py-10";
+let flexStyle = "flex flex-col mx-auto";
+let textStyle = "text-xl pt-10";
 if (props.centered) {
   flexStyle = "flex flex-col items-center justify-center";
   textStyle += " text-center";
 }
 textStyle += " " + props.additionalTextClasses;
-flexStyle += " " + props.width;
+if (props.width) {
+  flexStyle += " " + props.width;
+}
 </script>
 
 <template>
