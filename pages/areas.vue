@@ -1,22 +1,34 @@
 <script setup lang="ts">
+import { Area } from "../utils/DatabaseTypes";
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF%20Hero.jpg",
   alt: "hero",
 };
+
+const { data } = useFetch<Area[]>("/api/areas");
+let areas = data.value;
 </script>
 <template>
   <main>
+    <PageHeader :image="backgroundImageHeader">
+      <TitleTextItem
+        title="Our project portfolio"
+        text="ciao"
+        buttonText="Go To Projects"
+        centered
+        additionalTextClasses="text-secondarytext"
+      >
+      </TitleTextItem>
+    </PageHeader>
     <StandardSlotted>
-      <PageHeader :image="backgroundImageHeader">
-        <TitleTextItem
-          title="Our project portfolio"
-          text="ciao"
-          buttonText="Go To Projects"
-          centered
-          additionalTextClasses="text-secondarytext"
-        >
-        </TitleTextItem>
-      </PageHeader>
+      <TitleTextItem title="ciao" text="ciaone" centered> </TitleTextItem>
+      <div class="overflow-hidden h-[1006px]">
+        <img
+          class="rounded m-auto object-cover h-full"
+          :src="backgroundImageHeader.src"
+          :alt="backgroundImageHeader.alt"
+        />
+      </div>
     </StandardSlotted>
   </main>
 </template>
