@@ -17,10 +17,10 @@ background-image: linear-gradient(
 </script>
 
 <template>
-  <div class="w-fit min-h-fit h-[calc(100vh-75px)]">
+  <div class="min-h-[200px] h-[100vh] overflow-hidden">
     <div
       :style="containerStyle"
-      class="relative flex h-full text-center align-center justify-center w-screen max-h-screen"
+      class="relative flex text-center align-center justify-center h-full"
     >
       <div class="m-auto z-20">
         <slot></slot>
