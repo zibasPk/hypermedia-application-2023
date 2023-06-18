@@ -17,6 +17,7 @@ let areas = data.value;
         buttonText="Go To Projects"
         centered
         additionalTextClasses="text-secondarytext"
+        additionalTitleClasses="text-secondarytext"
       >
       </TitleTextItem>
     </PageHeader>

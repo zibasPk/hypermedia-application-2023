@@ -71,6 +71,7 @@ const tempEmployees = [
     <TitleTextItem
       title="Board"
       text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
+      additionalTitleClasses="text-primary"
     />
     <GridContainer :content="tempEmployees" />
   </StandardSlotted>
@@ -80,6 +81,7 @@ const tempEmployees = [
     <TitleTextItem
       title="Assembly"
       text="At CG venture, our Venture Capital Assembly forms the backbone of our collaborative and growth-oriented approach to investing. Comprised of exceptional professionals from diverse backgrounds, the Assembly represents a dynamic and synergistic force that drives our success."
+      additionalTitleClasses="text-primary"
     />
   </StandardSlotted>
 
@@ -87,6 +89,7 @@ const tempEmployees = [
     <TitleTextItem
       title="Other People"
       text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
+      additionalTitleClasses="text-primary"
     />
     <GridContainer :content="tempEmployees" />
   </StandardSlotted>
