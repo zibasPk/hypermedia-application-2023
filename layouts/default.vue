@@ -23,7 +23,7 @@ useHead({
 </script>
 <template>
   <Navbar />
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-32 mx-20 mb-32 ">
     <slot />
   </div>
   <Footer />

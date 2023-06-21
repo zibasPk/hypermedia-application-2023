@@ -89,7 +89,10 @@ function toggle(toShow: element) {
           ></path>
         </svg>
       </button>
-      <div class="mr-0 ml-auto hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <div
+        class="mr-0 ml-auto hidden w-full md:block md:w-auto"
+        id="navbar-dropdown"
+      >
         <ul
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
@@ -141,9 +144,11 @@ function toggle(toShow: element) {
           </li>
         </ul>
       </div>
-      <FilledButton content="Get in Touch" classes="bg-secondary border-secondary"/>
+      <FilledButton
+        classes="bg-secondary border-secondary"
+      >
+        <template v-slot:content> Get in Touch </template>
+      </FilledButton>
     </div>
   </nav>
-
-
 </template>

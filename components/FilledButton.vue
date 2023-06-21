@@ -1,7 +1,6 @@
 <script setup lang="ts">
-// <FilledButton content="button" link="https://google.com"/>
 
-const props = defineProps(["content", "link", "classes"]);
+const props = defineProps(["link", "classes"]);
 
 function forward() {
   location.href = props.link;
@@ -10,10 +9,10 @@ function forward() {
 
 <template>
   <button
-    class="border-2 text-white bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5"
+    class="border-2 text-white bg-secondary border-secondary font-medium rounded-lg text-sm px-5 py-2.5"
     :class="classes"
     @click="forward()"
   >
-    {{ props.content }}
+  <slot name="content"> </slot>
   </button>
 </template>
