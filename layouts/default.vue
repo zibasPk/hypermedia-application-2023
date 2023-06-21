@@ -9,6 +9,15 @@ useHead({
       href: "https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900",
       crossorigin: "",
     },
+    {
+      rel: "stylesheet",
+      href: "/fontawesome/css/all.min.css",
+    },
+  ],
+  meta: [
+    { charset: "utf-8" },
+    { equiv: "Content-Type", content: "text/html" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
   ],
 });
 </script>
