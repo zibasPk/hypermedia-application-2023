@@ -2,7 +2,7 @@
 
 // <OutlineButton content="button" link="https://google.com"/>
 
-const props = defineProps(['content', 'link', "classes"])
+const props = defineProps(['link', "classes"])
 
 function forward() {
     location.href = props.link;
@@ -16,6 +16,6 @@ function forward() {
         :class="classes"
         @click="forward()"
     >
-        {{ props.content }}
+    <slot name="content" /> 
     </button>   
 </template>

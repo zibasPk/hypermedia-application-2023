@@ -31,10 +31,13 @@ const props = defineProps({
     <p v-if="rendermaindesc">{{ maindesc }}</p>
     <div class="w-full h-full">
       <OutlineButton
-        :content="props.buttontext"
         classes="w-full"
         :link="buttonlink"
-      />
+      >
+      <template v-slot:content>
+        {{ props.buttontext }}
+      </template>
+      </OutlineButton>
     </div>
   </div>
 </template>

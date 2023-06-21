@@ -32,8 +32,7 @@ const props = defineProps({
   additionalTitleClasses: {
     type: String,
     required: false,
-  }
-
+  },
 });
 
 let flexStyle = "flex flex-col mx-auto";
@@ -54,11 +53,10 @@ if (props.width) {
       {{ props.title }}
     </h1>
     <p :class="textStyle">{{ props.text }}</p>
-    <FilledButton
-      v-if="buttonText"
-      :content="props.buttonText"
-      :link="props.buttonUrl"
-      classes="w-44"
-    />
+    <FilledButton v-if="buttonText" :link="props.buttonUrl" classes="w-44">
+      <template v-slot:content>
+        {{ props.buttonText }}
+      </template>
+    </FilledButton>
   </div>
 </template>
