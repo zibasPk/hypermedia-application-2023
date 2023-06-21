@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const props = defineProps(["link", "classes"]);
 
 function forward() {
@@ -13,6 +12,6 @@ function forward() {
     :class="classes"
     @click="forward()"
   >
-  <slot name="content"> </slot>
+    <slot name="content"> </slot>
   </button>
 </template>

@@ -29,7 +29,6 @@ const backgroundImageHeader = {
     </div>
   </StandardSlotted>
   <StandardSlotted>
-    
     <div class="overflow-hidden h-[1006px]">
       <img
         class="rounded m-auto object-cover h-full"

@@ -144,9 +144,7 @@ function toggle(toShow: element) {
           </li>
         </ul>
       </div>
-      <FilledButton
-        classes="bg-secondary border-secondary"
-      >
+      <FilledButton classes="bg-secondary border-secondary">
         <template v-slot:content> Get in Touch </template>
       </FilledButton>
     </div>
