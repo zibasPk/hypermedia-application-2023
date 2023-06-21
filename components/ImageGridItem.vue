@@ -28,7 +28,7 @@ const props = defineProps({
       />
       <p class="font-bold">{{ maintext }}</p>
     </div>
-    <p v-if="rendermaindesc">{{ maindesc }}</p>
+    <p v-if="rendermaindesc" class="text-sm">{{ maindesc }}</p>
     <div class="w-full h-full">
       <OutlineButton classes="w-full" :link="buttonlink">
         <template v-slot:content>
