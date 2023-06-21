@@ -1,5 +1,9 @@
 html {
   font-family: "Inter";
   font-size: 1.1rem;
+  background-color: #2d3648;
+}
+
+body {
   background-color: #e2eeff;
 }
