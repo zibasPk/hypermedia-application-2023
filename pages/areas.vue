@@ -22,7 +22,10 @@ let areas = data.value;
       </TitleTextItem>
     </PageHeader>
     <StandardSlotted>
+      <template v-slot:first>
       <TitleTextItem title="ciao" text="ciaone" centered> </TitleTextItem>
+    </template>
+    <template v-slot:second>
       <div class="overflow-hidden h-[1006px]">
         <img
           class="rounded m-auto object-cover h-full"
@@ -30,6 +33,7 @@ let areas = data.value;
           :alt="backgroundImageHeader.alt"
         />
       </div>
+    </template>
     </StandardSlotted>
   </main>
 </template>

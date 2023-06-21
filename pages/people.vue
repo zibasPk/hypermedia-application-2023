@@ -68,29 +68,41 @@ const tempEmployees = [
   </PageHeader>
 
   <StandardSlotted>
+    <template v-slot:first>
     <TitleTextItem
       title="Board"
       text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
       additionalTitleClasses="text-primary"
     />
+  </template>
+  <template v-slot:second>
     <GridContainer :content="tempEmployees" />
+  </template>
   </StandardSlotted>
 
   <StandardSlotted>
+    <template v-slot:first>
     <GridContainer :content="tempEmployees" />
+  </template>
+  <template v-slot:second>
     <TitleTextItem
       title="Assembly"
       text="At CG venture, our Venture Capital Assembly forms the backbone of our collaborative and growth-oriented approach to investing. Comprised of exceptional professionals from diverse backgrounds, the Assembly represents a dynamic and synergistic force that drives our success."
       additionalTitleClasses="text-primary"
     />
+  </template>
   </StandardSlotted>
 
   <StandardSlotted>
+    <template v-slot:first>
     <TitleTextItem
       title="Other People"
       text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
       additionalTitleClasses="text-primary"
     />
+  </template>
+  <template v-slot:second>
     <GridContainer :content="tempEmployees" />
+  </template>
   </StandardSlotted>
 </template>

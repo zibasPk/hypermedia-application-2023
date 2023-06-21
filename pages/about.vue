@@ -15,45 +15,57 @@ const backgroundImageHeader = {
   </PageHeader>
 
   <StandardSlotted>
-    <TitleTextItem
-      title="We Invest in Startups"
-      text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
-      additionalTitleClasses="text-primary"
-    />
-    <div class="overflow-hidden h-[1006px]">
-      <img
-        class="rounded m-auto object-cover h-full"
-        :src="backgroundImageHeader.src"
-        :alt="backgroundImageHeader.alt"
+    <template v-slot:first>
+      <TitleTextItem
+        title="We Invest in Startups"
+        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        additionalTitleClasses="text-primary"
       />
-    </div>
+    </template>
+
+    <template v-slot:second
+      ><div class="overflow-hidden h-[1006px]">
+        <img
+          class="rounded m-auto object-cover h-full"
+          :src="backgroundImageHeader.src"
+          :alt="backgroundImageHeader.alt"
+        /></div
+    ></template>
   </StandardSlotted>
   <StandardSlotted>
-    <div class="overflow-hidden h-[1006px]">
-      <img
-        class="rounded m-auto object-cover h-full"
-        :src="backgroundImageHeader.src"
-        :alt="backgroundImageHeader.alt"
+    <template v-slot:first>
+      <div class="overflow-hidden h-[1006px]">
+        <img
+          class="rounded m-auto object-cover h-full"
+          :src="backgroundImageHeader.src"
+          :alt="backgroundImageHeader.alt"
+        />
+      </div>
+    </template>
+    <template v-slot:second>
+      <TitleTextItem
+        title="We Value Capital"
+        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        additionalTitleClasses="text-primary"
       />
-    </div>
-    <TitleTextItem
-      title="We Value Capital"
-      text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
-      additionalTitleClasses="text-primary"
-    />
+    </template>
   </StandardSlotted>
   <StandardSlotted>
-    <TitleTextItem
-      title="We Transform Corporates"
-      text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
-      additionalTitleClasses="text-primary"
-    />
-    <div class="overflow-hidden h-[1006px]">
-      <img
-        class="rounded m-auto object-cover h-full"
-        :src="backgroundImageHeader.src"
-        :alt="backgroundImageHeader.alt"
+    <template v-slot:first>
+      <TitleTextItem
+        title="We Transform Corporates"
+        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        additionalTitleClasses="text-primary"
       />
-    </div>
+    </template>
+    <template v-slot:second>
+      <div class="overflow-hidden h-[1006px]">
+        <img
+          class="rounded m-auto object-cover h-full"
+          :src="backgroundImageHeader.src"
+          :alt="backgroundImageHeader.alt"
+        />
+      </div>
+    </template>
   </StandardSlotted>
 </template>
