@@ -19,14 +19,14 @@ const items: Item[] = [
       <div class="sm:flex sm:items-center sm:justify-between">
         <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            class="h-8 mr-3"
+            src="../assets/img/logo-lvg.png"
+            class="h-58 w-140 mr-3"
             alt="Flowbite Logo"
           />
-          <span
+          <!-- <span
             class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
             >Flowbite</span
-          >
+          > -->
         </a>
       </div>
       <div class="flex justify-between mt-10 text-xs">

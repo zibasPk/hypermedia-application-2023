@@ -5,8 +5,10 @@ import FilledButton from "../components/FilledButton.vue";
 interface element {
   text: string;
   link: string;
+  iconHTML: string;
   toggled: any;
   dropdownElements: dropdownElement[];
+  active: any;
 }
 
 interface dropdownElement {
@@ -20,32 +22,32 @@ let elements: element[] = [
     link: "/about",
     toggled: ref(false),
     dropdownElements: [],
+    iconHTML: '<i class="fa-solid fa-circle-info"></i>',
+    active: ref(false),
   },
   {
     text: "What we do",
-    link: "b",
+    link: "/",
     toggled: ref(false),
-    dropdownElements: [
-      // { text: "aa", link: "aa" },
-      // { text: "bb", link: "bb" },
-    ],
+    dropdownElements: [],
+    iconHTML: '<i class="fa-solid fa-briefcase"></i>',
+    active: ref(false),
   },
   {
     text: "Our People",
     link: "/people",
     toggled: ref(false),
-    dropdownElements: [
-      // { text: "aaa", link: "aaa" },
-      // { text: "bbb", link: "bbb" },
-      // { text: "ccc", link: "ccc" },
-      // { text: "ddd", link: "ddd" },
-    ],
+    dropdownElements: [],
+    iconHTML: '<i class="fa-solid fa-users"></i>',
+    active: ref(false),
   },
   {
     text: "Portfolio",
-    link: "c",
+    link: "/",
     toggled: ref(false),
     dropdownElements: [],
+    iconHTML: '<i class="fa-solid fa-book-open"></i>',
+    active: ref(false),
   },
 ];
 
@@ -56,22 +58,30 @@ function toggle(toShow: element) {
   });
   toShow.toggled.value = !init;
 }
+
+function setActive() {
+  elements.filter(el => {
+    let target = useRoute().fullPath.split("/")[1]
+    el.active.value = el.link.includes(target) && target !== ""
+  })
+}
+setActive()
+
 </script>
 
 <template>
   <nav class="bg-primary border-black border-solid border-b">
     <div
-      class="max-w-screen-xl grid grid-flow-col grid-cols-[1fr,7fr,1fr] items-center justify-evenly mx-auto p-4"
+      class="grid grid-flow-col grid-cols-[1fr,7fr,1fr] items-center justify-evenly mx-20 py-4"
     >
       <a href="#" class="flex items-center">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          class="h-8 mr-3"
-          alt="Flowbite Logo"
+          src="../assets/img/logo-lvg.png"
+          class="h-58 w-140 mr-3"
         />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap"
+        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
-        >
+        > -->
       </a>
       <button
         data-collapse-toggle="navbar-dropdown"
@@ -103,13 +113,20 @@ function toggle(toShow: element) {
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
           <li v-for="element in elements">
+            
             <a
               v-if="element.dropdownElements.length == 0"
               :href="element.link"
               class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
               aria-current="page"
             >
+            <div
+              class="flex gap-2" 
+              :class="[element.active.value ? 'border-solid border-b-2 border-secondary' : 'text-gray-400']"
+              >
+              <span v-html="element.iconHTML"></span>
               {{ element.text }}
+            </div>
             </a>
             <button
               v-if="element.dropdownElements.length != 0"
@@ -150,8 +167,13 @@ function toggle(toShow: element) {
           </li>
         </ul>
       </div>
-      <FilledButton classes="bg-secondary border-secondary">
-        <template v-slot:content> Get in Touch </template>
+      <FilledButton classes="bg-secondary border-secondary p-0">
+        <template v-slot:content>  
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            Get in Touch
+          </div>
+        </template>
       </FilledButton>
     </div>
   </nav>
