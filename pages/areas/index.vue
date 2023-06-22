@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Area } from "../utils/DatabaseTypes";
+import { Area } from "../../utils/DatabaseTypes";
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF%20Hero.jpg",
   alt: "hero",
