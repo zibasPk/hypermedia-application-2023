@@ -5,8 +5,9 @@ const backgroundImageHeader = {
   alt: "hero",
 };
 
-const { data } = useFetch<Area[]>("/api/areas");
+const { data } = await useFetch<Area[]>("/api/areas");
 let areas = data.value;
+console.log(areas)
 </script>
 <template>
   <main>
@@ -21,11 +22,11 @@ let areas = data.value;
       >
       </TitleTextItem>
     </PageHeader>
-    <StandardSlotted>
-      <template v-slot:first>
-        <TitleTextItem title="ciao" text="ciaone" centered> </TitleTextItem>
+    <StandardSlotted v-for="(area, index) in areas">
+      <template v-slot:first v-if="(index +1) % 2">
+        <TitleTextItem :title='area.name ?? ""' :text='area.short_description ?? ""'></TitleTextItem>
       </template>
-      <template v-slot:second>
+      <template v-slot:first v-else>
         <div class="overflow-hidden h-[1006px]">
           <img
             class="rounded m-auto object-cover h-full"
@@ -34,6 +35,20 @@ let areas = data.value;
           />
         </div>
       </template>
+      
+      <template v-slot:second v-if="index % 2">
+        <TitleTextItem :title='area.name ?? ""' :text='area.short_description ?? ""'></TitleTextItem>
+      </template>
+      <template v-slot:second v-else>
+        <div class="overflow-hidden h-[1006px]">
+          <img
+            class="rounded m-auto object-cover h-full"
+            :src="backgroundImageHeader.src"
+            :alt="backgroundImageHeader.alt"
+          />
+        </div>
+      </template>
+
     </StandardSlotted>
   </main>
 </template>
