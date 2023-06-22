@@ -82,12 +82,12 @@ watch(
     <div
       class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[100rem]"
     >
-      <a href="/" class="flex items-center">
+      <NuxtLink href="/" class="flex items-center">
         <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
         > -->
-      </a>
+      </NuxtLink>
       <button
         data-collapse-toggle="navbar-dropdown"
         type="button"
@@ -164,10 +164,10 @@ watch(
             >
               <ul class="py-2 text-sm text-gray-700">
                 <li v-for="dropdownElement in element.dropdownElements">
-                  <a
+                  <NuxtLink
                     :href="dropdownElement.link"
                     class="block px-4 py-2 hover:bg-gray-100"
-                    >{{ dropdownElement.text }}</a
+                    >{{ dropdownElement.text }}</NuxtLink
                   >
                 </li>
               </ul>
