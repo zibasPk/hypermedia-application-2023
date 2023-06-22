@@ -14,11 +14,11 @@ if (props.separator) {
     class="grid grid-cols-2 place-items-center gap-5"
     :class="separatorClass"
   >
-    <div class="mb-[-1px] w-full">
+    <div class="mb-[-1px] w-full h-full">
       <slot name="first"></slot>
     </div>
 
-    <div class="mb-[-1px] w-full">
+    <div class="mb-[-1px] w-full h-full">
       <slot name="second"></slot>
     </div>
   </div>
