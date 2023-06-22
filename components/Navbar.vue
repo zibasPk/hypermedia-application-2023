@@ -26,7 +26,7 @@ let elements: element[] = [
     active: ref(false),
   },
   {
-    text: "What we do",
+    text: "Investment Areas",
     link: "/areas",
     toggled: ref(false),
     dropdownElements: [],
@@ -43,7 +43,7 @@ let elements: element[] = [
   },
   {
     text: "Portfolio",
-    link: "/projects",
+    link: "/portfolio",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
@@ -65,7 +65,14 @@ function setActive() {
     el.active.value = el.link.includes(target) && target !== "";
   });
 }
-setActive();
+const route = useRoute();
+watch(
+  route,
+  () => {
+    setActive();
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -73,14 +80,14 @@ setActive();
     class="bg-primary border-[#1A202C] border-solid border-b-2 fixed z-40 w-full"
   >
     <div
-      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[90rem]"
+      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[100rem]"
     >
-      <a href="/" class="flex items-center">
+      <NuxtLink href="/" class="flex items-center">
         <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
         > -->
-      </a>
+      </NuxtLink>
       <button
         data-collapse-toggle="navbar-dropdown"
         type="button"
@@ -111,11 +118,11 @@ setActive();
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
           <li v-for="element in elements" class="my-auto">
-            <a
-              v-if="element.dropdownElements.length == 0"
-              :href="element.link"
-              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
+            <NuxtLink
+              :to="element.link"
               aria-current="page"
+              v-if="element.dropdownElements.length == 0"
+              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
             >
               <div
                 class="flex gap-2"
@@ -128,7 +135,7 @@ setActive();
                 <span v-html="element.iconHTML"></span>
                 {{ element.text }}
               </div>
-            </a>
+            </NuxtLink>
             <button
               v-if="element.dropdownElements.length != 0"
               @click="toggle(element)"
@@ -157,10 +164,10 @@ setActive();
             >
               <ul class="py-2 text-sm text-gray-700">
                 <li v-for="dropdownElement in element.dropdownElements">
-                  <a
+                  <NuxtLink
                     :href="dropdownElement.link"
                     class="block px-4 py-2 hover:bg-gray-100"
-                    >{{ dropdownElement.text }}</a
+                    >{{ dropdownElement.text }}</NuxtLink
                   >
                 </li>
               </ul>
