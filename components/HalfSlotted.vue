@@ -10,15 +10,9 @@ if (props.separator) {
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-2 place-items-center gap-5 border-b border-secondary"
-    :class="separatorClass"
-  >
-    <div class="mb-[-1px] w-full">
+  <div :class="separatorClass">
+    <div class="grid grid-cols-2 place-items-center gap-5 mb-[-1px]">
       <slot name="first"></slot>
-    </div>
-
-    <div class="mb-[-1px] w-full">
       <slot name="second"></slot>
     </div>
   </div>
