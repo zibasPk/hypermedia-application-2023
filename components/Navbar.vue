@@ -6,7 +6,6 @@ interface element {
   text: string;
   link: string;
   iconHTML: string;
-  classes: string;
   toggled: any;
   dropdownElements: dropdownElement[];
   active: any;
@@ -25,7 +24,6 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-circle-info"></i>',
     active: ref(false),
-    classes: "",
   },
   {
     text: "What we do",
@@ -34,7 +32,6 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-briefcase"></i>',
     active: ref(false),
-    classes: "",
   },
   {
     text: "Our People",
@@ -43,7 +40,6 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-users"></i>',
     active: ref(false),
-    classes: "",
   },
   {
     text: "Portfolio",
@@ -52,7 +48,6 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
     active: ref(false),
-    classes: "",
   },
 ];
 
