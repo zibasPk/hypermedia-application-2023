@@ -6,3 +6,12 @@ export interface Area {
   short_description: string | null;
   image: string;
 }
+
+export interface TeamMember {
+  member_code: number; // BigInt is typically represented as a number in JavaScript/TypeScript
+  name: string | null;
+  surname: string | null;
+  age: number | null;
+  role: string | null;
+  short_description: string | null;
+}
