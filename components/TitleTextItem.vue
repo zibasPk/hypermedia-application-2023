@@ -37,7 +37,7 @@ const props = defineProps({
   additionalTitleClasses: {
     type: String,
     required: false,
-    default: "title-primary",
+    default: "text-primary",
   },
 });
 
