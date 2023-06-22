@@ -65,7 +65,14 @@ function setActive() {
     el.active.value = el.link.includes(target) && target !== "";
   });
 }
-setActive();
+const route = useRoute();
+watch(
+  route,
+  () => {
+    setActive();
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -111,11 +118,11 @@ setActive();
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
           <li v-for="element in elements" class="my-auto">
-            <a
-              v-if="element.dropdownElements.length == 0"
-              :href="element.link"
-              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
+            <NuxtLink
+              :to="element.link"
               aria-current="page"
+              v-if="element.dropdownElements.length == 0"
+              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
             >
               <div
                 class="flex gap-2"
@@ -128,7 +135,7 @@ setActive();
                 <span v-html="element.iconHTML"></span>
                 {{ element.text }}
               </div>
-            </a>
+            </NuxtLink>
             <button
               v-if="element.dropdownElements.length != 0"
               @click="toggle(element)"
