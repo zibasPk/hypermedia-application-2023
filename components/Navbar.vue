@@ -174,7 +174,10 @@ watch(
             </div>
           </li>
           <li>
-            <FilledButton classes="bg-secondary border-secondary p-0">
+            <FilledButton
+              classes="bg-secondary border-secondary p-0"
+              link="/contact"
+            >
               <template v-slot:content>
                 <div>
                   <i class="fa-solid fa-envelope"></i>
