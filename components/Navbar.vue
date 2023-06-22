@@ -26,7 +26,7 @@ let elements: element[] = [
     active: ref(false),
   },
   {
-    text: "What we do",
+    text: "Investment Areas",
     link: "/areas",
     toggled: ref(false),
     dropdownElements: [],
@@ -43,7 +43,7 @@ let elements: element[] = [
   },
   {
     text: "Portfolio",
-    link: "/projects",
+    link: "/portfolio",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
@@ -73,7 +73,7 @@ setActive();
     class="bg-primary border-[#1A202C] border-solid border-b-2 fixed z-40 w-full"
   >
     <div
-      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[90rem]"
+      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[100rem]"
     >
       <a href="/" class="flex items-center">
         <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
