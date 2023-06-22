@@ -60,25 +60,23 @@ function toggle(toShow: element) {
 }
 
 function setActive() {
-  elements.filter(el => {
-    let target = useRoute().fullPath.split("/")[1]
-    el.active.value = el.link.includes(target) && target !== ""
-  })
+  elements.filter((el) => {
+    let target = useRoute().fullPath.split("/")[1];
+    el.active.value = el.link.includes(target) && target !== "";
+  });
 }
-setActive()
-
+setActive();
 </script>
 
 <template>
-  <nav class="bg-primary border-black border-solid border-b">
+  <nav
+    class="bg-primary border-[#1A202C] border-solid border-b-2 fixed z-40 w-full"
+  >
     <div
-      class="grid grid-flow-col grid-cols-[1fr,7fr,1fr] items-center justify-evenly mx-20 py-4"
+      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[90rem]"
     >
       <a href="#" class="flex items-center">
-        <img
-          src="../assets/img/logo-lvg.png"
-          class="h-58 w-140 mr-3"
-        />
+        <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
         > -->
@@ -106,27 +104,30 @@ setActive()
         </svg>
       </button>
       <div
-        class="mr-6 ml-auto hidden w-full md:block md:w-auto"
+        class="ml-auto hidden w-full md:block md:w-auto"
         id="navbar-dropdown"
       >
         <ul
           class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
-          <li v-for="element in elements">
-            
+          <li v-for="element in elements" class="my-auto">
             <a
               v-if="element.dropdownElements.length == 0"
               :href="element.link"
               class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
               aria-current="page"
             >
-            <div
-              class="flex gap-2" 
-              :class="[element.active.value ? 'border-solid border-b-2 border-secondary' : 'text-gray-400']"
+              <div
+                class="flex gap-2"
+                :class="[
+                  element.active.value
+                    ? 'border-solid border-b-2 border-secondary'
+                    : 'text-gray-400',
+                ]"
               >
-              <span v-html="element.iconHTML"></span>
-              {{ element.text }}
-            </div>
+                <span v-html="element.iconHTML"></span>
+                {{ element.text }}
+              </div>
             </a>
             <button
               v-if="element.dropdownElements.length != 0"
@@ -165,16 +166,18 @@ setActive()
               </ul>
             </div>
           </li>
+          <li>
+            <FilledButton classes="bg-secondary border-secondary p-0">
+              <template v-slot:content>
+                <div>
+                  <i class="fa-solid fa-envelope"></i>
+                  Get in Touch
+                </div>
+              </template>
+            </FilledButton>
+          </li>
         </ul>
       </div>
-      <FilledButton classes="bg-secondary border-secondary p-0">
-        <template v-slot:content>  
-          <div>
-            <i class="fa-solid fa-envelope"></i>
-            Get in Touch
-          </div>
-        </template>
-      </FilledButton>
     </div>
   </nav>
 </template>
