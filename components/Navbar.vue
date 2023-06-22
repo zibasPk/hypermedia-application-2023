@@ -16,30 +16,36 @@ interface dropdownElement {
 
 let elements: element[] = [
   {
-    text: "ciao",
-    link: "a",
+    text: "About Us",
+    link: "/about",
     toggled: ref(false),
     dropdownElements: [],
   },
   {
-    text: "ciao2",
+    text: "What we do",
     link: "b",
     toggled: ref(false),
     dropdownElements: [
-      { text: "aa", link: "aa" },
-      { text: "bb", link: "bb" },
+      // { text: "aa", link: "aa" },
+      // { text: "bb", link: "bb" },
     ],
   },
   {
-    text: "ciao3",
-    link: "c",
+    text: "Our People",
+    link: "/people",
     toggled: ref(false),
     dropdownElements: [
-      { text: "aaa", link: "aaa" },
-      { text: "bbb", link: "bbb" },
-      { text: "ccc", link: "ccc" },
-      { text: "ddd", link: "ddd" },
+      // { text: "aaa", link: "aaa" },
+      // { text: "bbb", link: "bbb" },
+      // { text: "ccc", link: "ccc" },
+      // { text: "ddd", link: "ddd" },
     ],
+  },
+  {
+    text: "Portfolio",
+    link: "c",
+    toggled: ref(false),
+    dropdownElements: [],
   },
 ];
 
@@ -55,7 +61,7 @@ function toggle(toShow: element) {
 <template>
   <nav class="bg-primary border-black border-solid border-b">
     <div
-      class="max-w-screen-xl grid grid-flow-col grid-cols-[1fr,4fr,1fr] items-center justify-between mx-auto p-4"
+      class="max-w-screen-xl grid grid-flow-col grid-cols-[1fr,7fr,1fr] items-center justify-evenly mx-auto p-4"
     >
       <a href="#" class="flex items-center">
         <img
@@ -90,7 +96,7 @@ function toggle(toShow: element) {
         </svg>
       </button>
       <div
-        class="mr-0 ml-auto hidden w-full md:block md:w-auto"
+        class="mr-6 ml-auto hidden w-full md:block md:w-auto"
         id="navbar-dropdown"
       >
         <ul
