@@ -27,7 +27,7 @@ let elements: element[] = [
   },
   {
     text: "What we do",
-    link: "/",
+    link: "/areas",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-briefcase"></i>',
@@ -43,7 +43,7 @@ let elements: element[] = [
   },
   {
     text: "Portfolio",
-    link: "/",
+    link: "/projects",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
