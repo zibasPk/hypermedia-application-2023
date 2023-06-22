@@ -18,22 +18,10 @@ const data = [
 
   <StandardSlotted>
     <template v-slot:first>
-      <TextWithData :stringObjectArray="data"></TextWithData>
-    </template>
-    <template v-slot:second>
-      <div class="overflow-hidden h-[503px]">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
-          :alt="backgroundImageHeader.alt"
-        />
-      </div>
-    </template>
-  </StandardSlotted>
-
-  <StandardSlotted>
-    <template v-slot:first>
-      <div class="overflow-hidden h-[503px]">
+      <div class="grid grid-rows-2 max-h-[50rem]">
+        <div class="m-auto">
+          <TextWithData :stringObjectArray="data"></TextWithData>
+        </div>
         <img
           class="rounded m-auto object-cover h-full"
           :src="backgroundImageHeader.src"
@@ -42,20 +30,34 @@ const data = [
       </div>
     </template>
     <template v-slot:second>
-      <TitleTextItem
-        title="Investment Highlights"
-        text="Our carefully curated portfolio offers a balanced blend of high-growth ventures, mitigating the impact of market fluctuations and enhancing long-term value creation."
-        additionalTitleClasses="text-primary"
-      />
+      <div class="grid grid-rows-2 max-h-[50rem]">
+        <img
+          class="rounded m-auto object-cover h-full"
+          :src="backgroundImageHeader.src"
+          :alt="backgroundImageHeader.alt"
+        />
+        <div class="m-auto">
+          <TitleTextItem
+            title="ciao"
+            text="ciaone"
+            button-text="ciao"
+            button-url="/portfoglio"
+            centered
+          >
+          </TitleTextItem>
+        </div>
+      </div>
     </template>
   </StandardSlotted>
 
   <StandardSlotted>
     <template v-slot:first>
       <TitleTextItem
-        title="Investment Highlights"
-        text="Our carefully curated portfolio offers a balanced blend of high-growth ventures, mitigating the impact of market fluctuations and enhancing long-term value creation."
+        title="Our many different fields of action"
+        text="We are at the forefront of multiple disciplines, leading the charge in innovation and problem-solving. From Sustainable Energy and Clean Technology to AI and Robotics, we're paving the way for a brighter future. Click below to explore our diverse projects."
         additionalTitleClasses="text-primary"
+        button-text="All areas"
+        button-url="/areas"
       />
     </template>
     <template v-slot:second>
@@ -68,6 +70,4 @@ const data = [
       </div>
     </template>
   </StandardSlotted>
-
-  <main>ciao<i class="fa-solid fa-user fa-beat-fade"></i>come</main>
 </template>

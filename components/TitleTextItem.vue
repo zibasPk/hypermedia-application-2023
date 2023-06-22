@@ -52,7 +52,7 @@ if (props.width) {
     <h1 class="text-4xl font-bold" :class="additionalTitleClasses">
       {{ props.title }}
     </h1>
-    <p :class="textStyle">{{ props.text }}</p>
+    <p class="pb-10" :class="textStyle">{{ props.text }}</p>
     <FilledButton v-if="buttonText" :link="props.buttonUrl" classes="w-44">
       <template v-slot:content>
         {{ props.buttonText }}
