@@ -62,12 +62,7 @@ function toggle(toShow: element) {
 function setActive() {
   elements.filter(el => {
     let target = useRoute().fullPath.split("/")[1]
-    if (el.link.includes(target) && target !== "") {
-      console.log(target, el.link)
-      el.active.value = true;
-    } else {
-      el.active.value = false;
-    }
+    el.active.value = el.link.includes(target) && target !== ""
   })
 }
 setActive()
