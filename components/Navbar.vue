@@ -122,7 +122,7 @@ setActive()
               aria-current="page"
             >
             <div
-              class="flex gap-1.5" 
+              class="flex gap-2" 
               :class="[element.active.value ? 'border-solid border-b-2 border-secondary' : 'text-gray-400']"
               >
               <span v-html="element.iconHTML"></span>
@@ -168,7 +168,7 @@ setActive()
           </li>
         </ul>
       </div>
-      <FilledButton classes="bg-secondary border-secondary">
+      <FilledButton classes="bg-secondary border-secondary p-0">
         <template v-slot:content>  
           <div>
             <i class="fa-solid fa-envelope"></i>
