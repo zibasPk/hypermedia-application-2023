@@ -75,7 +75,7 @@ setActive();
     <div
       class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[90rem]"
     >
-      <a href="#" class="flex items-center">
+      <a href="/" class="flex items-center">
         <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
