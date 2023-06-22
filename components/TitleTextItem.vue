@@ -21,6 +21,11 @@ const props = defineProps({
     required: false,
     default: false,
   },
+  divCentered: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
   width: {
     type: String,
     required: false,
@@ -32,13 +37,19 @@ const props = defineProps({
   additionalTitleClasses: {
     type: String,
     required: false,
+    default: "title-primary",
   },
 });
 
 let flexStyle = "flex flex-col mx-auto";
 let textStyle = "text-xl pt-10";
+let buttonStyle = "";
+if (props.divCentered) {
+  flexStyle = "flex flex-col items-center justify-center p-10";
+  buttonStyle = "w-full";
+}
 if (props.centered) {
-  flexStyle = "flex flex-col items-center justify-center";
+  flexStyle = "flex flex-col items-center justify-center text-center";
   textStyle += " text-center";
 }
 textStyle += " " + props.additionalTextClasses;
@@ -49,14 +60,16 @@ if (props.width) {
 
 <template>
   <div :class="flexStyle">
-    <h1 class="text-4xl font-bold" :class="additionalTitleClasses">
+    <h1 class="text-4xl font-bold w-full" :class="additionalTitleClasses">
       {{ props.title }}
     </h1>
-    <p class="pb-10" :class="textStyle">{{ props.text }}</p>
-    <FilledButton v-if="buttonText" :link="props.buttonUrl" classes="w-44">
-      <template v-slot:content>
-        {{ props.buttonText }}
-      </template>
-    </FilledButton>
+    <p class="pb-10 w-full" :class="textStyle">{{ props.text }}</p>
+    <div :class="buttonStyle">
+      <FilledButton v-if="buttonText" :link="props.buttonUrl" classes="w-44">
+        <template v-slot:content>
+          {{ props.buttonText }}
+        </template>
+      </FilledButton>
+    </div>
   </div>
 </template>

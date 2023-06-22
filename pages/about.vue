@@ -20,6 +20,7 @@ const backgroundImageHeader = {
         title="We Invest in Startups"
         text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
         additionalTitleClasses="text-primary"
+        divCentered
       />
     </template>
 
@@ -47,6 +48,7 @@ const backgroundImageHeader = {
         title="We Value Capital"
         text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
         additionalTitleClasses="text-primary"
+        divCentered
       />
     </template>
   </StandardSlotted>
@@ -56,6 +58,7 @@ const backgroundImageHeader = {
         title="We Transform Corporates"
         text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
         additionalTitleClasses="text-primary"
+        divCentered
       />
     </template>
     <template v-slot:second>
