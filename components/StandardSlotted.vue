@@ -11,7 +11,7 @@ if (props.separator) {
 
 <template>
   <div
-    class="grid grid-cols-2 place-items-center gap-5 border-b border-secondary"
+    class="grid grid-cols-2 place-items-center gap-5"
     :class="separatorClass"
   >
     <div class="mb-[-1px] w-full">
