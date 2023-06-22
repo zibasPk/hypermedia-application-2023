@@ -4,4 +4,5 @@ export interface Area {
   description: string | null;
   data1: number | null; // BigInt is typically represented as a number in JavaScript/TypeScript
   short_description: string | null;
+  image: string;
 }
