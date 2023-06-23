@@ -24,7 +24,7 @@ let adaptedData = data.value?.map((member) => {
 
 let board = adaptedData?.filter((member) => member.maindesc === "Board");
 let assembly = adaptedData?.filter((member) => member.maindesc === "Assembly");
-let members = adaptedData?.filter((member) => member.maindesc === "Member");
+let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
@@ -68,12 +68,13 @@ let members = adaptedData?.filter((member) => member.maindesc === "Member");
 
   <StandardSlotted>
     <template v-slot:first>
-      <TitleTextItem
-        title="Other People"
-        text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
-        additionalTitleClasses="text-primary"
-        divCentered
-      />
+      <div class="p-10">
+        <TitleTextItem
+          title="Other Project Supervisors"
+          text="Our Project Supervisors bring a wealth of experience and industry knowledge to the table. They have a proven track record of identifying and nurturing promising startups, helping them scale and reach their full potential. With their sharp business acumen, they provide invaluable insights into market trends, competitive landscapes, and emerging technologies."
+          additionalTitleClasses="text-primary"
+        />
+      </div>
     </template>
     <template v-slot:second>
       <GridContainer :content="members" />
