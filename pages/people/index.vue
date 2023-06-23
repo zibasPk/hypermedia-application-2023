@@ -1,59 +1,30 @@
 <script setup lang="ts">
+import { TeamMember } from "~/utils/DatabaseTypes";
+
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
   alt: "hero",
 };
 
-const tempEmployees = [
-  {
+const { data } = await useFetch<TeamMember[]>("/api/people");
+
+let adaptedData = data.value?.map((member) => {
+  return {
     buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
+    buttonlink: "/people/" + member.member_code.toString(),
+    maintext: member.name + " " + member.surname,
+    maindesc: member.role,
     rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-  {
-    buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
-    rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-  {
-    buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
-    rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-  {
-    buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
-    rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-  {
-    buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
-    rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-  {
-    buttontext: "Profile",
-    buttonlink: "#",
-    maintext: "mario draghi",
-    maindesc: "Board member",
-    rendermaindesc: true,
-    image: backgroundImageHeader,
-  },
-];
+    image: {
+      src: member.image,
+      alt: member.name,
+    },
+  };
+});
+
+let board = adaptedData?.filter((member) => member.maindesc === "Board");
+let assembly = adaptedData?.filter((member) => member.maindesc === "Assembly");
+let members = adaptedData?.filter((member) => member.maindesc === "Member");
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
@@ -77,13 +48,13 @@ const tempEmployees = [
       />
     </template>
     <template v-slot:second>
-      <GridContainer :content="tempEmployees" />
+      <GridContainer :content="board" />
     </template>
   </StandardSlotted>
 
   <StandardSlotted>
     <template v-slot:first>
-      <GridContainer :content="tempEmployees" />
+      <GridContainer :content="assembly" />
     </template>
     <template v-slot:second>
       <TitleTextItem
@@ -105,7 +76,7 @@ const tempEmployees = [
       />
     </template>
     <template v-slot:second>
-      <GridContainer :content="tempEmployees" />
+      <GridContainer :content="members" />
     </template>
   </StandardSlotted>
 </template>

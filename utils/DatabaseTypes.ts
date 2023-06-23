@@ -14,4 +14,5 @@ export interface TeamMember {
   age: number | null;
   role: string | null;
   short_description: string | null;
+  image: string | null;
 }
