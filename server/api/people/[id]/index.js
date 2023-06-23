@@ -6,9 +6,9 @@ export default defineEventHandler(async (event) => {
   const client = serverSupabaseClient(event);
 
   const { data, error } = await client
-    .from("project")
+    .from("team_member")
     .select("*")
-    .eq("project_code", id)
+    .eq("member_code", id)
     .limit(1)
     .single();
 
