@@ -21,7 +21,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
     >
     </TitleTextItem>
   </PageHeader>
-  <StandardSlotted v-for="(area, index) in areas">
+  <StandardSlotted v-for="(area, index) in areas" separator>
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem
         :title="area.name ?? ''"

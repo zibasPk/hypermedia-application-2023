@@ -25,7 +25,7 @@ if (top_projects == null) {
     </TitleTextItem>
   </PageHeader>
 
-  <StandardSlotted v-for="(project, index) in top_projects">
+  <StandardSlotted v-for="(project, index) in top_projects" separator>
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem
         :title="project.name"
@@ -46,7 +46,7 @@ if (top_projects == null) {
       </div>
     </template>
 
-    <template v-slot:second v-if="(index) % 2">
+    <template v-slot:second v-if="index % 2">
       <TitleTextItem
         :title="project.name"
         :text="project.section_1_description"

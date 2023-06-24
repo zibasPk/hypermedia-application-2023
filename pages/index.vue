@@ -16,7 +16,7 @@ const data = [
     <div class="font-bold text-6xl text-secondarytext">Investing in Change</div>
   </PageHeader>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <div class="grid grid-rows-2 max-h-[50rem] p-10">
         <div class="m-auto">

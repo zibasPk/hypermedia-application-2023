@@ -38,7 +38,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </div>
   </PageHeader>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
         title="Board"
@@ -52,7 +52,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </template>
   </StandardSlotted>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <GridContainer :content="assembly" />
     </template>
@@ -66,7 +66,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </template>
   </StandardSlotted>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <div class="p-10">
         <TitleTextItem

@@ -14,7 +14,7 @@ const backgroundImageHeader = {
     </div>
   </PageHeader>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
         title="We Invest in Startups"
@@ -33,7 +33,7 @@ const backgroundImageHeader = {
         /></div
     ></template>
   </StandardSlotted>
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <div class="overflow-hidden h-[1006px]">
         <img
@@ -52,7 +52,7 @@ const backgroundImageHeader = {
       />
     </template>
   </StandardSlotted>
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
         title="We Transform Corporates"

@@ -36,7 +36,7 @@ const grid_content = projects?.map((project) => {
   </PageHeader>
 
   <!-- Shit about area -->
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
         :title="area?.section_1_title"
@@ -56,7 +56,7 @@ const grid_content = projects?.map((project) => {
     </template>
   </StandardSlotted>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <div class="overflow-hidden h-[1006px]">
         <img
@@ -76,7 +76,7 @@ const grid_content = projects?.map((project) => {
     </template>
   </StandardSlotted>
 
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
         :title="area?.section_3_title"
@@ -97,7 +97,7 @@ const grid_content = projects?.map((project) => {
   </StandardSlotted>
 
   <!-- Project related to this area -->
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
       <div class="p-10">
         <TitleTextItem
