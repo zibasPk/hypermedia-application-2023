@@ -42,7 +42,7 @@ const props = defineProps({
 });
 
 let flexStyle = "flex flex-col mx-auto";
-let textStyle = "text-xl pt-10";
+let textStyle = "text-xl pt-10 " + props.additionalTextClasses;
 let buttonStyle = "";
 if (props.divCentered) {
   flexStyle = "flex flex-col items-center justify-center p-10";
@@ -52,7 +52,6 @@ if (props.centered) {
   flexStyle = "flex flex-col items-center justify-center text-center";
   textStyle += " text-center";
 }
-textStyle += " " + props.additionalTextClasses;
 if (props.width) {
   flexStyle += " " + props.width;
 }
@@ -60,7 +59,10 @@ if (props.width) {
 
 <template>
   <div :class="flexStyle">
-    <h1 class="text-4xl font-bold w-full" :class="additionalTitleClasses">
+    <h1
+      class="text-4xl font-bold w-full text-primary"
+      :class="additionalTitleClasses"
+    >
       {{ props.title }}
     </h1>
     <slot name="before"></slot>
