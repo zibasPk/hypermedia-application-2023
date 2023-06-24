@@ -6,6 +6,15 @@ export interface Area {
   short_description: string | null;
   image: string | null;
   projects: Project[] | null;
+  section_1_title: string | null;
+  section_2_title: string | null;
+  section_3_title: string | null;
+  section_1_description: string | null;
+  section_2_description: string | null;
+  section_3_description: string | null;
+  section_1_image: string | null;
+  section_2_image: string | null;
+  section_3_image: string | null;
 }
 
 export interface TeamMember {
