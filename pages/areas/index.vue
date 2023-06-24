@@ -14,7 +14,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
     <TitleTextItem
       title="Our project portfolio"
       text="ciao"
-      buttonText="Go To Projects"
+      buttonText="Go To Projects by Area"
       centered
       additionalTextClasses="text-secondarytext"
       additionalTitleClasses="text-secondarytext"
