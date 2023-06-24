@@ -13,7 +13,7 @@ if (d.value == null) {
   navigateTo("/404");
 }
 const area = d.value;
-const projects = d.value?.project;
+const projects = d.value?.project; // supabase sputa fuori un oggetto con .project invece di .projects
 const grid_content = projects?.map((project) => {
   return {
     buttontext: "Project",
