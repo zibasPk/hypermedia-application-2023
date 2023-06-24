@@ -12,8 +12,8 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
 <template>
   <PageHeader :image="backgroundImageHeader">
     <TitleTextItem
-      title="Our project portfolio"
-      text="ciao"
+      title="Our Projects"
+      text="Here is a complete list of all our projects divided by area."
       buttonText="Go To Projects by Area"
       centered
       additionalTextClasses="text-secondarytext"
