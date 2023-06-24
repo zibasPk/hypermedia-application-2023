@@ -14,7 +14,7 @@ let adaptedData = data.value?.map((member) => {
     buttonlink: "/people/" + member.member_code.toString(),
     maintext: member.name + " " + member.surname,
     maindesc: member.role,
-    rendermaindesc: true,
+    rendermaindesc: false,
     image: {
       src: member.image,
       alt: member.name,
@@ -38,7 +38,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </div>
   </PageHeader>
 
-  <StandardSlotted separator>
+  <StandardSlotted separator class="py-40">
     <template v-slot:first>
       <TitleTextItem
         title="Board"
@@ -52,7 +52,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator>
+  <StandardSlotted separator class="py-40">
     <template v-slot:first>
       <GridContainer :content="assembly" />
     </template>
@@ -66,7 +66,7 @@ let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator>
+  <StandardSlotted class="py-40">
     <template v-slot:first>
       <div class="p-10">
         <TitleTextItem
