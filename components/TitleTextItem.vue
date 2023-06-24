@@ -63,9 +63,14 @@ if (props.width) {
     <h1 class="text-4xl font-bold w-full" :class="additionalTitleClasses">
       {{ props.title }}
     </h1>
-    <p class="pb-10 w-full" :class="textStyle">{{ props.text }}</p>
+    <p class="w-full" :class="textStyle">{{ props.text }}</p>
+    <slot></slot>
     <div :class="buttonStyle">
-      <FilledButton v-if="buttonText" :link="props.buttonUrl" classes="w-44">
+      <FilledButton
+        v-if="buttonText"
+        :link="props.buttonUrl"
+        classes="w-44 pt-10"
+      >
         <template v-slot:content>
           {{ props.buttonText }}
         </template>
