@@ -29,7 +29,7 @@ const grid_content = projects?.map((project) => {
       :title="area.name"
       :text="area?.description"
       centered
-      additionalTextClasses="text-secondarytext"
+      additionalTextClasses="text-secondarytext px-20"
       additionalTitleClasses="text-secondarytext"
     >
     </TitleTextItem>
@@ -102,7 +102,7 @@ const grid_content = projects?.map((project) => {
       <div class="p-10">
         <TitleTextItem
           title="Projects in this field"
-          text="Testo"
+          text="Explore the startups in our portfolio working on these topics"
           additionalTitleClasses="text-primary"
         ></TitleTextItem>
       </div>
