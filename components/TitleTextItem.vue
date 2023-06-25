@@ -16,6 +16,11 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  buttonFilled: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
   centered: {
     type: Boolean,
     required: false,
@@ -70,7 +75,7 @@ if (props.width) {
     <slot name="after"></slot>
     <div :class="buttonStyle">
       <FilledButton
-        v-if="buttonText"
+        v-if="buttonText && buttonFilled"
         :link="props.buttonUrl"
         classes="w-44 mt-10"
       >
@@ -78,6 +83,15 @@ if (props.width) {
           {{ props.buttonText }}
         </template>
       </FilledButton>
+      <OutlineButton
+        v-if="buttonText && !buttonFilled"
+        :link="props.buttonUrl"
+        classes="w-44 mt-10"
+      >
+        <template v-slot:content>
+          {{ props.buttonText }}
+        </template>
+      </OutlineButton>
     </div>
   </div>
 </template>
