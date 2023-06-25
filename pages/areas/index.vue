@@ -15,6 +15,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
       title="Our Projects"
       text="Here is a complete list of all our projects divided by area."
       buttonText="Go To Projects by Area"
+      buttonUrl="/projects"
       centered
       additionalTextClasses="text-secondarytext"
       additionalTitleClasses="text-secondarytext"

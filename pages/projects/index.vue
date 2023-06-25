@@ -10,7 +10,7 @@ if (d.value == null) {
   navigateTo("/404")
 }
 const areas = d.value?.sort((a, b) => a.area_code - b.area_code);
-const grid_content = areas?.map(area => {
+const grid_contents = areas?.map(area => {
   return area.project.map(p => {
     return {
       buttontext: "Project",
@@ -37,7 +37,7 @@ const grid_content = areas?.map(area => {
       </TitleTextItem>
     </template>
     <template v-slot:second>
-      <GridContainer :content="grid_content?.at(index)">
+      <GridContainer :content="grid_contents?.at(index)">
       </GridContainer>
     </template>
 
