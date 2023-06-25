@@ -18,7 +18,7 @@ if (top_projects == null) {
       title="My preciousss"
       text="We wants it, we needs it. Must have the precious. They stole it from us. Sneaky little hobbitses."
       centered
-      buttonText="Go To Projects"
+      buttonText="Go To Projects by Area"
       buttonUrl="/projects"
       additionalTextClasses="text-secondarytext"
       additionalTitleClasses="text-secondarytext"
