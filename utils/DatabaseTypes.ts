@@ -5,7 +5,7 @@ export interface Area {
   data1: number | null;
   short_description: string | null;
   image: string | null;
-  projects: Project[] | null;
+  project: Project[] | null;
   section_1_title: string | null;
   section_2_title: string | null;
   section_3_title: string | null;
@@ -25,7 +25,7 @@ export interface TeamMember {
   role: string | null;
   short_description: string | null;
   image: string | null;
-  projects: Project[] | null;
+  project: Project[] | null;
 }
 
 export interface Project {
@@ -41,5 +41,5 @@ export interface Project {
   section_2_description: string | null;
   section_1_image: string | null;
   section_2_image: string | null;
-  areas: Area[] | null;
+  area: Area[] | null;
 }
