@@ -25,6 +25,7 @@ const props = defineProps({
       :maintext="item.maintext"
       :maindesc="item.maindesc"
       :rendermaindesc="item.rendermaindesc"
+      :image="item.image"
       class="col-span-1 row-span-1 mr-6"
     />
   </div>

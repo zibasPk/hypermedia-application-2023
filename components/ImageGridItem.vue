@@ -16,6 +16,8 @@ const props = defineProps({
     },
   },
 });
+const BucketUrl =
+  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const props = defineProps({
     <div class="flex items-center space-x-4">
       <img
         class="w-[64px] h-[64px] rounded"
-        :src="image.src"
+        :src="BucketUrl + image.src"
         :alt="image.alt"
       />
       <p class="font-bold">{{ maintext }}</p>

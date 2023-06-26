@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { Project, TeamMember } from "../../utils/DatabaseTypes";
-const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
-  alt: "hero",
-};
 
+const BucketUrl =
+  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 const route = useRoute();
 const id = route.params.id;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
@@ -51,7 +49,7 @@ if (projects.length > 0) {
 </script>
 
 <template>
-  <StandardSlotted :separator="hasProjects" class="pt-32">
+  <StandardSlotted :separator="hasProjects" class="pt-32 pb-32">
     <template v-slot:first>
       <TitleTextItem
         :title="member?.name + ' ' + member?.surname"
@@ -68,8 +66,8 @@ if (projects.length > 0) {
       <div class="overflow-hidden max-h-[50rem]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
-          :alt="backgroundImageHeader.alt"
+          :src="BucketUrl + member?.image || ''"
+          :alt="member?.name + ' ' + member?.surname + ' image' || 'member'"
         />
       </div>
     </template>
@@ -81,12 +79,15 @@ if (projects.length > 0) {
           :title="
             'Projects supervised by ' + member?.name + ' ' + member?.surname
           "
-          text="These are the projects supervised by this member."
+          :text="
+            'Discover the Remarkable Projects Supervised by ' +
+            member?.name +
+            ' ' +
+            member?.surname +
+            '.'
+          "
           additionalTitleClasses="pb-5"
         >
-          <template v-slot:before>
-            <div class="font-light w-full pb-">Role: {{ roleText }}</div>
-          </template>
         </TitleTextItem>
       </div>
     </template>
