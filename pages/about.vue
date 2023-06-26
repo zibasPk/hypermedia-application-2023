@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
+  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_10.jpg",
   alt: "hero",
 };
 const imageBucket =

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
-  alt: "hero",
+  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_10.jpg",
+  alt: "a field with wind power generators wow",
 };
+const imageBucket =
+  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 
 const data = [
   { string1: "3+", string2: "Billion of dollars invested" },
@@ -25,8 +27,8 @@ const data = [
         <div class="h-full w-full flex overflow-hidden">
           <img
             class="rounded m-auto object-cover w-full min-h-full cover"
-            :src="backgroundImageHeader.src"
-            :alt="backgroundImageHeader.alt"
+            :src="imageBucket + 'Cross_13.jpg'"
+            alt="people sitting around a table watching each other intently"
           />
         </div>
       </div>
@@ -36,8 +38,8 @@ const data = [
         <div class="h-full w-full flex overflow-hidden">
           <img
             class="rounded m-auto object-cover w-full min-h-full cover"
-            :src="backgroundImageHeader.src"
-            :alt="backgroundImageHeader.alt"
+            :src="imageBucket + 'Cross_15.jpg'"
+            alt="an image of our beautiful but also scary office"
           />
         </div>
         <div class="m-auto">
@@ -69,8 +71,8 @@ const data = [
       <div class="overflow-hidden h-[1006px]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
-          :alt="backgroundImageHeader.alt"
+          :src="imageBucket + 'Cross_12.jpg'"
+          alt="an image of the fabric of reality"
         />
       </div>
     </template>

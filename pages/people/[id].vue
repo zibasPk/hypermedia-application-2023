@@ -31,9 +31,9 @@ switch (roleText) {
 }
 let hasProjects = false;
 let adaptedData: any[] = [];
-if (projects.length > 0) {
+if (projects!.length > 0) {
   hasProjects = true;
-  adaptedData = projects.map((project) => {
+  adaptedData = projects!.map((project) => {
     return {
       buttontext: "View Project",
       buttonlink: "/projects/" + project.project_code.toString(),
@@ -53,7 +53,7 @@ if (projects.length > 0) {
     <template v-slot:first>
       <TitleTextItem
         :title="member?.name + ' ' + member?.surname"
-        :text="member?.short_description"
+        :text="member?.short_description || ''"
         additionalTitleClasses="pb-5"
         divCentered
       >
