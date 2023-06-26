@@ -3,6 +3,8 @@ const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
   alt: "hero",
 };
+const imageBucket =
+  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
@@ -28,8 +30,8 @@ const backgroundImageHeader = {
       ><div class="overflow-hidden h-[1006px]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
-          :alt="backgroundImageHeader.alt"
+          :src="imageBucket + 'WF Hero_3.jpg'"
+          alt="people around a table"
         /></div
     ></template>
   </StandardSlotted>
@@ -38,8 +40,8 @@ const backgroundImageHeader = {
       <div class="overflow-hidden h-[1006px]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
-          :alt="backgroundImageHeader.alt"
+          :src="imageBucket + 'WF Hero_9.jpg'"
+          alt="a whiteboard with a lot of text on it"
         />
       </div>
     </template>
@@ -65,7 +67,7 @@ const backgroundImageHeader = {
       <div class="overflow-hidden h-[1006px]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src"
+          :src="imageBucket + 'Rectangle 3_10.jpg'"
           :alt="backgroundImageHeader.alt"
         />
       </div>
