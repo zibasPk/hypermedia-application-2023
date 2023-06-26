@@ -58,7 +58,7 @@ console.log(areas);
       </div>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_1_image"
@@ -69,7 +69,7 @@ console.log(areas);
   </StandardSlotted>
   <StandardSlotted>
     <template v-slot:first>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_2_image"

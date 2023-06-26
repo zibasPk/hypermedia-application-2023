@@ -33,7 +33,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
       ></TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + area.image"
@@ -52,7 +52,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
       ></TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + area.image"

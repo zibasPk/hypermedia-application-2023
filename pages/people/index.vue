@@ -2,7 +2,7 @@
 import { TeamMember } from "~/utils/DatabaseTypes";
 
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
+  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF Hero_5.jpg",
   alt: "hero",
 };
 

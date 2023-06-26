@@ -52,7 +52,7 @@ if (area != null) {
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_1_image"
@@ -64,7 +64,7 @@ if (area != null) {
 
   <StandardSlotted separator>
     <template v-slot:first>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_2_image"
@@ -92,7 +92,7 @@ if (area != null) {
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_3_image"

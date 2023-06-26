@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/temp",
-  alt: "hero",
+  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_14.jpg",
+  alt: "people walking on pavement from above",
 };
 const imageBucket =
   "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
@@ -27,7 +27,7 @@ const imageBucket =
     </template>
 
     <template v-slot:second
-      ><div class="overflow-hidden h-[1006px]">
+      ><div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + 'WF Hero_3.jpg'"
@@ -37,7 +37,7 @@ const imageBucket =
   </StandardSlotted>
   <StandardSlotted separator>
     <template v-slot:first>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + 'WF Hero_9.jpg'"
@@ -64,7 +64,7 @@ const imageBucket =
       />
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + 'Rectangle 3_10.jpg'"
