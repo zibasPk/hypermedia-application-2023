@@ -38,7 +38,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="backgroundImageHeader.src + project.section_1_image"
@@ -58,7 +58,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="backgroundImageHeader.src + project.section_1_image"

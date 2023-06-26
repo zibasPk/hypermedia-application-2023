@@ -46,7 +46,7 @@ const grid_content = projects?.map((project) => {
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_1_image"
@@ -58,7 +58,7 @@ const grid_content = projects?.map((project) => {
 
   <StandardSlotted separator>
     <template v-slot:first>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_2_image"
@@ -86,7 +86,7 @@ const grid_content = projects?.map((project) => {
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auot object-cover h-full"
           :src="backgroundImageHeader.src + area?.section_3_image"

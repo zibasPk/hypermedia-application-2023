@@ -11,7 +11,7 @@ const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
 let project = p.value;
 const areas = a.value;
-console.log(areas)
+console.log(areas);
 </script>
 
 <template>
@@ -31,8 +31,7 @@ console.log(areas)
           centered
           class="pr-6"
           :topMargin="false"
-        > 
-
+        >
         </TitleTextItem>
       </div>
       <div class="m-auto z-20">
@@ -59,7 +58,7 @@ console.log(areas)
       </div>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_1_image"
@@ -70,7 +69,7 @@ console.log(areas)
   </StandardSlotted>
   <StandardSlotted>
     <template v-slot:first>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_2_image"

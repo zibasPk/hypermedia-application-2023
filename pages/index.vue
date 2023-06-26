@@ -68,7 +68,7 @@ const data = [
       </div>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-[1006px]">
+      <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket + 'Cross_12.jpg'"
