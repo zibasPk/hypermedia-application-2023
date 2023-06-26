@@ -24,7 +24,7 @@ const BucketUrl =
   <div class="grid w-48 h-44 m-1">
     <div class="flex items-center space-x-4">
       <img
-        class="w-[64px] h-[64px] rounded"
+        class="w-[64px] h-[64px] rounded overflow-hidden object-cover"
         :src="BucketUrl + image.src"
         :alt="image.alt"
       />
