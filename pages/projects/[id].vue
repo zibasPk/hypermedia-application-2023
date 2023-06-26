@@ -11,7 +11,7 @@ const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
 let project = p.value;
 const areas = a.value;
-console.log(areas)
+console.log(areas);
 </script>
 
 <template>
@@ -31,8 +31,7 @@ console.log(areas)
           centered
           class="pr-6"
           :topMargin="false"
-        > 
-
+        >
         </TitleTextItem>
       </div>
       <div class="m-auto z-20">

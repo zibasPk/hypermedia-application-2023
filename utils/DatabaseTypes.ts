@@ -5,7 +5,7 @@ export interface Area {
   data1: number | null;
   short_description: string | null;
   image: string | null;
-  project: Project[] | null;
+  project: Project[];
   section_1_title: string | null;
   section_2_title: string | null;
   section_3_title: string | null;

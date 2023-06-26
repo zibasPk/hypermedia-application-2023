@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Project as ProjectDAO, Area as AreaDAO } from "~/utils/DatabaseTypes";
+import { ContentItem } from "~/utils/Types";
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
   alt: "area",
@@ -13,21 +14,27 @@ if (d.value == null) {
   navigateTo("/404");
 }
 const area = d.value;
-const projects = d.value?.project; // supabase sputa fuori un oggetto con .project invece di .projects
-const grid_content = projects?.map((project) => {
-  return {
-    buttontext: "Project",
-    buttonlink: "/projects/" + project.project_code.toString(),
-    maintext: project.name,
-  };
-});
+const grid_content: ContentItem[] = [];
+if (area != null) {
+  const projects = area.project;
+  projects.forEach((p) => {
+    grid_content.push({
+      buttontext: "Project",
+      buttonlink: "/projects/" + p.project_code.toString(),
+      maintext: p.name ?? "",
+      maindesc: "",
+    });
+  });
+}
 </script>
 
 <template>
-  <PageHeader :image="backgroundImageHeader.src + area.image">
+  <PageHeader
+    :image="{ src: backgroundImageHeader.src + area?.image, alt: '' }"
+  >
     <TitleTextItem
-      :title="area.name"
-      :text="area?.description"
+      :title="area?.name ?? ''"
+      :text="area?.description ?? ''"
       centered
       additionalTextClasses="text-secondarytext px-20"
       additionalTitleClasses="text-secondarytext"
@@ -35,12 +42,11 @@ const grid_content = projects?.map((project) => {
     </TitleTextItem>
   </PageHeader>
 
-  <!-- Shit about area -->
   <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
-        :title="area?.section_1_title"
-        :text="area?.section_1_description"
+        :title="area?.section_1_title ?? ''"
+        :text="area?.section_1_description ?? ''"
         additionalTextClasses="mx-auto"
         divCentered
       ></TitleTextItem>
@@ -68,8 +74,8 @@ const grid_content = projects?.map((project) => {
     </template>
     <template v-slot:second>
       <TitleTextItem
-        :title="area?.section_2_title"
-        :text="area?.section_2_description"
+        :title="area?.section_2_title ?? ''"
+        :text="area?.section_2_description ?? ''"
         additionalTextClasses="mx-auto"
         divCentered
       ></TitleTextItem>
@@ -79,8 +85,8 @@ const grid_content = projects?.map((project) => {
   <StandardSlotted separator>
     <template v-slot:first>
       <TitleTextItem
-        :title="area?.section_3_title"
-        :text="area?.section_3_description"
+        :title="area?.section_3_title ?? ''"
+        :text="area?.section_3_description ?? ''"
         additionalTextClasses="mx-auto"
         divCentered
       ></TitleTextItem>

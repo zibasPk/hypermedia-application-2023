@@ -5,9 +5,7 @@ export default defineEventHandler(async (event) => {
 
   const { data, error } = await client
     .from("project")
-    .select(
-      "*"
-    )
+    .select("*")
     .eq("top_project", true);
 
   if (error) {

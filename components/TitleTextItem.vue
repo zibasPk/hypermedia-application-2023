@@ -48,7 +48,7 @@ const props = defineProps({
     type: Boolean,
     required: false,
     default: true,
-  }
+  },
 });
 
 let flexStyle = "flex flex-col mx-auto";
@@ -82,16 +82,16 @@ if (props.width) {
       <FilledButton
         v-if="buttonText && buttonFilled"
         :link="props.buttonUrl"
-        v-bind:classes="(topMargin) ? 'w-44 mt-10' : 'w-44 mt-2'"
-        >
+        v-bind:classes="topMargin ? 'w-44 mt-10' : 'w-44 mt-2'"
+      >
         <template v-slot:content>
           {{ props.buttonText }}
         </template>
       </FilledButton>
       <OutlineButton
-      v-if="buttonText && !buttonFilled"
-      :link="props.buttonUrl"
-      v-bind:classes="(topMargin) ? 'w-44 mt-10' : 'w-44 mt-2'"
+        v-if="buttonText && !buttonFilled"
+        :link="props.buttonUrl"
+        v-bind:classes="topMargin ? 'w-44 mt-10' : 'w-44 mt-2'"
       >
         <template v-slot:content>
           {{ props.buttonText }}

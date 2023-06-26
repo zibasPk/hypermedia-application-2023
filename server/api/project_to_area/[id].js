@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     .select(
       "area (area_code, name)" // questo si può cambiare a "area_code" se non vogliamo usare il nome
     )
-    .eq("project_code", id)
+    .eq("project_code", id);
 
   if (error) {
     throw createError({ statusCode: 400, statusMessage: error.message });
