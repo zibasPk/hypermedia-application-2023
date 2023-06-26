@@ -29,10 +29,10 @@ if (top_projects == null) {
   <StandardSlotted v-for="(project, index) in top_projects" separator>
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem
-        :title="project.name"
-        :text="project.section_1_description"
+        :title="project.name ?? ''"
+        :text="project.section_1_description ?? ''"
         buttonText="Go to Project"
-        :buttonUrl="'/projects/' + project.project_code.toString()"
+        :buttonUrl="'/projects/' + project.slug"
         divCentered
       >
       </TitleTextItem>
@@ -49,10 +49,10 @@ if (top_projects == null) {
 
     <template v-slot:second v-if="index % 2">
       <TitleTextItem
-        :title="project.name"
-        :text="project.section_1_description"
+        :title="project.name ?? ''"
+        :text="project.section_1_description ?? ''"
         buttonText="Go to Project"
-        :buttonUrl="'/projects/' + project.project_code.toString()"
+        :buttonUrl="'/projects/' + project.slug"
         divCentered
       >
       </TitleTextItem>

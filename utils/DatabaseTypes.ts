@@ -1,5 +1,5 @@
 export interface Area {
-  area_code: number; // BigInt is typically represented as a number in JavaScript/TypeScript
+  slug: string; // BigInt is typically represented as a number in JavaScript/TypeScript
   name: string | null;
   description: string | null;
   data1: number | null;
@@ -18,7 +18,7 @@ export interface Area {
 }
 
 export interface TeamMember {
-  member_code: number;
+  slug: string;
   name: string | null;
   surname: string | null;
   age: number | null;
@@ -29,7 +29,7 @@ export interface TeamMember {
 }
 
 export interface Project {
-  project_code: number;
+  slug: string;
   supervisor: TeamMember | null;
   data1: number | null;
   description: string | null;

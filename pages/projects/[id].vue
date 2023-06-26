@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts">
+import { Area, Project } from "~/utils/DatabaseTypes";
 const imageBucket = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/W",
   alt: "project_",
@@ -9,8 +10,8 @@ const id = route.params.id;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
 const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
-let project = p.value;
-const areas = a.value;
+let project = p.value as Project;
+const areas = a.value as Area[];
 console.log(areas);
 </script>
 
@@ -20,10 +21,10 @@ console.log(areas);
       <div class="absolute inline-flex left-0 top-12">
         <TitleTextItem
           v-for="inner in areas"
-          :title="'Area ' + inner.area.area_code"
-          :text="inner.area.name"
+          :title="'Area ' + inner.slug"
+          :text="inner.name ?? ''"
           buttonText="Go to Area"
-          :buttonUrl="'/areas/' + (inner.area.area_code - 1)"
+          :buttonUrl="'/areas/' + area.slug"
           :buttonFilled="false"
           additionalTitleClasses="text-3xl"
           additionalTextClasses="w-3/4 text-xs pt-0"
@@ -35,7 +36,10 @@ console.log(areas);
         </TitleTextItem>
       </div>
       <div class="m-auto z-20">
-        <TitleTextItem :title="project.name" :text="project.description">
+        <TitleTextItem
+          :title="project.name ?? ''"
+          :text="project.description ?? ''"
+        >
         </TitleTextItem>
       </div>
     </div>
@@ -45,13 +49,15 @@ console.log(areas);
       <div class="relative">
         <ImageGridItem
           buttontext="Profile"
-          :buttonlink="'/people/' + project.supervisor.member_code"
-          :maintext="project.supervisor.name + ' ' + project.supervisor.surname"
-          :maindesc="project.supervisor.role"
+          :buttonlink="'/people/' + project.supervisor?.slug"
+          :maintext="
+            project.supervisor?.name + ' ' + project.supervisor?.surname
+          "
+          :maindesc="project.supervisor?.role ?? ''"
         />
         <TitleTextItem
-          :title="project.section_1_title"
-          :text="project.section_1_description"
+          :title="project.section_1_title ?? ''"
+          :text="project.section_1_description ?? ''"
           divCentered
         >
         </TitleTextItem>
@@ -62,7 +68,7 @@ console.log(areas);
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_1_image"
-          :alt="imageBucket.alt + project.project_code.toString() + '_image_1'"
+          :alt="imageBucket.alt + project.slug + '_image_1'"
         />
       </div>
     </template>
@@ -73,14 +79,14 @@ console.log(areas);
         <img
           class="rounded m-auto object-cover h-full"
           :src="imageBucket.src + project.section_2_image"
-          :alt="imageBucket.alt + project.project_code.toString() + '_image_2'"
+          :alt="imageBucket.alt + project.slug + '_image_2'"
         />
       </div>
     </template>
     <template v-slot:second>
       <TitleTextItem
-        :title="project.section_2_title"
-        :text="project.section_2_description"
+        :title="project.section_2_title ?? ''"
+        :text="project.section_2_description ?? ''"
         divCentered
       >
       </TitleTextItem>

@@ -1,4 +1,4 @@
 export default interface ImageInfo {
-  src: string;
-  alt: string;
+  src: string | null;
+  alt: string | null;
 }

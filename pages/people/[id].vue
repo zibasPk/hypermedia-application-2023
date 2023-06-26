@@ -36,7 +36,7 @@ if (projects!.length > 0) {
   adaptedData = projects!.map((project) => {
     return {
       buttontext: "View Project",
-      buttonlink: "/projects/" + project.project_code.toString(),
+      buttonlink: "/projects/" + project.slug.toString(),
       maintext: project.name,
       rendermaindesc: false,
       image: {

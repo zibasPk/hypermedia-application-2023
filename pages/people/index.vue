@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TeamMember } from "~/utils/DatabaseTypes";
+import { ContentItem } from "~/utils/Types";
 
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF Hero_5.jpg",
@@ -11,9 +12,9 @@ const { data } = await useFetch<TeamMember[]>("/api/people");
 let adaptedData = data.value?.map((member) => {
   return {
     buttontext: "Profile",
-    buttonlink: "/people/" + member.member_code.toString(),
+    buttonlink: "/people/" + member.slug,
     maintext: member.name + " " + member.surname,
-    maindesc: member.role,
+    maindesc: member.role ?? "",
     rendermaindesc: false,
     image: {
       src: member.image,
@@ -22,9 +23,17 @@ let adaptedData = data.value?.map((member) => {
   };
 });
 
-let board = adaptedData?.filter((member) => member.maindesc === "Board");
-let assembly = adaptedData?.filter((member) => member.maindesc === "Assembly");
-let members = adaptedData?.filter((member) => member.maindesc === "Supervisor");
+if (adaptedData != null) {
+  let board: ContentItem[] = adaptedData.filter(
+    (member) => member.maindesc === "Board"
+  );
+  let assembly: ContentItem[] = adaptedData.filter(
+    (member) => member.maindesc === "Assembly"
+  );
+  let members: ContentItem[] = adaptedData.filter(
+    (member) => member.maindesc === "Supervisor"
+  );
+}
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">

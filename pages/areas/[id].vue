@@ -6,10 +6,9 @@ const backgroundImageHeader = {
   alt: "area",
 };
 const route = useRoute();
-const id = window.location.pathname.split("/")[2];
-const area_code = parseInt(id) + 1;
+const id = route.params.id;
 
-const { data: d } = await useFetch<AreaDAO>("/api/areas/" + area_code);
+const { data: d } = await useFetch<AreaDAO>("/api/areas/" + id);
 if (d.value == null) {
   navigateTo("/404");
 }
@@ -20,12 +19,13 @@ if (area != null) {
   projects.forEach((p) => {
     grid_content.push({
       buttontext: "Project",
-      buttonlink: "/projects/" + p.project_code.toString(),
+      buttonlink: "/projects/" + p.slug.toString(),
       maintext: p.name ?? "",
       maindesc: "",
     });
   });
 }
+console.log(area);
 </script>
 
 <template>

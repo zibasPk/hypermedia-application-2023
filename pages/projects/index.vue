@@ -13,13 +13,13 @@ if (d.value == null) {
 let areas: AreaDAO[] = [];
 let grid_contents: ContentItem[][] = [];
 if (d.value != null) {
-  areas = d.value.sort((a, b) => a.area_code - b.area_code);
+  areas = d.value.sort((a, b) => (a.slug > b.slug ? 1 : 0));
   areas.forEach((a) => {
     let arr: ContentItem[] = [];
     a.project.forEach((p) => {
       arr.push({
         buttontext: "Project",
-        buttonlink: "/projects/" + p.project_code.toString(),
+        buttonlink: "/projects/" + p.slug.toString(),
         maintext: p.name ?? "",
         maindesc: "",
       });
@@ -36,7 +36,7 @@ if (d.value != null) {
         :title="area.name ?? ''"
         :text="area.description ?? ''"
         buttonText="Area"
-        :button-url="'/areas/' + (area.area_code - 1)"
+        :button-url="'/areas/' + area.slug"
         :buttonFilled="false"
         divCentered
       >

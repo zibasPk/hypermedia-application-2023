@@ -7,7 +7,7 @@ const backgroundImageHeader = {
 const imageBucket =
   "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 const { data } = await useFetch<Area[]>("/api/areas");
-let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
+let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
@@ -28,7 +28,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
         :title="area.name ?? ''"
         :text="area.short_description ?? ''"
         buttonText="Show More"
-        :buttonUrl="'/areas/' + index.toString()"
+        :buttonUrl="'/areas/' + area.slug"
         divCentered
       ></TitleTextItem>
     </template>
@@ -47,7 +47,7 @@ let areas = data.value?.sort((a, b) => a.area_code - b.area_code);
         :title="area.name ?? ''"
         :text="area.short_description ?? ''"
         buttonText="Show More"
-        :buttonUrl="'/areas/' + index.toString()"
+        :buttonUrl="'/areas/' + area.slug"
         divCentered
       ></TitleTextItem>
     </template>
