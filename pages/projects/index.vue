@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import {Area as AreaDAO, Project as ProjectDAO} from "~/utils/DatabaseTypes";
+import { Area as AreaDAO, Project as ProjectDAO } from "~/utils/DatabaseTypes";
 const imageBucket = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF%20Hero.jpg",
   alt: "hero",
 };
 
-const { data : d } = await useFetch<AreaDAO[]>("/api/areas/with_projects");
+const { data: d } = await useFetch<AreaDAO[]>("/api/areas/with_projects");
 if (d.value == null) {
-  navigateTo("/404")
+  navigateTo("/404");
 }
 const areas = d.value?.sort((a, b) => a.area_code - b.area_code);
-const grid_contents = areas?.map(area => {
-  return area.project.map(p => {
+const grid_contents = areas?.map((area) => {
+  return area.project?.map((p) => {
     return {
       buttontext: "Project",
       buttonlink: "/projects/" + p.project_code.toString(),
       maintext: p.name,
-    }
-  })
-})
-
+    };
+  });
+});
 </script>
 
 <template>
-
-  <StandardSlotted v-for="(area, index) in areas" separator>
+  <StandardSlotted v-for="(area, index) in areas" separator class="py-40">
     <template v-slot:first>
       <TitleTextItem
         :title="area.name"
@@ -37,10 +35,7 @@ const grid_contents = areas?.map(area => {
       </TitleTextItem>
     </template>
     <template v-slot:second>
-      <GridContainer :content="grid_contents?.at(index)">
-      </GridContainer>
+      <GridContainer :content="grid_contents?.at(index)"> </GridContainer>
     </template>
-
   </StandardSlotted>
-
 </template>
