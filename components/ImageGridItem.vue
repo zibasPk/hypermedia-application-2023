@@ -20,14 +20,16 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid w-48 h-44 m-1">
-    <div class="flex items-center space-x-4">
-      <img
-        class="w-[64px] h-[64px] rounded overflow-hidden object-cover"
-        :src="Consts.base_image_url + image.src"
-        :alt="image.alt ?? ''"
-      />
-      <p class="font-bold">{{ maintext }}</p>
+  <div class="grid max-w-48 w-48 h-44 m-1">
+    <div class="grid grid-flow-col items-center space-x-4">
+      <div class="w-[64px] h-[64px] rounded overflow-hidden">
+        <img
+          class="min-w-full min-h-full object-cover"
+          :src="Consts.base_image_url + image.src"
+          :alt="image.alt ?? ''"
+        />
+      </div>
+      <p class="font-bold break-words overflow-hidden">{{ maintext }}</p>
     </div>
     <p v-if="rendermaindesc" class="text-sm">{{ maindesc }}</p>
     <div class="w-full h-full">
