@@ -23,8 +23,6 @@ let adaptedData = data.value?.map((member) => {
   };
 });
 
-console.log(adaptedData);
-
 let board: ContentItem[] = [];
 let assembly: ContentItem[] = [];
 let members: ContentItem[] = [];

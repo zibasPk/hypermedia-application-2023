@@ -9,7 +9,6 @@ const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
 let project = p.value as Project;
 const areas = a.value as { area: Area }[];
-console.log(areas);
 </script>
 
 <template>
