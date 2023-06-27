@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { Project } from "~/utils/DatabaseTypes";
-const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
-  alt: "top_projects_",
-};
+import { Consts } from "~/utils/Types";
 
 const { data: d } = await useFetch<Project[]>("/api/projects/top");
 const top_projects = d.value;
@@ -13,17 +10,19 @@ if (top_projects == null) {
 </script>
 
 <template>
-  <PageHeader :image="backgroundImageHeader">
-    <TitleTextItem
-      title="My preciousss"
-      text="We wants it, we needs it. Must have the precious. They stole it from us. Sneaky little hobbitses."
-      centered
-      buttonText="Go To Projects by Area"
-      buttonUrl="/projects"
-      additionalTextClasses="text-secondarytext"
-      additionalTitleClasses="text-secondarytext"
-    >
-    </TitleTextItem>
+  <PageHeader :image="{ src: Consts.base_image_url +"WF%20Hero_9.jpg", alt: '' }">
+    <div class="w-3/5 m-auto">
+      <TitleTextItem
+        title="Portfolio"
+        text="Dive into our portfolio to discover our ground-breaking projects across various industries. Our work in Sustainable Energy, Health & Life Sciences, Fintech, and E-commerce demonstrates our dedication to innovation and impactful change."
+        centered
+        buttonText="Go To All Projects"
+        buttonUrl="/projects"
+        additionalTextClasses="text-secondarytext"
+        additionalTitleClasses="text-secondarytext"
+      >
+      </TitleTextItem>
+    </div>
   </PageHeader>
 
   <StandardSlotted v-for="(project, index) in top_projects" separator>
@@ -38,11 +37,11 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-screen">
+      <div class="overflow-hidden h-[80vh]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src + project.section_1_image"
-          :alt="backgroundImageHeader.alt + project.section_1_image"
+          :src="Consts.base_image_url + project.section_1_image"
+          :alt="project.name + ' imagez'"
         />
       </div>
     </template>
@@ -58,11 +57,11 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-screen">
+      <div class="overflow-hidden h-[80vh]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="backgroundImageHeader.src + project.section_1_image"
-          :alt="backgroundImageHeader.alt + project.section_1_image"
+          :src="Consts.base_image_url + project.section_1_image"
+          :alt="project.name + ' image'"
         />
       </div>
     </template>

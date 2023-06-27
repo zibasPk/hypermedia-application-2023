@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { Area, Project } from "~/utils/DatabaseTypes";
-const imageBucket = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
-  alt: "project_",
-};
+import { Consts } from "~/utils/Types";
 
 const route = useRoute();
 const id = route.params.id;
@@ -11,18 +8,18 @@ const id = route.params.id;
 const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
 let project = p.value as Project;
-const areas = a.value as Area[];
+const areas = a.value as { area: Area }[];
 console.log(areas);
 </script>
 
 <template>
   <div class="min-h-[200px] h-[100vh] overflow-hidden">
     <div class="relative flex text-center align-center justify-center h-full">
-      <div class="absolute inline-flex left-0 top-12">
+      <div class="absolute inline-flex left-0 top-12 w-100">
         <TitleTextItem
           v-for="inner in areas"
-          :title="'Area ' + inner.area.area_code"
-          :text="inner.area.name ?? ''"
+          :title="inner.area.name ?? ''"
+          :text="''"
           buttonText="Go to Area"
           :buttonUrl="'/areas/' + inner.area.slug"
           :buttonFilled="false"
@@ -68,8 +65,8 @@ console.log(areas);
       <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="imageBucket.src + project.section_1_image"
-          :alt="imageBucket.alt + project.slug + '_image_1'"
+          :src="Consts.base_image_url + project.section_1_image"
+          :alt="project.name + ' image'"
         />
       </div>
     </template>
@@ -79,8 +76,8 @@ console.log(areas);
       <div class="overflow-hidden h-screen">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="imageBucket.src + project.section_2_image"
-          :alt="imageBucket.alt + project.slug + '_image_2'"
+          :src="Consts.base_image_url + project.section_2_image"
+          :alt="project.name + ' image'"
         />
       </div>
     </template>
