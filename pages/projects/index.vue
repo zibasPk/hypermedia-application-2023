@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { Area as AreaDAO, Project as ProjectDAO } from "~/utils/DatabaseTypes";
-import { ContentItem } from "~/utils/Types";
-const imageBucket = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF%20Hero.jpg",
-  alt: "hero",
-};
+import { ContentItem, Consts } from "~/utils/Types";
 
 const { data: d } = await useFetch<AreaDAO[]>("/api/areas/with_projects");
 if (d.value == null) {
@@ -22,6 +18,10 @@ if (d.value != null) {
         buttonlink: "/projects/" + p.slug,
         maintext: p.name ?? "",
         maindesc: "",
+        image: {
+          src: p.section_1_image,
+          alt: p.name + " image",
+        },
       });
     });
     grid_contents.push(arr);

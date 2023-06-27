@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ImageInfo from "~/utils/Image";
+import { Consts } from "~/utils/Types";
 
 const props = defineProps({
   buttontext: { type: String, required: true },
@@ -16,8 +17,6 @@ const props = defineProps({
     },
   },
 });
-const BucketUrl =
-  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 </script>
 
 <template>
@@ -25,8 +24,8 @@ const BucketUrl =
     <div class="flex items-center space-x-4">
       <img
         class="w-[64px] h-[64px] rounded overflow-hidden object-cover"
-        :src="BucketUrl + image.src"
-        :alt="image.alt"
+        :src="Consts.base_image_url + image.src"
+        :alt="image.alt ?? ''"
       />
       <p class="font-bold">{{ maintext }}</p>
     </div>

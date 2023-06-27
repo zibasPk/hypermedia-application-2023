@@ -8,3 +8,8 @@ export type ContentItem = {
   rendermaindesc?: boolean;
   image?: ImageInfo;
 };
+
+export class Consts {
+  static base_image_url =
+    "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
+}
