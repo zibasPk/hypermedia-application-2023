@@ -10,7 +10,12 @@ if (top_projects == null) {
 </script>
 
 <template>
-  <PageHeader :image="{ src: Consts.base_image_url +"WF%20Hero_9.jpg", alt: '' }">
+  <PageHeader
+    :image="{
+      src: Consts.base_image_url + 'WF%20Hero_9.jpg',
+      alt: 'Portfolio base image',
+    }"
+  >
     <div class="w-3/5 m-auto">
       <TitleTextItem
         title="Portfolio"
