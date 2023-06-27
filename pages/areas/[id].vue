@@ -25,7 +25,6 @@ if (area != null) {
     });
   });
 }
-console.log(area);
 </script>
 
 <template>
