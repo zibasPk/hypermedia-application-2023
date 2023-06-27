@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Consts } from "~/utils/Types";
 import { Area } from "../../utils/DatabaseTypes";
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF%20Hero.jpg",
-  alt: "hero",
+  src: Consts.base_image_url + "WF%20Hero.jpg",
+  alt: "Areas of expertise hero image",
 };
 const imageBucket =
   "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
@@ -12,9 +13,9 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
 <template>
   <PageHeader :image="backgroundImageHeader">
     <TitleTextItem
-      title="Our Projects"
+      title="Our Areas of Expertise"
       text="Here is a complete list of all our projects divided by area."
-      buttonText="Go To Projects by Area"
+      buttonText="Go To Projects"
       buttonUrl="/projects"
       centered
       additionalTextClasses="text-secondarytext"

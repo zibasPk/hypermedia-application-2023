@@ -5,7 +5,7 @@ let props = defineProps({
 
 let separatorClass = "";
 if (props.separator) {
-  separatorClass = "border-b border-secondary";
+  separatorClass = "border-b-2 border-secondary";
 }
 </script>
 
