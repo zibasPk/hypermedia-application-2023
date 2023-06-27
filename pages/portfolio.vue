@@ -10,7 +10,7 @@ if (top_projects == null) {
 </script>
 
 <template>
-  <PageHeader :image="{ src: Consts.base_image_url, alt: '' }">
+  <PageHeader :image="{ src: Consts.base_image_url +"WF%20Hero_9.jpg", alt: '' }">
     <div class="w-3/5 m-auto">
       <TitleTextItem
         title="Portfolio"
@@ -37,7 +37,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-screen">
+      <div class="overflow-hidden h-[80vh]">
         <img
           class="rounded m-auto object-cover h-full"
           :src="Consts.base_image_url + project.section_1_image"
@@ -57,7 +57,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-screen">
+      <div class="overflow-hidden h-[80vh]">
         <img
           class="rounded m-auto object-cover h-full"
           :src="Consts.base_image_url + project.section_1_image"
