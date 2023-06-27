@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Area, Project } from "~/utils/DatabaseTypes";
 const imageBucket = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/W",
+  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
   alt: "project_",
 };
 
