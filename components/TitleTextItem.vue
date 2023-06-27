@@ -49,10 +49,16 @@ const props = defineProps({
     required: false,
     default: true,
   },
+  paddingBetweenText: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
 });
 
 let flexStyle = "flex flex-col mx-auto";
-let textStyle = "text-xl pt-10 " + props.additionalTextClasses;
+let textStyle = "text-xl " + props.additionalTextClasses;
+if (props.paddingBetweenText) { textStyle += " pt-10" }
 let buttonStyle = "";
 if (props.divCentered) {
   flexStyle = "flex flex-col items-center justify-center p-10";

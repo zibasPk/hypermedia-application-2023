@@ -21,10 +21,10 @@ console.log(areas);
       <div class="absolute inline-flex left-0 top-12">
         <TitleTextItem
           v-for="inner in areas"
-          :title="'Area ' + inner.slug"
-          :text="inner.name ?? ''"
+          :title="'Area ' + inner.area.area_code"
+          :text="inner.area.name ?? ''"
           buttonText="Go to Area"
-          :buttonUrl="'/areas/' + area.slug"
+          :buttonUrl="'/areas/' + inner.area.slug"
           :buttonFilled="false"
           additionalTitleClasses="text-3xl"
           additionalTextClasses="w-3/4 text-xs pt-0"
@@ -32,6 +32,7 @@ console.log(areas);
           centered
           class="pr-6"
           :topMargin="false"
+          :paddingBetweenText="false"
         >
         </TitleTextItem>
       </div>
