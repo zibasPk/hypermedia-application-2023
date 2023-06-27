@@ -23,16 +23,16 @@ let adaptedData = data.value?.map((member) => {
   };
 });
 
+console.log(adaptedData);
+
+let board: ContentItem[] = [];
+let assembly: ContentItem[] = [];
+let members: ContentItem[] = [];
+
 if (adaptedData != null) {
-  let board: ContentItem[] = adaptedData.filter(
-    (member) => member.maindesc === "Board"
-  );
-  let assembly: ContentItem[] = adaptedData.filter(
-    (member) => member.maindesc === "Assembly"
-  );
-  let members: ContentItem[] = adaptedData.filter(
-    (member) => member.maindesc === "Supervisor"
-  );
+  board = adaptedData.filter((member) => member.maindesc === "Board");
+  assembly = adaptedData.filter((member) => member.maindesc === "Assembly");
+  members = adaptedData.filter((member) => member.maindesc === "Supervisor");
 }
 </script>
 <template>
