@@ -30,7 +30,11 @@ if (top_projects == null) {
     </div>
   </PageHeader>
 
-  <StandardSlotted v-for="(project, index) in top_projects" separator>
+  <StandardSlotted
+    v-for="(project, index) in top_projects"
+    separator
+    :class="index % 2 ? 'flex-col-reverse' : ''"
+  >
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem
         :title="project.name ?? ''"
@@ -42,7 +46,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-[80vh]">
+      <div class="overflow-hidden h-[40vh] mb-10 md:h-[80vh] xl:mb-0">
         <img
           class="rounded m-auto object-cover h-full"
           :src="Consts.base_image_url + project.section_1_image"
@@ -62,7 +66,7 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-[80vh]">
+      <div class="overflow-hidden h-[40vh] mb-10 md:h-[80vh] xl:mb-0">
         <img
           class="rounded m-auto object-cover h-full"
           :src="Consts.base_image_url + project.section_1_image"
