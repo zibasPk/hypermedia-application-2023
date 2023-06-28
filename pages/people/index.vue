@@ -45,7 +45,7 @@ if (adaptedData != null) {
     </div>
   </PageHeader>
 
-  <StandardSlotted separator class="py-40">
+  <StandardSlotted separator class="xl:py-40">
     <template v-slot:first>
       <TitleTextItem
         title="Board"
@@ -59,7 +59,7 @@ if (adaptedData != null) {
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator class="py-40">
+  <StandardSlotted separator class="xl:py-40">
     <template v-slot:first>
       <GridContainer :content="assembly" />
     </template>
@@ -73,7 +73,7 @@ if (adaptedData != null) {
     </template>
   </StandardSlotted>
 
-  <StandardSlotted class="py-40">
+  <StandardSlotted class="xl:py-40">
     <template v-slot:first>
       <div class="p-10">
         <TitleTextItem

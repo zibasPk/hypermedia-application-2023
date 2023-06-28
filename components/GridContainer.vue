@@ -7,7 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid grid-cols-3 grid-rows-2 place-items-center w-fit">
+  <div
+    class="grid grid-rows-2 xl:grid-cols-3 m-auto xl:m-0 place-items-center w-fit grid-cols-2"
+  >
     <ImageGridItem
       v-for="item in content"
       :buttontext="item.buttontext"

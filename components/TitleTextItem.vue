@@ -59,11 +59,11 @@ const props = defineProps({
 let flexStyle = "flex flex-col mx-auto";
 let textStyle = "text-xl " + props.additionalTextClasses;
 if (props.paddingBetweenText) {
-  textStyle += " pt-10";
+  textStyle += " pt-5 xl:pt-10";
 }
 let buttonStyle = "";
 if (props.divCentered) {
-  flexStyle = "flex flex-col items-center justify-center p-10";
+  flexStyle = "flex flex-col items-center justify-center xl:p-10 pb-10";
   buttonStyle = "w-full";
 }
 if (props.centered) {

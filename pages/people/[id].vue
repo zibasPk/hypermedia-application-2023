@@ -49,12 +49,13 @@ if (projects!.length > 0) {
 </script>
 
 <template>
-  <StandardSlotted :separator="hasProjects" class="pt-32 pb-32">
+  <StandardSlotted :separator="hasProjects" class="xl:pt-32 xl:pb-32">
     <template v-slot:first>
       <TitleTextItem
         :title="member?.name + ' ' + member?.surname"
         :text="member?.short_description || ''"
         additionalTitleClasses="pb-5"
+        additionalTextClasses="pt-5 xl:pt-10"
         divCentered
       >
         <template v-slot:before>
@@ -74,7 +75,7 @@ if (projects!.length > 0) {
   </StandardSlotted>
   <StandardSlotted v-if="hasProjects">
     <template v-slot:first>
-      <div class="px-10">
+      <div class="xl:px-10">
         <TitleTextItem
           :title="
             'Projects supervised by ' + member?.name + ' ' + member?.surname
@@ -92,7 +93,7 @@ if (projects!.length > 0) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="adaptedData" />
+      <GridContainer :content="adaptedData" class="mt-5" />
     </template>
   </StandardSlotted>
 </template>
