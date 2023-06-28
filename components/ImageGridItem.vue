@@ -20,7 +20,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid max-w-48 w-48 h-44 m-1">
+  <div class="grid max-w-48 w-48 h-40 xl:h-44 m-1">
     <div class="grid grid-flow-col items-center space-x-4">
       <div class="w-[64px] h-[64px] rounded overflow-hidden">
         <img

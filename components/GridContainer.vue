@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div
-    class="grid grid-rows-2 xl:grid-cols-3 m-auto xl:m-0 place-items-center w-fit grid-cols-2"
+    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 m-auto xl:m-0 place-items-center w-fit"
   >
     <ImageGridItem
       v-for="item in content"
@@ -18,7 +18,7 @@ defineProps<{
       :maindesc="item.maindesc"
       :rendermaindesc="item.rendermaindesc"
       :image="item.image"
-      class="col-span-1 row-span-1 mr-6"
+      class="col-span-1 row-span-1 xl:mr-6"
     />
   </div>
 </template>

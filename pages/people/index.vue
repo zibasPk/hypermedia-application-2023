@@ -55,13 +55,13 @@ if (adaptedData != null) {
       />
     </template>
     <template v-slot:second>
-      <GridContainer :content="board" />
+      <GridContainer :content="board" class="pt-10 xl:pt-0" />
     </template>
   </StandardSlotted>
 
   <StandardSlotted separator class="xl:py-40 flex-col-reverse">
     <template v-slot:first>
-      <GridContainer :content="assembly" />
+      <GridContainer :content="assembly" class="pt-10 xl:pt-0" />
     </template>
     <template v-slot:second>
       <TitleTextItem
@@ -85,7 +85,7 @@ if (adaptedData != null) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="members" />
+      <GridContainer :content="members" class="pt-10 xl:pt-0" />
     </template>
   </StandardSlotted>
 </template>
