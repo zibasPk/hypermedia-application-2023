@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Project as ProjectDAO, Area as AreaDAO } from "~/utils/DatabaseTypes";
-import { ContentItem } from "~/utils/Types";
+import { Consts, ContentItem } from "~/utils/Types";
 const backgroundImageHeader = {
   src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
   alt: "area",
@@ -22,9 +22,14 @@ if (area != null) {
       buttonlink: "/projects/" + p.slug.toString(),
       maintext: p.name ?? "",
       maindesc: "",
+      image: {
+        src: p.section_1_image ?? "",
+        alt: p.name ?? "",
+      },
     });
   });
 }
+console.log(grid_content);
 </script>
 
 <template>
