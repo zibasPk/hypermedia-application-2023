@@ -59,7 +59,7 @@ if (adaptedData != null) {
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator class="xl:py-40">
+  <StandardSlotted separator class="xl:py-40 flex-col-reverse">
     <template v-slot:first>
       <GridContainer :content="assembly" />
     </template>
@@ -75,11 +75,12 @@ if (adaptedData != null) {
 
   <StandardSlotted class="xl:py-40">
     <template v-slot:first>
-      <div class="p-10">
+      <div>
         <TitleTextItem
           title="Other Project Supervisors"
           text="Our Project Supervisors bring a wealth of experience and industry knowledge to the table. They have a proven track record of identifying and nurturing promising startups, helping them scale and reach their full potential. With their sharp business acumen, they provide invaluable insights into market trends, competitive landscapes, and emerging technologies."
           additionalTitleClasses="text-primary"
+          divCentered
         />
       </div>
     </template>
