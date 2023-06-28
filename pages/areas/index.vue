@@ -15,7 +15,7 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     <TitleTextItem
       title="Our Areas of Expertise"
       text="Here is a complete list of all our projects divided by area."
-      buttonText="Go To Projects"
+      buttonText="Go To Projects by Area"
       buttonUrl="/projects"
       centered
       additionalTextClasses="text-secondarytext"
@@ -23,7 +23,11 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     >
     </TitleTextItem>
   </PageHeader>
-  <StandardSlotted v-for="(area, index) in areas" separator>
+  <StandardSlotted
+    v-for="(area, index) in areas"
+    separator
+    :class="index % 2 ? 'flex-col-reverse' : ''"
+  >
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem
         :title="area.name ?? ''"
@@ -34,13 +38,9 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
       ></TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + area.image"
-          :alt="area.image"
-        />
-      </div>
+      <FullsizeImage
+        :img="{ src: imageBucket + area.image, alt: area.image }"
+      ></FullsizeImage>
     </template>
 
     <template v-slot:second v-if="index % 2">
@@ -53,13 +53,9 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
       ></TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + area.image"
-          :alt="area.image"
-        />
-      </div>
+      <FullsizeImage
+        :img="{ src: imageBucket + area.image, alt: area.image }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 </template>

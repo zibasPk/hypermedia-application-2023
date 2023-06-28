@@ -61,10 +61,10 @@ let textStyle = "text-xl " + props.additionalTextClasses;
 if (props.paddingBetweenText) {
   textStyle += " pt-5 xl:pt-10";
 }
-let buttonStyle = "";
+let buttonStyle = "pt-10 md:pt-0 pb-10 md:pt-0";
 if (props.divCentered) {
   flexStyle = "flex flex-col items-center justify-center xl:p-10 pb-10";
-  buttonStyle = "w-full";
+  buttonStyle += " w-full";
 }
 if (props.centered) {
   flexStyle = "flex flex-col items-center justify-center text-center";
@@ -73,6 +73,10 @@ if (props.centered) {
 if (props.width) {
   flexStyle += " " + props.width;
 }
+
+flexStyle +=
+  "max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center";
+textStyle += " max-md::text-center";
 </script>
 
 <template>

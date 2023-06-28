@@ -17,7 +17,7 @@ background-image: linear-gradient(
 </script>
 
 <template>
-  <div class="min-h-[200px] h-[100vh] overflow-hidden">
+  <div class="min-h-[800px] h-[100vh] overflow-hidden">
     <div
       :style="containerStyle"
       class="relative flex text-center align-center justify-center h-full"
