@@ -20,11 +20,11 @@ if (props.horizontal) {
     class="flex md:grid place-items-center md:gap-5"
     :class="separatorClass + orientation_dependent_classes"
   >
-    <div class="mb-[-1px] w-full h-full grid">
+    <div class="mb-[-2px] w-full h-full grid">
       <slot name="first"></slot>
     </div>
 
-    <div class="mb-[-1px] w-full h-full grid">
+    <div class="mb-[-2px] w-full h-full grid">
       <slot name="second"></slot>
     </div>
   </div>
