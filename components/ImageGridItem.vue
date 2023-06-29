@@ -27,8 +27,8 @@ const props = defineProps({
 
 <template>
   <template v-if="variant == 'secondary'">
-    <div class="grid grid-flow-col p-4 w-60 bg-white rounded-lg">
-      <div class="w-[70px] h-32 mr-4 rounded overflow-hidden">
+    <div class="grid grid-flow-col min-h-[10rem] p-4 w-60 bg-white rounded-lg">
+      <div class="w-[70px] h-full mr-4 rounded overflow-hidden">
         <img
           class="min-w-full min-h-full object-cover"
           :src="Consts.base_image_url + image.src"
