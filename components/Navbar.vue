@@ -73,14 +73,23 @@ watch(
   },
   { immediate: true }
 );
-</script>
 
-<script lang="ts">
-document.getElementById("maincontent")?.addEventListener("click", closeNavbar);
-function closeNavbar() {
-  console.log("running");
-  document.getElementById("navbar-dropdown")?.classList.add("hidden");
+let dropdownActive = ref(false);
+function toggleDropdown() {
+  dropdownActive.value = !dropdownActive.value;
 }
+
+onMounted(() => {
+  document
+    .getElementById("maincontent")
+    ?.addEventListener("click", toggleDropdown);
+});
+
+onBeforeUnmount(() => {
+  document
+    .getElementById("maincontent")
+    ?.removeEventListener("click", toggleDropdown);
+});
 </script>
 
 <template>
@@ -104,7 +113,7 @@ function closeNavbar() {
         > -->
       </NuxtLink>
       <button
-        onclick="document.getElementById('navbar-dropdown').classList.toggle('hidden')"
+        @click="toggleDropdown()"
         type="button"
         class="col-start-3 md:col-start-2 inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         aria-controls="navbar-dropdown"
@@ -126,8 +135,9 @@ function closeNavbar() {
         </svg>
       </button>
       <div
-        class="ml-auto hidden w-full md:block md:w-auto"
+        class="ml-auto w-full md:block md:w-auto"
         id="navbar-dropdown"
+        :class="dropdownActive ? 'hidden' : ''"
       >
         <ul
           class="absolute right-10 top-20 md:right-0 md:top-0 md:relative flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
