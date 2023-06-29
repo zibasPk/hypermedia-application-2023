@@ -32,7 +32,7 @@ const props = defineProps({
         <img
           class="min-w-full min-h-full object-cover"
           :src="Consts.base_image_url + image.src"
-          :alt="image.alt ?? ''"
+          :alt="image.alt ?? 'image of the element of the grid'"
         />
       </div>
       <div class="flex flex-col-reverse h-ful gap-1">
@@ -55,7 +55,7 @@ const props = defineProps({
           <img
             class="min-w-full min-h-full object-cover"
             :src="Consts.base_image_url + image.src"
-            :alt="image.alt ?? ''"
+            :alt="image.alt ?? 'image of the element of the grid'"
           />
         </div>
         <p class="font-bold break-words overflow-hidden">{{ maintext }}</p>

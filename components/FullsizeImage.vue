@@ -18,7 +18,7 @@ const props = defineProps({
     <img
       class="rounded m-auto object-cover h-full min-w-full md:w-auto"
       :src="img.src ?? ''"
-      :alt="img.alt ?? ''"
+      :alt="img.alt ?? 'No alt found'"
     />
   </div>
 </template>
