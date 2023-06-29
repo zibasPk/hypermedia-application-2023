@@ -64,7 +64,7 @@ if (projects!.length > 0) {
       </TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden max-h-[50rem]">
+      <div class="overflow-hidden max-h-[25rem] pb-10 xl:pb-0 md:max-h-[50rem]">
         <img
           class="rounded m-auto object-cover h-full"
           :src="BucketUrl + member?.image || ''"

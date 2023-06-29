@@ -61,7 +61,11 @@ let textStyle = "text-xl " + props.additionalTextClasses;
 if (props.paddingBetweenText) {
   textStyle += " pt-5 xl:pt-10";
 }
-let buttonStyle = "pt-10 md:pt-0 pb-10 md:pt-0";
+
+let buttonStyle = "pb-10";
+if (props.buttonText) {
+  buttonStyle = buttonStyle + " pt-10 md:pt-0 md:pt-0";
+}
 if (props.divCentered) {
   flexStyle = "flex flex-col items-center justify-center xl:p-10 pb-10";
   buttonStyle += " w-full";

@@ -18,7 +18,7 @@ defineProps<{
       :maindesc="item.maindesc"
       :rendermaindesc="item.rendermaindesc"
       :image="item.image"
-      class="col-span-1 row-span-1 mr-6"
+      class="col-span-1 row-span-1 xl:mr-6"
     />
   </div>
 </template>
