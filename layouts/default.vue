@@ -3,6 +3,7 @@
 -->
 <script setup>
 useHead({
+  title: "LVenture Group",
   link: [
     {
       rel: "stylesheet",
@@ -16,8 +17,14 @@ useHead({
   ],
   meta: [
     { charset: "utf-8" },
-    { equiv: "Content-Type", content: "text/html" },
+    { equiv: "Content-Type", content: "text/html; charset=utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "title", content: "LVenture Group" },
+    { name: "description", content: "Investing in Change" },
+    { name: "keywords", content: "VC, Investing, in, Change" },
+    { name: "robots", content: "index, follow" },
+    { name: "language", content: "English" },
+    { name: "author", content: "AJBR" },
   ],
 });
 </script>
