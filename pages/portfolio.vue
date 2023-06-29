@@ -46,13 +46,12 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:first v-else>
-      <div class="overflow-hidden h-[40vh] mb-10 md:h-[80vh] xl:mb-0">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="Consts.base_image_url + project.section_1_image"
-          :alt="project.name + ' imagez'"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + project.section_1_image,
+          alt: project.name + ' image',
+        }"
+      ></FullsizeImage>
     </template>
 
     <template v-slot:second v-if="index % 2">
@@ -66,13 +65,12 @@ if (top_projects == null) {
       </TitleTextItem>
     </template>
     <template v-slot:second v-else>
-      <div class="overflow-hidden h-[40vh] mb-10 md:h-[80vh] xl:mb-0">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="Consts.base_image_url + project.section_1_image"
-          :alt="project.name + ' image'"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + project.section_1_image,
+          alt: project.name + ' image',
+        }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 </template>

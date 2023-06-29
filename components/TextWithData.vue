@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
   <div class="grid grid-flow-row">
     <div
-      class="flex font-bold items-center mt-1"
+      class="grid grid-flow-col gap-5 font-bold items-center mt-1"
       v-for="(item, index) in stringObjectArray"
     >
       <template v-if="index % 2 === 0">

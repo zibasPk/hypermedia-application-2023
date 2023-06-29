@@ -64,7 +64,7 @@ if (props.paddingBetweenText) {
 
 let buttonStyle = "pb-10";
 if (props.buttonText) {
-  buttonStyle = buttonStyle + " pt-10 md:pt-0 md:pt-0";
+  buttonStyle = buttonStyle + " md:pt-0";
 }
 if (props.divCentered) {
   flexStyle = "flex flex-col items-center justify-center xl:p-10 pb-10";

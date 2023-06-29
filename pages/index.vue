@@ -21,7 +21,7 @@ const data = [
     <template v-slot:first>
       <StandardSlotted horizontal>
         <template v-slot:first>
-          <div class="m-auto md:w-auto w-4/5">
+          <div class="m-auto md:w-auto w-4/5 pb-10 md:pb-0">
             <TextWithData :stringObjectArray="data"></TextWithData>
           </div>
         </template>
