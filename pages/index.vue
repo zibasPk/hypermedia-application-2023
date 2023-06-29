@@ -29,7 +29,7 @@ const data = [
           <FullsizeImage
             :img="{
               src: Consts.base_image_url + 'Cross_13.jpg',
-              alt: 'people sitting around a table watching each other intently',
+              alt: 'the scary place where the magic happens',
             }"
           ></FullsizeImage>
         </template>

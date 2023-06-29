@@ -26,24 +26,23 @@ const imageBucket =
       />
     </template>
 
-    <template v-slot:second
-      ><div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'WF Hero_3.jpg'"
-          alt="people around a table"
-        /></div
-    ></template>
+    <template v-slot:second>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'WF Hero_3.jpg',
+          alt: 'people around a table',
+        }"
+      ></FullsizeImage>
+    </template>
   </StandardSlotted>
-  <StandardSlotted separator>
+  <StandardSlotted separator class="flex-col-reverse">
     <template v-slot:first>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'WF Hero_9.jpg'"
-          alt="a whiteboard with a lot of text on it"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'WF Hero_9.jpg',
+          alt: 'a whiteboard with a lot of text on it',
+        }"
+      ></FullsizeImage>
     </template>
     <template v-slot:second>
       <TitleTextItem
@@ -64,13 +63,12 @@ const imageBucket =
       />
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'Rectangle 3_10.jpg'"
-          :alt="backgroundImageHeader.alt"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'Rectangle 3_10.jpg',
+          alt: 'abstract painting of colors and stuff',
+        }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 </template>
