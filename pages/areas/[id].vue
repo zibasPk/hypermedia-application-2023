@@ -13,6 +13,7 @@ if (d.value == null) {
   navigateTo("/404");
 }
 const area = d.value;
+
 const grid_content: ContentItem[] = [];
 if (area != null) {
   const projects = area.project;
@@ -29,7 +30,6 @@ if (area != null) {
     });
   });
 }
-console.log(grid_content);
 </script>
 
 <template>
@@ -56,25 +56,23 @@ console.log(grid_content);
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auot object-cover h-full"
-          :src="backgroundImageHeader.src + area?.section_1_image"
-          :alt="backgroundImageHeader.alt + '_image_1'"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + area?.section_1_image,
+          alt: 'image of ' + area?.section_1_title,
+        }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator>
+  <StandardSlotted separator class="flex-col-reverse">
     <template v-slot:first>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auot object-cover h-full"
-          :src="backgroundImageHeader.src + area?.section_2_image"
-          :alt="backgroundImageHeader.alt + '_image_2'"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + area?.section_2_image,
+          alt: 'image of ' + area?.section_2_title,
+        }"
+      ></FullsizeImage>
     </template>
     <template v-slot:second>
       <TitleTextItem
@@ -96,13 +94,12 @@ console.log(grid_content);
       ></TitleTextItem>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auot object-cover h-full"
-          :src="backgroundImageHeader.src + area?.section_3_image"
-          :alt="backgroundImageHeader.alt + '_image_3'"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + area?.section_3_image,
+          alt: 'image of ' + area?.section_3_title,
+        }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 
