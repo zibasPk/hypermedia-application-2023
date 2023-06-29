@@ -83,7 +83,11 @@ watch(
       class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[100rem]"
     >
       <NuxtLink href="/" class="flex items-center">
-        <img src="../assets/img/logo-lvg.png" class="h-58 w-140 mr-3" />
+        <img
+          src="../assets/img/logo-lvg.png"
+          class="h-58 w-140 mr-3"
+          alt="the company logo"
+        />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
           >Flowbite</span
         > -->
