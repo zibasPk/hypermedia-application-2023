@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PropType } from "nuxt/dist/app/compat/capi";
 import ImageInfo from "~/utils/Image";
 import { Consts } from "~/utils/Types";
 
@@ -8,7 +9,11 @@ const props = defineProps({
   maintext: { type: String, required: true },
   maindesc: { type: String, required: true },
   rendermaindesc: { type: Boolean, required: false, default: true },
-  variant: { type: String, required: false, default: "default" },
+  variant: {
+    type: Object as PropType<"default" | "secondary">,
+    required: false,
+    default: "default",
+  },
   image: {
     type: Object as PropType<ImageInfo>,
     required: false,

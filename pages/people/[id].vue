@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Project, TeamMember } from "../../utils/DatabaseTypes";
 
-const BucketUrl =
-  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 const route = useRoute();
 const id = route.params.id;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
@@ -67,7 +65,7 @@ if (projects!.length > 0) {
       <div class="overflow-hidden max-h-[25rem] pb-10 xl:pb-0 md:max-h-[50rem]">
         <img
           class="rounded m-auto object-cover h-full"
-          :src="BucketUrl + member?.image || ''"
+          :src="Consts.base_image_url + member?.image || ''"
           :alt="member?.name + ' ' + member?.surname + ' image' || 'member'"
         />
       </div>

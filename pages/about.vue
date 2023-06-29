@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_14.jpg",
+  src: Consts.base_image_url + "Cross_14.jpg",
   alt: "people walking on pavement from above",
 };
-const imageBucket =
-  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">

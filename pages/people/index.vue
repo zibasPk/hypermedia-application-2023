@@ -3,7 +3,7 @@ import { TeamMember } from "~/utils/DatabaseTypes";
 import { ContentItem } from "~/utils/Types";
 
 const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/WF Hero_5.jpg",
+  src: Consts.base_image_url + "WF Hero_5.jpg",
   alt: "hero",
 };
 
@@ -35,13 +35,14 @@ if (adaptedData != null) {
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
-    <div class="font-bold text-4xl text-secondarytext">
-      <h1>Meet the exceptional individuals who power our organization.</h1>
-      <h1>
-        With diverse skills, unwavering dedication, and a shared passion for
-        success,
-      </h1>
-      <h1>our team drives innovation and delivers outstanding results.</h1>
+    <div class="w-full flex">
+      <div class="font-bold text-4xl text-secondarytext w-4/5 m-auto">
+        <h1>
+          Meet the exceptional individuals who power our organization. <br />
+          With diverse skills, unwavering dedication, and a shared passion for
+          success, our team drives innovation and delivers outstanding results.
+        </h1>
+      </div>
     </div>
   </PageHeader>
 

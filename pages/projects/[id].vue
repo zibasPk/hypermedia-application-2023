@@ -9,80 +9,124 @@ const { data: p } = await useFetch("/api/projects/" + id);
 const { data: a } = await useFetch("/api/project_to_area/" + id);
 let project = p.value as Project;
 const areas = a.value as { area: Area }[];
+
+const imageGridItemsArrayForAreas = areas.map(({ area }) => ({
+  buttontext: area.name || "",
+  buttonlink: area.slug,
+  maintext: area.name || "",
+  maindesc: "",
+  rendermaindesc: true, // assuming you want this to be true for all areas
+  variant: "secondary",
+  image: {
+    src: area.image || "",
+    alt: area.name ? `${area.name} image` : "",
+  },
+}));
+
+let imageGridItemForSuper: {
+  buttontext: string;
+  buttonlink: string;
+  maintext: string;
+  maindesc: string;
+  rendermaindesc: boolean; // assuming you want this to be true for the supervisor
+  variant: string; // assuming you want this to be "default" for the supervisor
+  image: { src: string; alt: string };
+};
+if (project.supervisor != null) {
+  imageGridItemForSuper = {
+    buttontext: project.supervisor.name || "",
+    buttonlink: project.supervisor.slug,
+    maintext: project.supervisor.name + " " + project.supervisor.surname || "",
+    maindesc: project.supervisor.role || "",
+    rendermaindesc: true, // assuming you want this to be true for the supervisor
+    variant: "default", // assuming you want this to be "default" for the supervisor
+    image: {
+      src: project.supervisor.image || "",
+      alt: project.supervisor.name ? `${project.supervisor.name} image` : "",
+    },
+  };
+}
 </script>
 
 <template>
-  <div class="min-h-[200px] h-[100vh] overflow-hidden">
-    <div class="relative flex text-center align-center justify-center h-full">
-      <div class="absolute inline-flex left-0 top-12 w-100">
-        <TitleTextItem
-          v-for="inner in areas"
-          :title="inner.area.name ?? ''"
-          :text="''"
-          buttonText="Go to Area"
-          :buttonUrl="'/areas/' + inner.area.slug"
-          :buttonFilled="false"
-          additionalTitleClasses="text-3xl"
-          additionalTextClasses="w-3/4 text-xs pt-0"
-          additionalButtonClasses="mt-2"
-          centered
-          class="pr-6"
-          :topMargin="false"
-          :paddingBetweenText="false"
-        >
-        </TitleTextItem>
-      </div>
-      <div class="m-auto z-20">
-        <TitleTextItem
-          :title="project.name ?? ''"
-          :text="project.description ?? ''"
-        >
-        </TitleTextItem>
-      </div>
-    </div>
-  </div>
-  <StandardSlotted separator>
+  <StandardSlotted class="flex-col-reverse">
     <template v-slot:first>
-      <div class="relative">
-        <ImageGridItem
-          buttontext="Profile"
-          :buttonlink="'/people/' + project.supervisor?.slug"
-          :maintext="
-            project.supervisor?.name + ' ' + project.supervisor?.surname
-          "
-          :maindesc="project.supervisor?.role ?? ''"
+      <div class="">
+        <PageHeader
           :image="{
-            src: project.supervisor?.image ?? '',
-            alt: 'image of ' + project.supervisor?.name,
+            src: Consts.base_image_url + project.descriptive_image,
+            alt: '',
           }"
-        />
-        <TitleTextItem
-          :title="project.section_1_title ?? ''"
-          :text="project.section_1_description ?? ''"
-          divCentered
         >
-        </TitleTextItem>
+          <div class="font-bold text-3xl pb-2 text-secondarytext">
+            <p class="md:text-left">Areas</p>
+          </div>
+          <div class="grid gap-4 xl:grid-cols-2 z-20 align-center">
+            <ImageGridItem
+              class="m-auto"
+              v-for="(item, index) in imageGridItemsArrayForAreas"
+              :key="index"
+              buttontext="Area"
+              :buttonlink="item.buttonlink"
+              :maintext="item.maintext"
+              :maindesc="item.maindesc"
+              :rendermaindesc="item.rendermaindesc"
+              variant="secondary"
+              :image="item.image"
+            />
+          </div>
+          <div class="font-bold text-3xl pt-10 pb-2 text-secondarytext">
+            <p class="text-left">Supervisor</p>
+          </div>
+          <div class="grid">
+            <ImageGridItem
+              class="max-xl:m-auto"
+              :buttontext="imageGridItemForSuper.buttontext"
+              :buttonlink="imageGridItemForSuper.buttonlink"
+              :maintext="imageGridItemForSuper.maintext"
+              :maindesc="imageGridItemForSuper.maindesc"
+              :rendermaindesc="imageGridItemForSuper.rendermaindesc"
+              variant="secondary"
+              :image="imageGridItemForSuper.image"
+            />
+          </div>
+        </PageHeader>
       </div>
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="Consts.base_image_url + project.section_1_image"
-          :alt="project.name + ' image'"
-        />
-      </div>
+      <TitleTextItem
+        :title="project.name ?? ''"
+        :text="project.description ?? ''"
+        divCentered
+      />
     </template>
   </StandardSlotted>
-  <StandardSlotted>
+  <StandardSlotted separator>
     <template v-slot:first>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="Consts.base_image_url + project.section_2_image"
-          :alt="project.name + ' image'"
-        />
-      </div>
+      <TitleTextItem
+        :title="project.section_1_title ?? ''"
+        :text="project.section_1_description ?? ''"
+        divCentered
+      >
+      </TitleTextItem>
+    </template>
+    <template v-slot:second>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + project.section_1_image,
+          alt: project.name + ' image',
+        }"
+      ></FullsizeImage>
+    </template>
+  </StandardSlotted>
+  <StandardSlotted class="flex-col-reverse">
+    <template v-slot:first>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + project.section_2_image,
+          alt: project.name + ' image',
+        }"
+      ></FullsizeImage>
     </template>
     <template v-slot:second>
       <TitleTextItem

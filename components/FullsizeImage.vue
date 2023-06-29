@@ -2,6 +2,7 @@
 import ImageInfo from "~/utils/Image";
 const props = defineProps({
   img: { type: Object as PropType<ImageInfo>, required: true },
+  big: { type: Boolean, required: false, default: false },
 });
 </script>
 
