@@ -12,7 +12,7 @@ const areas = a.value as { area: Area }[];
 
 const imageGridItemsArrayForAreas = areas.map(({ area }) => ({
   buttontext: area.name || "",
-  buttonlink: area.slug,
+  buttonlink: "/areas/" + area.slug,
   maintext: area.name || "",
   maindesc: "",
   rendermaindesc: true, // assuming you want this to be true for all areas
@@ -35,7 +35,7 @@ let imageGridItemForSuper: {
 if (project.supervisor != null) {
   imageGridItemForSuper = {
     buttontext: project.supervisor.name || "",
-    buttonlink: project.supervisor.slug,
+    buttonlink: "/people/" + project.supervisor.slug,
     maintext: project.supervisor.name + " " + project.supervisor.surname || "",
     maindesc: project.supervisor.role || "",
     rendermaindesc: true, // assuming you want this to be true for the supervisor
