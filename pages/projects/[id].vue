@@ -51,6 +51,10 @@ const areas = a.value as { area: Area }[];
             project.supervisor?.name + ' ' + project.supervisor?.surname
           "
           :maindesc="project.supervisor?.role ?? ''"
+          :image="{
+            src: project.supervisor?.image ?? '',
+            alt: 'image of ' + project.supervisor?.name,
+          }"
         />
         <TitleTextItem
           :title="project.section_1_title ?? ''"

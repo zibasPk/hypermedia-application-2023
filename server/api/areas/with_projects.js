@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await client
     .from("area")
     .select(
-      "area_code, name, description, data1, short_description, image, section_1_title, section_1_description, section_1_image, section_2_title, section_2_description, section_2_image, section_3_title, section_3_description, section_3_image, project (slug, description, name, section_1_image, section_2_image)"
+      "area_code, name, description, data1, short_description, image, section_1_title, section_1_description, section_1_image, section_2_title, section_2_description, section_2_image, section_3_title, section_3_description, section_3_image,slug, project (slug, description, name, section_1_image, section_2_image)"
     );
 
   if (error) {

@@ -20,35 +20,34 @@ const imageBucket =
     <template v-slot:first>
       <TitleTextItem
         title="We Invest in Startups"
-        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        text="We fuel startup success through strategic investments, partnering with visionary founders to drive innovation and create lasting impact. Join us as we unlock potential, ignite growth, and shape the future of the startup ecosystem."
         additionalTitleClasses="text-primary"
         divCentered
       />
     </template>
 
-    <template v-slot:second
-      ><div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'WF Hero_3.jpg'"
-          alt="people around a table"
-        /></div
-    ></template>
+    <template v-slot:second>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'WF Hero_3.jpg',
+          alt: 'people around a table',
+        }"
+      ></FullsizeImage>
+    </template>
   </StandardSlotted>
-  <StandardSlotted separator>
+  <StandardSlotted separator class="flex-col-reverse">
     <template v-slot:first>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'WF Hero_9.jpg'"
-          alt="a whiteboard with a lot of text on it"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'WF Hero_9.jpg',
+          alt: 'a whiteboard with a lot of text on it',
+        }"
+      ></FullsizeImage>
     </template>
     <template v-slot:second>
       <TitleTextItem
         title="We Value Capital"
-        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        text="We unlock the full value of capital by maximizing investment potential. Through strategic allocation and expertise, we seize opportunities and deliver exceptional results for our partners. Join us in maximizing your capital's impact and achieving remarkable returns."
         additionalTitleClasses="text-primary"
         divCentered
       />
@@ -58,19 +57,18 @@ const imageBucket =
     <template v-slot:first>
       <TitleTextItem
         title="We Transform Corporates"
-        text="Quis consectetur anim ut commodo deserunt quis exercitation ullamco ut nulla aute elit. Proident aute ad aliqua magna Lorem culpa exercitation. Nisi anim eiusmod nulla esse voluptate aliquip consequat labore Lorem pariatur mollit consequat."
+        text="We are catalysts of corporate evolution, dedicated to transforming businesses through the power of innovation. By bridging the gap between startups and established companies, we facilitate strategic partnerships that drive growth and foster groundbreaking advancements. Join us in redefining the corporate landscape, embracing change, and unlocking new opportunities for success"
         additionalTitleClasses="text-primary"
         divCentered
       />
     </template>
     <template v-slot:second>
-      <div class="overflow-hidden h-screen">
-        <img
-          class="rounded m-auto object-cover h-full"
-          :src="imageBucket + 'Rectangle 3_10.jpg'"
-          :alt="backgroundImageHeader.alt"
-        />
-      </div>
+      <FullsizeImage
+        :img="{
+          src: Consts.base_image_url + 'Rectangle 3_10.jpg',
+          alt: 'abstract painting of colors and stuff',
+        }"
+      ></FullsizeImage>
     </template>
   </StandardSlotted>
 </template>

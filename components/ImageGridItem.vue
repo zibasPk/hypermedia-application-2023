@@ -8,11 +8,12 @@ const props = defineProps({
   maintext: { type: String, required: true },
   maindesc: { type: String, required: true },
   rendermaindesc: { type: Boolean, required: false, default: true },
+  variant: { type: String, required: false, default: "default" },
   image: {
     type: Object as PropType<ImageInfo>,
     required: false,
     default: {
-      src: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
+      src: "%20Cross.jpg",
       alt: "A picture of a person",
     },
   },
@@ -20,22 +21,48 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid w-48 h-44 m-1">
-    <div class="flex items-center space-x-4">
-      <img
-        class="w-[64px] h-[64px] rounded overflow-hidden object-cover"
-        :src="Consts.base_image_url + image.src"
-        :alt="image.alt ?? ''"
-      />
-      <p class="font-bold">{{ maintext }}</p>
+  <template v-if="variant == 'secondary'">
+    <div class="grid grid-flow-col p-4 w-60 bg-white rounded-lg">
+      <div class="w-[70px] h-32 mr-4 rounded overflow-hidden">
+        <img
+          class="min-w-full min-h-full object-cover"
+          :src="Consts.base_image_url + image.src"
+          :alt="image.alt ?? ''"
+        />
+      </div>
+      <div class="flex flex-col-reverse h-ful gap-1">
+        <div class="w-full">
+          <FilledButton classes="w-full" :link="buttonlink">
+            <template v-slot:content>
+              {{ props.buttontext }}
+            </template>
+          </FilledButton>
+        </div>
+        <p v-if="rendermaindesc" class="text-sm w-full">{{ maindesc }}</p>
+        <p class="font-bold">{{ maintext }}</p>
+      </div>
     </div>
-    <p v-if="rendermaindesc" class="text-sm">{{ maindesc }}</p>
-    <div class="w-full h-full">
-      <OutlineButton classes="w-full" :link="buttonlink">
-        <template v-slot:content>
-          {{ props.buttontext }}
-        </template>
-      </OutlineButton>
+  </template>
+  <template v-else>
+    <div class="grid max-w-48 w-48 h-40 xl:h-44 m-1">
+      <div class="grid grid-flow-col items-center space-x-4">
+        <div class="w-[64px] h-[64px] rounded overflow-hidden">
+          <img
+            class="min-w-full min-h-full object-cover"
+            :src="Consts.base_image_url + image.src"
+            :alt="image.alt ?? ''"
+          />
+        </div>
+        <p class="font-bold break-words overflow-hidden">{{ maintext }}</p>
+      </div>
+      <p v-if="rendermaindesc" class="text-sm">{{ maindesc }}</p>
+      <div class="w-full h-full">
+        <OutlineButton classes="w-full" :link="buttonlink">
+          <template v-slot:content>
+            {{ props.buttontext }}
+          </template>
+        </OutlineButton>
+      </div>
     </div>
-  </div>
+  </template>
 </template>

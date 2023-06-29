@@ -27,23 +27,32 @@ if (d.value != null) {
     grid_contents.push(arr);
   });
 }
+console.log(areas);
 </script>
 
 <template>
-  <StandardSlotted v-for="(area, index) in areas" separator class="py-40">
-    <template v-slot:first>
-      <TitleTextItem
-        :title="area.name ?? ''"
-        :text="area.description ?? ''"
-        buttonText="Area"
-        :button-url="'/areas/' + area.slug"
-        :buttonFilled="false"
-        divCentered
-      >
-      </TitleTextItem>
-    </template>
-    <template v-slot:second>
-      <GridContainer :content="grid_contents[index]"> </GridContainer>
-    </template>
-  </StandardSlotted>
+  <div v-for="(area, index) in areas">
+    <StandardSlotted :separator="false" class="pb-16">
+      <template v-slot:first>
+        <TitleTextItem
+          :title="area.name ?? ''"
+          :text="area.description ?? ''"
+          buttonText="Area"
+          :button-url="'/areas/' + area.slug"
+          divCentered
+        >
+        </TitleTextItem>
+      </template>
+      <template v-slot:second>
+        <FullsizeImage
+          :img="{
+            src: Consts.base_image_url + area.image,
+            alt: area.name + ' image',
+          }"
+        ></FullsizeImage>
+      </template>
+    </StandardSlotted>
+    <FlexContainer :content="grid_contents[index]" class="justify-center">
+    </FlexContainer>
+  </div>
 </template>
