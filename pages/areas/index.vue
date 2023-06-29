@@ -5,8 +5,6 @@ const backgroundImageHeader = {
   src: Consts.base_image_url + "WF%20Hero.jpg",
   alt: "Areas of expertise hero image",
 };
-const imageBucket =
-  "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
 const { data } = await useFetch<Area[]>("/api/areas");
 let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
 </script>
