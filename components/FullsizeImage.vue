@@ -11,11 +11,11 @@ const props = defineProps({
     :class="
       big
         ? 'md:h-full md:min-h-[600px] h-[600px]'
-        : 'md:h-full md:min-h-[600px] h-[200px] w-4/5 md:w-auto m-auto'
+        : 'md:h-full md:min-h-[600px] h-[200px] w-4/5 md:w-auto m-auto min-w-full'
     "
   >
     <img
-      class="rounded m-auto object-cover h-full w-full md:w-auto w-full"
+      class="rounded m-auto object-cover h-full min-w-full md:w-auto"
       :src="img.src ?? ''"
       :alt="img.alt ?? ''"
     />
