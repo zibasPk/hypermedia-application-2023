@@ -25,6 +25,25 @@ useHead({
     { name: "robots", content: "index, follow" },
     { name: "language", content: "English" },
     { name: "author", content: "AJBR" },
+    // Social media tags
+    { property: "og:title", content: "LVenture Group" },
+    { property: "og:description", content: "Investing in Change" },
+    {
+      property: "og:image",
+      content:
+        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.jpg",
+    },
+    {
+      property: "og:url",
+      content: "https://hypermedia-application-2023.vercel.app/",
+    },
+    { property: "twitter:card", content: "summary_large_image" },
+    // Images
+    {
+      itemprop: "image",
+      content:
+        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.jpg",
+    },
   ],
 });
 </script>
