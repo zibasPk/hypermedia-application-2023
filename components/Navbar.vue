@@ -75,17 +75,28 @@ watch(
 );
 </script>
 
+<script lang="ts">
+document.getElementById("maincontent")?.addEventListener("click", closeNavbar);
+function closeNavbar() {
+  console.log("running");
+  document.getElementById("navbar-dropdown")?.classList.add("hidden");
+}
+</script>
+
 <template>
   <nav
     class="bg-primary border-[#1A202C] border-solid border-b-2 fixed z-40 w-full"
   >
     <div
-      class="grid grid-flow-col grid-cols-[1fr,8fr] items-center justify-evenly px-20 py-4 mx-auto max-w-[100rem]"
+      class="grid grid-flow-col md:grid-cols-[1fr,8fr] grid-cols-[1fr,8fr,1fr] items-center justify-evenly px-5 xl:px-20 py-4 mx-auto max-w-[100rem]"
     >
-      <NuxtLink href="/" class="flex items-center">
+      <NuxtLink
+        href="/"
+        class="md:col-start-1 col-start-2 m-auto flex items-center"
+      >
         <img
           src="../assets/img/logo-lvg.png"
-          class="h-58 w-140 mr-3"
+          class="md:h-58 h-full md:w-140 mr-3"
           alt="the company logo"
         />
         <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap"
@@ -93,9 +104,9 @@ watch(
         > -->
       </NuxtLink>
       <button
-        data-collapse-toggle="navbar-dropdown"
+        onclick="document.getElementById('navbar-dropdown').classList.toggle('hidden')"
         type="button"
-        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        class="col-start-3 md:col-start-2 inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         aria-controls="navbar-dropdown"
         aria-expanded="false"
       >
@@ -119,24 +130,24 @@ watch(
         id="navbar-dropdown"
       >
         <ul
-          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
+          class="absolute right-10 top-20 md:right-0 md:top-0 md:relative flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
           <li v-for="element in elements" class="my-auto">
             <NuxtLink
               :to="element.link"
               aria-current="page"
               v-if="element.dropdownElements.length == 0"
-              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md: md: align-middle"
+              class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md: md: align-middle"
             >
               <div
                 class="flex gap-2"
                 :class="[
                   element.active.value
-                    ? 'border-solid border-b-2 border-secondary'
-                    : 'text-gray-400',
+                    ? 'border-solid text-gray-700 md:text-gray-400 border-b-2 border-secondary'
+                    : 'text-gray-700 md:text-gray-400',
                 ]"
               >
-                <span v-html="element.iconHTML"></span>
+                <span v-html="element.iconHTML" class="hidden xl:block"></span>
                 {{ element.text }}
               </div>
             </NuxtLink>

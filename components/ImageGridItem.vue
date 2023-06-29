@@ -8,7 +8,6 @@ const props = defineProps({
   buttonlink: { type: String, required: true },
   maintext: { type: String, required: true },
   maindesc: { type: String, required: true },
-  rendermaindesc: { type: Boolean, required: false, default: true },
   variant: {
     type: Object as PropType<"default" | "secondary">,
     required: false,
@@ -27,7 +26,9 @@ const props = defineProps({
 
 <template>
   <template v-if="variant == 'secondary'">
-    <div class="grid grid-flow-col min-h-[10rem] p-4 w-60 bg-white rounded-lg">
+    <div
+      class="grid grid-flow-col h-full min-h-[10rem] p-4 w-60 bg-white rounded-lg"
+    >
       <div class="w-[70px] h-full mr-4 rounded overflow-hidden">
         <img
           class="min-w-full min-h-full object-cover"
@@ -43,8 +44,8 @@ const props = defineProps({
             </template>
           </FilledButton>
         </div>
-        <p v-if="rendermaindesc" class="text-sm w-full">{{ maindesc }}</p>
-        <p class="font-bold">{{ maintext }}</p>
+        <p v-if="maindesc" class="text-sm w-full mb-auto">{{ maindesc }}</p>
+        <p class="font-bold m-auto">{{ maintext }}</p>
       </div>
     </div>
   </template>

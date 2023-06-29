@@ -50,6 +50,7 @@ useHead({
 <template>
   <Navbar />
   <div
+    id="maincontent"
     class="flex flex-col gap-16 mx-auto px-2 md:px-20 mb-32 max-w-[100rem] pt-[92px]"
   >
     <slot />

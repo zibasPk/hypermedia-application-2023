@@ -61,7 +61,9 @@ if (project.supervisor != null) {
           <div class="font-bold text-3xl pb-2 text-secondarytext">
             <p class="md:text-left">Areas</p>
           </div>
-          <div class="grid place-items-start gap-4 xl:grid-cols-2 z-20">
+          <div
+            class="grid auto-rows-fr place-items-start gap-4 xl:grid-cols-2 z-20"
+          >
             <ImageGridItem
               v-for="(item, index) in imageGridItemsArrayForAreas"
               :key="index"
@@ -80,9 +82,9 @@ if (project.supervisor != null) {
           <div>
             <ImageGridItem
               class="max-xl:m-auto"
-              :buttontext="imageGridItemForSuper.buttontext"
+              buttontext="Profile"
               :buttonlink="imageGridItemForSuper.buttonlink"
-              maintext="Profile"
+              :maintext="imageGridItemForSuper.maintext"
               :maindesc="imageGridItemForSuper.maindesc"
               :rendermaindesc="imageGridItemForSuper.rendermaindesc"
               variant="secondary"
