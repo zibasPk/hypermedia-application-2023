@@ -82,7 +82,7 @@ function toggleDropdown() {
 onMounted(() => {
   document
     .getElementById("maincontent")
-    ?.addEventListener("click", toggleDropdown);
+    ?.addEventListener("click", ()=>{dropdownActive.value = !dropdownActive.value});
 });
 
 onBeforeUnmount(() => {
