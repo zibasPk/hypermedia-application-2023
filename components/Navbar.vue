@@ -80,9 +80,9 @@ function toggleDropdown() {
 }
 
 onMounted(() => {
-  document
-    .getElementById("maincontent")
-    ?.addEventListener("click", ()=>{dropdownActive.value = !dropdownActive.value});
+  document.getElementById("maincontent")?.addEventListener("click", () => {
+    dropdownActive.value = false;
+  });
 });
 
 onBeforeUnmount(() => {
@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
       <div
         class="ml-auto w-full md:block md:w-auto"
         id="navbar-dropdown"
-        :class="dropdownActive ? 'hidden' : ''"
+        :class="!dropdownActive ? 'hidden' : ''"
       >
         <ul
           class="absolute right-10 top-20 md:right-0 md:top-0 md:relative flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
