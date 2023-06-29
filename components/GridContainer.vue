@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div
-    class="grid grid-rows-2 xl:grid-cols-3 m-auto xl:m-0 place-items-center w-fit grid-cols-2"
+    class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 md:max-xl:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 m-auto xl:m-0 place-items-center w-fit grid-cols-2"
   >
     <ImageGridItem
       v-for="item in content"
