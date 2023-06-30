@@ -31,6 +31,7 @@ export interface TeamMember {
 export interface Project {
   slug: string;
   supervisor: TeamMember | null;
+  descriptive_image: string | null;
   data1: number | null;
   description: string | null;
   name: string | null;

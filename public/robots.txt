@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://hypermedia-application-2023.vercel.app/sitemap.xml

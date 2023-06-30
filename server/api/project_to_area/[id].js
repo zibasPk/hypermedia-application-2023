@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await client
     .from("project_to_area")
     .select(
-      "area (slug, name, area_code)" // questo si può cambiare a "area_code" se non vogliamo usare il nome
+      "area (slug, name, area_code, image, short_description)" // questo si può cambiare a "area_code" se non vogliamo usare il nome
     )
     .eq("project_code", id);
 

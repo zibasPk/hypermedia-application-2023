@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PropType } from "nuxt/dist/app/compat/capi";
 import ImageInfo from "~/utils/Image";
 import { Consts } from "~/utils/Types";
 
@@ -7,8 +8,11 @@ const props = defineProps({
   buttonlink: { type: String, required: true },
   maintext: { type: String, required: true },
   maindesc: { type: String, required: true },
-  rendermaindesc: { type: Boolean, required: false, default: true },
-  variant: { type: String, required: false, default: "default" },
+  variant: {
+    type: Object as PropType<"default" | "secondary">,
+    required: false,
+    default: "default",
+  },
   image: {
     type: Object as PropType<ImageInfo>,
     required: false,
@@ -22,12 +26,14 @@ const props = defineProps({
 
 <template>
   <template v-if="variant == 'secondary'">
-    <div class="grid grid-flow-col p-4 w-60 bg-white rounded-lg">
-      <div class="w-[70px] h-32 mr-4 rounded overflow-hidden">
+    <div
+      class="grid grid-flow-col h-full min-h-[10rem] p-4 w-60 bg-white rounded-lg"
+    >
+      <div class="w-[70px] h-full mr-4 rounded overflow-hidden">
         <img
           class="min-w-full min-h-full object-cover"
           :src="Consts.base_image_url + image.src"
-          :alt="image.alt ?? ''"
+          :alt="image.alt ?? 'image of the element of the grid'"
         />
       </div>
       <div class="flex flex-col-reverse h-ful gap-1">
@@ -38,8 +44,8 @@ const props = defineProps({
             </template>
           </FilledButton>
         </div>
-        <p v-if="rendermaindesc" class="text-sm w-full">{{ maindesc }}</p>
-        <p class="font-bold">{{ maintext }}</p>
+        <p v-if="maindesc" class="text-sm w-full mb-auto">{{ maindesc }}</p>
+        <p class="font-bold m-auto">{{ maintext }}</p>
       </div>
     </div>
   </template>
@@ -50,7 +56,7 @@ const props = defineProps({
           <img
             class="min-w-full min-h-full object-cover"
             :src="Consts.base_image_url + image.src"
-            :alt="image.alt ?? ''"
+            :alt="image.alt ?? 'image of the element of the grid'"
           />
         </div>
         <p class="font-bold break-words overflow-hidden">{{ maintext }}</p>

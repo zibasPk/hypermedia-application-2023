@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { Project as ProjectDAO, Area as AreaDAO } from "~/utils/DatabaseTypes";
 import { Consts, ContentItem } from "~/utils/Types";
-const backgroundImageHeader = {
-  src: "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/",
-  alt: "area",
-};
+
 const route = useRoute();
 const id = route.params.id;
 
@@ -33,9 +30,7 @@ if (area != null) {
 </script>
 
 <template>
-  <PageHeader
-    :image="{ src: backgroundImageHeader.src + area?.image, alt: '' }"
-  >
+  <PageHeader :image="{ src: Consts.base_image_url + area?.image, alt: '' }">
     <TitleTextItem
       :title="area?.name ?? ''"
       :text="area?.description ?? ''"

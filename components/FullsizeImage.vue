@@ -2,6 +2,7 @@
 import ImageInfo from "~/utils/Image";
 const props = defineProps({
   img: { type: Object as PropType<ImageInfo>, required: true },
+  big: { type: Boolean, required: false, default: false },
 });
 </script>
 
@@ -17,7 +18,7 @@ const props = defineProps({
     <img
       class="rounded m-auto object-cover h-full min-w-full md:w-auto"
       :src="img.src ?? ''"
-      :alt="img.alt ?? ''"
+      :alt="img.alt ?? 'No alt found'"
     />
   </div>
 </template>

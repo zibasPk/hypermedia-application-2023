@@ -37,7 +37,7 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     </template>
     <template v-slot:first v-else>
       <FullsizeImage
-        :img="{ src: imageBucket + area.image, alt: area.image }"
+        :img="{ src: Consts.base_image_url + area.image, alt: area.image }"
       ></FullsizeImage>
     </template>
 
@@ -52,7 +52,7 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     </template>
     <template v-slot:second v-else>
       <FullsizeImage
-        :img="{ src: imageBucket + area.image, alt: area.image }"
+        :img="{ src: Consts.base_image_url + area.image, alt: area.image }"
       ></FullsizeImage>
     </template>
   </StandardSlotted>
