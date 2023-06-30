@@ -67,7 +67,7 @@ if (props.buttonText) {
   buttonStyle = buttonStyle + " md:pt-0";
 }
 if (props.divCentered) {
-  flexStyle = "flex flex-col items-center justify-center xl:p-10 pb-10";
+  flexStyle = "flex flex-col items-center justify-center xl:px-10 pb-10";
   buttonStyle += " w-full";
 }
 if (props.centered) {
