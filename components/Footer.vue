@@ -33,7 +33,7 @@ const items: Item[] = [
           >© 2023 AJBR™. All Rights Reserved.</span
         >
         <ul
-          class="flex justify-center mb-6 gap-4 text-gray-400 md:mb-0 md:items-right md:justify-normal"
+          class="flex justify-center flex-wrap mb-6 gap-4 text-gray-400 md:mb-0 md:items-right md:justify-normal"
         >
           <li v-for="item in items">
             <NuxtLink :href="item.link" class="hover:underline">{{
