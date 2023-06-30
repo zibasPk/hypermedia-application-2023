@@ -33,7 +33,7 @@ if (projects!.length > 0) {
   hasProjects = true;
   adaptedData = projects!.map((project) => {
     return {
-      buttontext: "View Project",
+      buttontext: "Project",
       buttonlink: "/projects/" + project.slug.toString(),
       maintext: project.name,
       rendermaindesc: false,
@@ -91,7 +91,7 @@ if (projects!.length > 0) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="adaptedData" class="mt-5" />
+      <GridContainer :content="adaptedData" class="mt-5" variant="secondary" />
     </template>
   </StandardSlotted>
 </template>
