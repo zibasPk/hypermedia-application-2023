@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
                 class="flex gap-2"
                 :class="[
                   element.active.value
-                    ? 'border-solid text-gray-700 md:text-gray-400 border-b-2 border-secondary'
+                    ? 'border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
                     : 'text-gray-700 md:text-gray-400',
                 ]"
               >
