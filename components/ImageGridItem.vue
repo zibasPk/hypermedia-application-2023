@@ -27,7 +27,7 @@ const props = defineProps({
 <template>
   <template v-if="variant == 'secondary'">
     <div
-      class="grid grid-flow-col h-full min-h-[10rem] p-4 w-60 bg-white rounded-lg"
+      class="grid grid-flow-col h-full min-h-[10rem] p-4 w-60 bg-white rounded-lg hover:shadow-md"
     >
       <div class="w-[70px] h-full mr-4 rounded overflow-hidden">
         <img
