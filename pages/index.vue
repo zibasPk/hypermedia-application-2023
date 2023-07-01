@@ -64,7 +64,7 @@ const data = [
 
   <StandardSlotted>
     <template v-slot:first>
-      <div class="my-auto pl-10">
+      <div class="my-auto xl:px-10">
         <TitleTextItem
           title="Our many different fields of action"
           text="We are at the forefront of multiple disciplines, leading the charge in innovation and problem-solving. From Sustainable Energy and Clean Technology to AI and Robotics, we're paving the way for a brighter future. Click below to explore our diverse projects."
