@@ -27,7 +27,6 @@ if (d.value != null) {
     grid_contents.push(arr);
   });
 }
-console.log(areas);
 </script>
 
 <template>

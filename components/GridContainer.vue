@@ -9,7 +9,6 @@ const props = defineProps({
     default: "default",
   },
 });
-console.log(props.variant);
 </script>
 
 <template>
