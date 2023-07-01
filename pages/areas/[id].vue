@@ -99,7 +99,7 @@ if (area != null) {
   </StandardSlotted>
 
   <!-- Project related to this area -->
-  <StandardSlotted separator>
+  <StandardSlotted :separator="false">
     <template v-slot:first>
       <div class="p-10">
         <TitleTextItem
@@ -110,7 +110,7 @@ if (area != null) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="grid_content" />
+      <GridContainer :content="grid_content" variant="secondary" />
     </template>
   </StandardSlotted>
 </template>

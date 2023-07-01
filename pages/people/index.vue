@@ -46,35 +46,47 @@ if (adaptedData != null) {
     </div>
   </PageHeader>
 
-  <StandardSlotted separator class="xl:py-40">
+  <StandardSlotted separator class="xl:py-20">
     <template v-slot:first>
-      <TitleTextItem
-        title="Board"
-        text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
-        additionalTitleClasses="text-primary"
-        divCentered
-      />
+      <div>
+        <TitleTextItem
+          title="Board"
+          text="Our esteemed board members are the driving force behind our vision for innovation and investment. With their vast expertise and unwavering commitment, they play a pivotal role in shaping the future of our industry."
+          additionalTitleClasses="text-primary"
+          divCentered
+        />
+      </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="board" class="pt-10 xl:pt-0" />
-    </template>
-  </StandardSlotted>
-
-  <StandardSlotted separator class="xl:py-40 flex-col-reverse">
-    <template v-slot:first>
-      <GridContainer :content="assembly" class="pt-10 xl:pt-0" />
-    </template>
-    <template v-slot:second>
-      <TitleTextItem
-        title="Assembly"
-        text="At CG venture, our Venture Capital Assembly forms the backbone of our collaborative and growth-oriented approach to investing. Comprised of exceptional professionals from diverse backgrounds, the Assembly represents a dynamic and synergistic force that drives our success."
-        additionalTitleClasses="text-primary"
-        divCentered
+      <GridContainer
+        :content="board"
+        class="pt-10 md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
+        variant="secondary"
       />
     </template>
   </StandardSlotted>
 
-  <StandardSlotted class="xl:py-40">
+  <StandardSlotted separator class="xl:py-20 flex-col-reverse">
+    <template v-slot:first>
+      <GridContainer
+        :content="assembly"
+        class="pt-10 md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
+        variant="secondary"
+      />
+    </template>
+    <template v-slot:second>
+      <div>
+        <TitleTextItem
+          title="Assembly"
+          text="At CG venture, our Venture Capital Assembly forms the backbone of our collaborative and growth-oriented approach to investing. Comprised of exceptional professionals from diverse backgrounds, the Assembly represents a dynamic and synergistic force that drives our success."
+          additionalTitleClasses="text-primary"
+          divCentered
+        />
+      </div>
+    </template>
+  </StandardSlotted>
+
+  <StandardSlotted class="xl:py-20">
     <template v-slot:first>
       <div>
         <TitleTextItem
@@ -86,7 +98,11 @@ if (adaptedData != null) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="members" class="pt-10 xl:pt-0" />
+      <GridContainer
+        :content="members"
+        class="pt-10 md:pt-0 xl:pt-0 xl:m-auto m-auto"
+        variant="secondary"
+      />
     </template>
   </StandardSlotted>
 </template>
