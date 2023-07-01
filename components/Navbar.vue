@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import FilledButton from "../components/FilledButton.vue";
+import { Consts } from "~/utils/Types";
 
 interface element {
   text: string;
@@ -104,7 +105,7 @@ onBeforeUnmount(() => {
         class="md:col-start-1 col-start-2 m-auto flex items-center"
       >
         <img
-          src="../assets/img/logo-lvg.png"
+          :src="Consts.base_image_url + 'logo-lvg.png'"
           class="md:h-58 h-full md:w-140 mr-3"
           alt="the company logo"
         />
