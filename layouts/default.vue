@@ -4,6 +4,9 @@
 <script setup>
 useHead({
   title: "LVenture Group",
+  htmlAttrs: {
+    lang: "en",
+  },
   link: [
     {
       rel: "stylesheet",
