@@ -32,7 +32,7 @@ const props = defineProps({
       <div class="w-[70px] h-full mr-4 rounded overflow-hidden">
         <img
           class="min-w-full min-h-full object-cover"
-          :src="Consts.base_image_url + image.src"
+          :src="Consts.small_image_url + image.src"
           :alt="image.alt ?? 'image of the element of the grid'"
         />
       </div>
@@ -55,7 +55,7 @@ const props = defineProps({
         <div class="w-[64px] h-[64px] rounded overflow-hidden">
           <img
             class="min-w-full min-h-full object-cover"
-            :src="Consts.base_image_url + image.src"
+            :src="Consts.small_image_url + image.src"
             :alt="image.alt ?? 'image of the element of the grid'"
           />
         </div>

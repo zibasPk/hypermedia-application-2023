@@ -11,5 +11,7 @@ export type ContentItem = {
 
 export class Consts {
   static base_image_url =
-    "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/";
+    "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/website_images/full-size/";
+  static small_image_url =
+    "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/website_images/small/";
 }
