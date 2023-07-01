@@ -46,7 +46,7 @@ if (adaptedData != null) {
     </div>
   </PageHeader>
 
-  <StandardSlotted separator class="xl:py-20">
+  <StandardSlotted separator class="py-10 xl:py-20">
     <template v-slot:first>
       <div>
         <TitleTextItem
@@ -60,17 +60,17 @@ if (adaptedData != null) {
     <template v-slot:second>
       <GridContainer
         :content="board"
-        class="pt-10 md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
+        class="md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
         variant="secondary"
       />
     </template>
   </StandardSlotted>
 
-  <StandardSlotted separator class="xl:py-20 flex-col-reverse">
+  <StandardSlotted separator class="pb-10 xl:py-20 flex-col-reverse">
     <template v-slot:first>
       <GridContainer
         :content="assembly"
-        class="pt-10 md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
+        class="md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
         variant="secondary"
       />
     </template>
@@ -100,7 +100,7 @@ if (adaptedData != null) {
     <template v-slot:second>
       <GridContainer
         :content="members"
-        class="pt-10 md:pt-0 xl:pt-0 xl:m-auto m-auto"
+        class="md:pt-0 xl:pt-0 xl:m-auto m-auto"
         variant="secondary"
       />
     </template>
