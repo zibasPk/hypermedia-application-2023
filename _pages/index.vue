@@ -20,7 +20,7 @@ onMounted(() => {
 
 <template>
   <main>
-    <img id="main-img" src="~/assets/img/home-image.jpg" />
+    <img id="main-img" src="~/assets/img/home-image.webp" />
     <h2 class="bg-white">
       This is a description for the Dog's Hotel. The best place where dogs can
       rest.

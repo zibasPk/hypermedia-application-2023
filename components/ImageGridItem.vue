@@ -17,7 +17,7 @@ const props = defineProps({
     type: Object as PropType<ImageInfo>,
     required: false,
     default: {
-      src: "%20Cross.jpg",
+      src: "%20Cross.webp",
       alt: "A picture of a person",
     },
   },

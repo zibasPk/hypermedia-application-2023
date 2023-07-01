@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const backgroundImageHeader = {
-  src: Consts.base_image_url + "Cross_14.jpg",
+  src: Consts.base_image_url + "Cross_14.webp",
   alt: "people walking on pavement from above",
 };
 </script>
@@ -27,7 +27,7 @@ const backgroundImageHeader = {
     <template v-slot:second>
       <FullsizeImage
         :img="{
-          src: Consts.base_image_url + 'WF Hero_3.jpg',
+          src: Consts.base_image_url + 'WF Hero_3.webp',
           alt: 'people around a table',
         }"
       ></FullsizeImage>
@@ -37,7 +37,7 @@ const backgroundImageHeader = {
     <template v-slot:first>
       <FullsizeImage
         :img="{
-          src: Consts.base_image_url + 'WF Hero_9.jpg',
+          src: Consts.base_image_url + 'WF Hero_9.webp',
           alt: 'a whiteboard with a lot of text on it',
         }"
       ></FullsizeImage>
@@ -63,7 +63,7 @@ const backgroundImageHeader = {
     <template v-slot:second>
       <FullsizeImage
         :img="{
-          src: Consts.base_image_url + 'Rectangle 3_10.jpg',
+          src: Consts.base_image_url + 'Rectangle 3_10.webp',
           alt: 'abstract painting of colors and stuff',
         }"
       ></FullsizeImage>

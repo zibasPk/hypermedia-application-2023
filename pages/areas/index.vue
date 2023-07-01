@@ -2,7 +2,7 @@
 import { Consts } from "~/utils/Types";
 import { Area } from "../../utils/DatabaseTypes";
 const backgroundImageHeader = {
-  src: Consts.base_image_url + "WF%20Hero.jpg",
+  src: Consts.base_image_url + "WF%20Hero.webp",
   alt: "Areas of expertise hero image",
 };
 const { data } = await useFetch<Area[]>("/api/areas");

@@ -2,7 +2,7 @@
 import { Consts } from "~/utils/Types";
 
 const backgroundImageHeader = {
-  src: Consts.base_image_url + "Cross_10.jpg",
+  src: Consts.base_image_url + "Cross_10.webp",
   alt: "a field with wind power generators wow",
 };
 
@@ -28,7 +28,7 @@ const data = [
         <template v-slot:second>
           <FullsizeImage
             :img="{
-              src: Consts.base_image_url + 'Cross_13.jpg',
+              src: Consts.base_image_url + 'Cross_13.webp',
               alt: 'the scary place where the magic happens',
             }"
           ></FullsizeImage>
@@ -40,7 +40,7 @@ const data = [
         <template v-slot:first>
           <FullsizeImage
             :img="{
-              src: Consts.base_image_url + 'Cross_15.jpg',
+              src: Consts.base_image_url + 'Cross_15.webp',
               alt: 'people sitting around a table watching each other intently',
             }"
           ></FullsizeImage>
@@ -77,7 +77,7 @@ const data = [
     <template v-slot:second>
       <FullsizeImage
         :img="{
-          src: Consts.base_image_url + 'Cross_12.jpg',
+          src: Consts.base_image_url + 'Cross_12.webp',
           alt: 'an image of the fabric of reality',
         }"
       ></FullsizeImage>

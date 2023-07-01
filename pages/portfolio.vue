@@ -12,7 +12,7 @@ if (top_projects == null) {
 <template>
   <PageHeader
     :image="{
-      src: Consts.base_image_url + 'WF%20Hero_9.jpg',
+      src: Consts.base_image_url + 'WF%20Hero_9.webp',
       alt: 'Portfolio base image',
     }"
   >

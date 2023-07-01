@@ -31,7 +31,7 @@ useHead({
     {
       property: "og:image",
       content:
-        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.jpg",
+        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.webp",
     },
     {
       property: "og:url",
@@ -42,7 +42,7 @@ useHead({
     {
       itemprop: "image",
       content:
-        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.jpg",
+        "https://dqtgyrjqxnduyldbwyfx.supabase.co/storage/v1/object/public/images/Cross_15.webp",
     },
   ],
 });

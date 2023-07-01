@@ -3,7 +3,7 @@ import { TeamMember } from "~/utils/DatabaseTypes";
 import { ContentItem } from "~/utils/Types";
 
 const backgroundImageHeader = {
-  src: Consts.base_image_url + "WF Hero_5.jpg",
+  src: Consts.base_image_url + "WF Hero_5.webp",
   alt: "hero",
 };
 
