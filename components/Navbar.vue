@@ -10,6 +10,7 @@ interface element {
   toggled: any;
   dropdownElements: dropdownElement[];
   active: any;
+  hideInDesktop: any;
 }
 
 interface dropdownElement {
@@ -25,6 +26,7 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-circle-info"></i>',
     active: ref(false),
+    hideInDesktop: ref(false),
   },
   {
     text: "Investment Areas",
@@ -33,6 +35,7 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-briefcase"></i>',
     active: ref(false),
+    hideInDesktop: ref(false),
   },
   {
     text: "Our People",
@@ -41,14 +44,43 @@ let elements: element[] = [
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-users"></i>',
     active: ref(false),
+    hideInDesktop: ref(false),
   },
   {
     text: "Portfolio",
+    link: "/",
+    toggled: ref(false),
+    dropdownElements: [
+      {
+        text: "Top projects",
+        link: "/portfolio",
+      },
+      {
+        text: "All projects",
+        link: "/projects",
+      },
+    ],
+    iconHTML: '<i class="fa-solid fa-book-open"></i>',
+    active: ref(false),
+    hideInDesktop: ref(false),
+  },
+  {
+    text: "Top projects",
     link: "/portfolio",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
     active: ref(false),
+    hideInDesktop: ref(true),
+  },
+  {
+    text: "All projects",
+    link: "/projects",
+    toggled: ref(false),
+    dropdownElements: [],
+    iconHTML: '<i class="fa-solid fa-folder"></i>',
+    active: ref(false),
+    hideInDesktop: ref(true),
   },
 ];
 
@@ -143,63 +175,75 @@ onBeforeUnmount(() => {
         <ul
           class="absolute right-10 top-20 md:right-0 md:top-0 md:relative flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-primary md:"
         >
-          <li v-for="element in elements" class="my-auto">
-            <NuxtLink
-              :to="element.link"
-              aria-current="page"
-              v-if="element.dropdownElements.length == 0"
-              class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md: md: align-middle"
+          <template v-for="element in elements">
+            <li
+              :class="[element.hideInDesktop.value ? 'md:hidden' : '']"
+              class="my-auto"
             >
+              <NuxtLink
+                :to="element.link"
+                aria-current="page"
+                v-if="element.dropdownElements.length == 0"
+                class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md: md: align-middle"
+              >
+                <div
+                  class="flex gap-2"
+                  :class="[
+                    element.active.value
+                      ? 'border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
+                      : 'text-gray-700 md:text-gray-400',
+                  ]"
+                >
+                  <span
+                    v-html="element.iconHTML"
+                    class="hidden xl:block"
+                  ></span>
+                  {{ element.text }}
+                </div>
+              </NuxtLink>
+              <button
+                v-if="element.dropdownElements.length != 0"
+                @click="toggle(element)"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: max-md:hidden"
+              >
+                <span
+                  v-html="element.iconHTML"
+                  class="hidden xl:block w-[24px]"
+                ></span
+                >{{ element.text }}
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
               <div
-                class="flex gap-2"
-                :class="[
-                  element.active.value
-                    ? 'border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
-                    : 'text-gray-700 md:text-gray-400',
-                ]"
+                v-if="
+                  element.dropdownElements.length > 0 && element.toggled.value
+                "
+                class="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 right-[184px] mt-[10px]"
               >
-                <span v-html="element.iconHTML" class="hidden xl:block"></span>
-                {{ element.text }}
+                <ul class="py-2 text-sm text-gray-700">
+                  <li v-for="dropdownElement in element.dropdownElements">
+                    <NuxtLink
+                      :href="dropdownElement.link"
+                      class="block px-4 py-2 hover:bg-gray-100"
+                      >{{ dropdownElement.text }}</NuxtLink
+                    >
+                  </li>
+                </ul>
               </div>
-            </NuxtLink>
-            <button
-              v-if="element.dropdownElements.length != 0"
-              @click="toggle(element)"
-              class="text-white flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: md:"
-            >
-              {{ element.text }}
-              <svg
-                class="w-5 h-5 ml-1"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div
-              v-if="
-                element.dropdownElements.length > 0 && element.toggled.value
-              "
-              class="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
-            >
-              <ul class="py-2 text-sm text-gray-700">
-                <li v-for="dropdownElement in element.dropdownElements">
-                  <NuxtLink
-                    :href="dropdownElement.link"
-                    class="block px-4 py-2 hover:bg-gray-100"
-                    >{{ dropdownElement.text }}</NuxtLink
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
+            </li>
+          </template>
+          <li class="max-md:mt-[8px]">
             <FilledButton
               classes="bg-secondary border-secondary p-0"
               link="/contact"
