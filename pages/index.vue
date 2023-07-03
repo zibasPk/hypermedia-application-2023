@@ -52,7 +52,7 @@ const data = [
                 title="Investment Highlights"
                 text="Our carefully curated portfolio offers a balanced blend of high-growth ventures, mitigating the impact of market fluctuations and enhancing long-term value creation."
                 button-text="Top Investments"
-                button-url="/top_projects"
+                button-url="/top-projects"
               >
               </TitleTextItem>
             </div>

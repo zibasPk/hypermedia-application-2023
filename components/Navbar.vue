@@ -57,7 +57,7 @@ let elements: element[] = [
       },
       {
         text: "Top projects",
-        link: "/top_projects",
+        link: "/top-projects",
       },
     ],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
