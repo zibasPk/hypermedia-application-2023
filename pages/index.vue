@@ -52,7 +52,7 @@ const data = [
                 title="Investment Highlights"
                 text="Our carefully curated portfolio offers a balanced blend of high-growth ventures, mitigating the impact of market fluctuations and enhancing long-term value creation."
                 button-text="Top Investments"
-                button-url="/portfolio"
+                button-url="/top_projects"
               >
               </TitleTextItem>
             </div>
@@ -69,7 +69,7 @@ const data = [
           title="Our many different fields of action"
           text="We are at the forefront of multiple disciplines, leading the charge in innovation and problem-solving. From Sustainable Energy and Clean Technology to AI and Robotics, we're paving the way for a brighter future. Click below to explore our diverse projects."
           additionalTitleClasses="text-primary"
-          button-text="All areas"
+          button-text="Investment Areas"
           button-url="/areas"
         />
       </div>

@@ -47,17 +47,17 @@ let elements: element[] = [
     hideInDesktop: ref(false),
   },
   {
-    text: "Portfolio",
+    text: "Projects",
     link: "/",
     toggled: ref(false),
     dropdownElements: [
       {
-        text: "Top projects",
-        link: "/portfolio",
-      },
-      {
         text: "All projects",
         link: "/projects",
+      },
+      {
+        text: "Top projects",
+        link: "/top_projects",
       },
     ],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',

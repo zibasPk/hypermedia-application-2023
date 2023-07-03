@@ -13,7 +13,7 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     <TitleTextItem
       title="Our Areas of Expertise"
       text="Here is a complete list of all our projects divided by area."
-      buttonText="Go To Projects by Area"
+      buttonText="Go To All Projects"
       buttonUrl="/projects"
       centered
       additionalTextClasses="text-secondarytext"
