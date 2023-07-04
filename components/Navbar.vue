@@ -95,7 +95,8 @@ function toggle(toShow: element) {
 function setActive() {
   elements.filter((el) => {
     let target = useRoute().fullPath.split("/")[1];
-    el.active.value = el.link.includes(target) && target !== "";
+    let link = el.link.substring(1);
+    el.active.value = link === target;
   });
 }
 const route = useRoute();
