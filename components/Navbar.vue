@@ -92,6 +92,12 @@ function toggle(toShow: element) {
   toShow.toggled.value = !init;
 }
 
+function toggleOff() {
+  elements.forEach((e) => {
+    e.toggled.value = false;
+  });
+}
+
 function setActive() {
   elements.filter((el) => {
     let target = useRoute().fullPath.split("/")[1];
@@ -116,12 +122,20 @@ function toggleDropdown() {
 onMounted(() => {
   document.getElementById("maincontent")?.addEventListener("click", () => {
     dropdownActive.value = false;
+    toggleOff();
+  });
+  document.getElementById("footer")?.addEventListener("click", () => {
+    dropdownActive.value = false;
+    toggleOff();
   });
 });
 
 onBeforeUnmount(() => {
   document
     .getElementById("maincontent")
+    ?.removeEventListener("click", toggleDropdown);
+  document
+    .getElementById("footer")
     ?.removeEventListener("click", toggleDropdown);
 });
 </script>
@@ -136,6 +150,7 @@ onBeforeUnmount(() => {
       <NuxtLink
         href="/"
         class="md:col-start-1 col-start-2 m-auto flex items-center"
+        @click="toggleOff()"
       >
         <img
           :src="Consts.base_image_url + 'logo-lvg.png'"
@@ -183,6 +198,7 @@ onBeforeUnmount(() => {
             >
               <NuxtLink
                 :to="element.link"
+                @click="toggle(element)"
                 aria-current="page"
                 v-if="element.dropdownElements.length == 0"
                 class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md: md: align-middle"
@@ -236,6 +252,7 @@ onBeforeUnmount(() => {
                   <li v-for="dropdownElement in element.dropdownElements">
                     <NuxtLink
                       :href="dropdownElement.link"
+                      @click="toggle(element)"
                       class="block px-4 py-2 hover:bg-gray-100"
                       >{{ dropdownElement.text }}</NuxtLink
                     >
@@ -248,6 +265,7 @@ onBeforeUnmount(() => {
             <FilledButton
               classes="bg-secondary border-secondary p-0"
               link="/contact"
+              @click="toggleOff()"
             >
               <template v-slot:content>
                 <div>
