@@ -92,6 +92,12 @@ function toggle(toShow: element) {
   toShow.toggled.value = !init;
 }
 
+function toggleOff() {
+  elements.forEach((e) => {
+    e.toggled.value = false;
+  });
+}
+
 function setActive() {
   elements.filter((el) => {
     let target = useRoute().fullPath.split("/")[1];
@@ -115,12 +121,20 @@ function toggleDropdown() {
 onMounted(() => {
   document.getElementById("maincontent")?.addEventListener("click", () => {
     dropdownActive.value = false;
+    toggleOff();
+  });
+  document.getElementById("footer")?.addEventListener("click", () => {
+    dropdownActive.value = false;
+    toggleOff();
   });
 });
 
 onBeforeUnmount(() => {
   document
     .getElementById("maincontent")
+    ?.removeEventListener("click", toggleDropdown);
+  document
+    .getElementById("footer")
     ?.removeEventListener("click", toggleDropdown);
 });
 </script>
@@ -135,6 +149,7 @@ onBeforeUnmount(() => {
       <NuxtLink
         href="/"
         class="md:col-start-1 col-start-2 m-auto flex items-center"
+        @click="toggleOff()"
       >
         <img
           :src="Consts.base_image_url + 'logo-lvg.png'"
@@ -249,6 +264,7 @@ onBeforeUnmount(() => {
             <FilledButton
               classes="bg-secondary border-secondary p-0"
               link="/contact"
+              @click="toggleOff()"
             >
               <template v-slot:content>
                 <div>

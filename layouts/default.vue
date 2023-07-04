@@ -58,5 +58,5 @@ useHead({
   >
     <slot />
   </div>
-  <Footer />
+  <Footer id="footer" />
 </template>
