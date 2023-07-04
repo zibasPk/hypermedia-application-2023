@@ -90,6 +90,7 @@ function toggle(toShow: element) {
     e.toggled.value = false;
   });
   toShow.toggled.value = !init;
+  console.log(elements);
 }
 
 function setActive() {
@@ -182,6 +183,7 @@ onBeforeUnmount(() => {
             >
               <NuxtLink
                 :to="element.link"
+                @click="toggle(element)"
                 aria-current="page"
                 v-if="element.dropdownElements.length == 0"
                 class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md: md: align-middle"
@@ -235,6 +237,7 @@ onBeforeUnmount(() => {
                   <li v-for="dropdownElement in element.dropdownElements">
                     <NuxtLink
                       :href="dropdownElement.link"
+                      @click="toggle(element)"
                       class="block px-4 py-2 hover:bg-gray-100"
                       >{{ dropdownElement.text }}</NuxtLink
                     >
