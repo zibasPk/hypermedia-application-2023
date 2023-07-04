@@ -31,7 +31,7 @@ if (d.value != null) {
 
 <template>
   <div v-for="(area, index) in areas">
-    <StandardSlotted :separator="false" class="pb-16">
+    <StandardSlotted :separator="false" class="pb-16 pt-10 md:pt-0">
       <template v-slot:first>
         <TitleTextItem
           :title="area.name ?? ''"
