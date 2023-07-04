@@ -66,7 +66,7 @@ let elements: element[] = [
   },
   {
     text: "Top projects",
-    link: "/portfolio",
+    link: "/top-projects",
     toggled: ref(false),
     dropdownElements: [],
     iconHTML: '<i class="fa-solid fa-book-open"></i>',
