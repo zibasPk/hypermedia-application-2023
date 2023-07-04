@@ -90,7 +90,6 @@ function toggle(toShow: element) {
     e.toggled.value = false;
   });
   toShow.toggled.value = !init;
-  console.log(elements);
 }
 
 function setActive() {
