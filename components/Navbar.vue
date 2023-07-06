@@ -48,7 +48,7 @@ let elements: element[] = [
   },
   {
     text: "Projects",
-    link: "/",
+    link: "/projects",
     toggled: ref(false),
     dropdownElements: [
       {
@@ -102,7 +102,7 @@ function setActive() {
   elements.filter((el) => {
     let target = useRoute().fullPath.split("/")[1];
     let link = el.link.substring(1);
-    el.active.value = link === target;
+    el.active.value = target.includes(link);
   });
 }
 const route = useRoute();
@@ -218,30 +218,39 @@ onBeforeUnmount(() => {
                   {{ element.text }}
                 </div>
               </NuxtLink>
-              <button
-                v-if="element.dropdownElements.length != 0"
-                @click="toggle(element)"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: max-md:hidden"
+              <div
+                :class="[
+                  element.active.value
+                    ? 'border-solid text-white md:text-white lg:text-white border-b-2 border-secondary'
+                    : 'text-gray-400',
+                ]"
               >
-                <span
-                  v-html="element.iconHTML"
-                  class="hidden xl:block w-[24px]"
-                ></span
-                >{{ element.text }}
-                <svg
-                  class="w-5 h-5 ml-1"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+                <button
+                  v-if="element.dropdownElements.length != 0"
+                  @click="toggle(element)"
+                  class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: max-md:hidden"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
+                  <span
+                    v-html="element.iconHTML"
+                    class="hidden xl:block w-[24px]"
+                  ></span
+                  >{{ element.text }}
+                  <svg
+                    class="w-5 h-5 ml-1"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
               <div
                 v-if="
                   element.dropdownElements.length > 0 && element.toggled.value
