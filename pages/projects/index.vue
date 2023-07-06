@@ -14,30 +14,34 @@ const backgroundImageHeader = {
 };
 
 let grid_contents: ContentItem[][] = [];
+
 if (d.value != null) {
   for (const a of areas) {
     let arr: ContentItem[] = [];
     for (const p of a.project) {
-      const { data: abs_proj } = await useFetch<ProjectDAO>(
-        "/api/projects/" + p.slug
-      );
-      if (abs_proj.value == null) continue;
-      let project = abs_proj.value;
-      arr.push({
-        buttontext: "Project",
-        buttonlink: "/projects/" + project.slug,
-        maintext: project.name ?? "",
-        maindesc: "",
-        image: {
-          src: project.section_1_image,
-          alt: "logo of " + project.name,
-        },
-      });
+      try {
+        const { data: abs_proj } = await useFetch<ProjectDAO>(
+          "/api/projects/" + p.slug
+        );
+        if (abs_proj.value == null) continue;
+        let project = abs_proj.value;
+        arr.push({
+          buttontext: "Project",
+          buttonlink: "/projects/" + project.slug,
+          maintext: project.name ?? "",
+          maindesc: "",
+          image: {
+            src: project.section_1_image,
+            alt: "logo of " + project.name,
+          },
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
     grid_contents.push(arr);
   }
 }
-console.log(grid_contents);
 </script>
 
 <template>
