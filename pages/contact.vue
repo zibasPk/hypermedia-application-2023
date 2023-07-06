@@ -15,7 +15,7 @@
             >info@DCventure.com
           </div>
           <div
-            class="rounded-lg bg-gray-400 border-gray-500 border-2 text-secondarytext p-3 max-w-sm"
+            class="rounded-lg bg-gray-600 border-gray-700 border-2 text-secondarytext p-3 max-w-sm"
           >
             <i class="fa-solid fa-phone pr-3"></i>+123 456 789
           </div>

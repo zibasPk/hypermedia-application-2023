@@ -9,7 +9,8 @@ const items: Item[] = [
   { text: "About", link: "/about" },
   { text: "Investement Areas", link: "/areas" },
   { text: "Our People", link: "/people" },
-  { text: "Portfolio", link: "/portfolio" },
+  { text: "All projects", link: "/projects" },
+  { text: "Top projects", link: "/top-projects" },
 ];
 </script>
 
@@ -19,7 +20,7 @@ const items: Item[] = [
       <div class="items-center md:flex md:items-center md:justify-between">
         <NuxtLink href="/" class="flex items-center mb-4 sm:mb-0">
           <img
-            src="../assets/img/logo-lvg.png"
+            :src="Consts.base_image_url + 'logo-lvg.png'"
             class="h-58 w-140 mx-auto md:mr-3 md:mx-0"
             alt="LVenture logo"
           />
