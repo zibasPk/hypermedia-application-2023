@@ -16,11 +16,6 @@ const props = defineProps({
     type: String,
     required: false,
   },
-  buttonFilled: {
-    type: Boolean,
-    required: false,
-    default: true,
-  },
   centered: {
     type: Boolean,
     required: false,
@@ -96,7 +91,7 @@ textStyle += " max-md::text-center";
     <slot name="after"></slot>
     <div :class="buttonStyle">
       <FilledButton
-        v-if="buttonText && buttonFilled"
+        v-if="buttonText"
         :link="props.buttonUrl"
         v-bind:classes="topMargin ? 'w-44 mt-10' : 'w-44 mt-2'"
       >
@@ -105,7 +100,7 @@ textStyle += " max-md::text-center";
         </template>
       </FilledButton>
       <OutlineButton
-        v-if="buttonText && !buttonFilled"
+        v-if="buttonText"
         :link="props.buttonUrl"
         v-bind:classes="topMargin ? 'w-44 mt-10' : 'w-44 mt-2'"
       >
