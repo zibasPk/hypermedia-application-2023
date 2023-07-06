@@ -1,6 +1,7 @@
 import ImageInfo from "./Image";
 
 export type ContentItem = {
+  area?: string | undefined;
   buttontext: string;
   buttonlink: string;
   maintext: string;

@@ -16,7 +16,7 @@ const props = defineProps<{
       :maindesc="item.maindesc"
       :rendermaindesc="item.rendermaindesc"
       :image="item.image"
-      :key="index"
+      :key="item.maintext"
     />
   </div>
 </template>

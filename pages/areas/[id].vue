@@ -14,24 +14,31 @@ const area = d.value;
 const grid_content: ContentItem[] = [];
 if (area != null) {
   const projects = area.project;
+  let project_fetcher: Promise<void>[] = [];
   for (let i = 0; i < projects.length; i++) {
-    const p = projects[i];
-    const { data: abs_proj } = await useFetch<ProjectDAO>(
-      "/api/projects/" + p.slug
+    project_fetcher.push(
+      new Promise<void>(async (resolve) => {
+        const p = projects[i];
+        const { data: abs_proj } = await useFetch<ProjectDAO>(
+          "/api/projects/" + p.slug
+        );
+        if (abs_proj.value == null) return;
+        let prog = abs_proj.value;
+        grid_content.push({
+          buttontext: "Project",
+          buttonlink: "/projects/" + p.slug.toString(),
+          maintext: prog.name ?? "",
+          maindesc: "",
+          image: {
+            src: prog.section_1_image ?? "",
+            alt: "logo of project " + prog.name ?? "",
+          },
+        });
+        resolve();
+      })
     );
-    if (abs_proj.value == null) continue;
-    let prog = abs_proj.value;
-    grid_content.push({
-      buttontext: "Project",
-      buttonlink: "/projects/" + p.slug.toString(),
-      maintext: prog.name ?? "",
-      maindesc: "",
-      image: {
-        src: prog.section_1_image ?? "",
-        alt: "logo of project " + prog.name ?? "",
-      },
-    });
   }
+  await Promise.all(project_fetcher);
 }
 </script>
 

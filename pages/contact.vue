@@ -1,7 +1,6 @@
 <script setup lang="ts">
 let messageSent = ref(false);
 function sendMessage() {
-  console.log("inviato messaggio");
   messageSent.value = true;
 }
 </script>

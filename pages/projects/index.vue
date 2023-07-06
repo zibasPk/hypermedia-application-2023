@@ -13,33 +13,41 @@ const backgroundImageHeader = {
   alt: "All investement projects header background image",
 };
 
-let grid_contents: ContentItem[][] = [];
+let grid_contents: ContentItem[] = [];
 
 if (d.value != null) {
   for (const a of areas) {
-    let arr: ContentItem[] = [];
+    let project_fetcher: Promise<unknown>[] = [];
     for (const p of a.project) {
-      try {
-        const { data: abs_proj } = await useFetch<ProjectDAO>(
-          "/api/projects/" + p.slug
-        );
-        if (abs_proj.value == null) continue;
-        let project = abs_proj.value;
-        arr.push({
-          buttontext: "Project",
-          buttonlink: "/projects/" + project.slug,
-          maintext: project.name ?? "",
-          maindesc: "",
-          image: {
-            src: project.section_1_image,
-            alt: "logo of " + project.name,
-          },
-        });
-      } catch (error) {
-        console.log(error);
-      }
+      project_fetcher.push(
+        new Promise<void>(async (resolve, reject) => {
+          try {
+            const { data: abs_proj } = await useAsyncData<ProjectDAO>(
+              "/api/projects/" + p.slug,
+              () => $fetch("/api/projects/" + p.slug)
+            );
+            if (abs_proj.value == null) return;
+            let project = abs_proj.value;
+            grid_contents.push({
+              area: a.slug,
+              buttontext: "Project",
+              buttonlink: "/projects/" + project.slug,
+              maintext: project.name ?? "",
+              maindesc: "",
+              image: {
+                src: project.section_1_image,
+                alt: "logo of " + project.name,
+              },
+            });
+            resolve();
+          } catch (error) {
+            console.log(error);
+          }
+          reject();
+        })
+      );
     }
-    grid_contents.push(arr);
+    await Promise.all(project_fetcher);
   }
 }
 </script>
@@ -56,7 +64,7 @@ if (d.value != null) {
     </TitleTextItem>
   </PageHeader>
 
-  <div v-for="(area, index) in areas" :key="index">
+  <div v-for="(area, index) in areas" :key="area.slug">
     <StandardSlotted :separator="false" class="pb-16 pt-10 md:pt-0">
       <template v-slot:first>
         <TitleTextItem
@@ -77,7 +85,10 @@ if (d.value != null) {
         ></FullsizeImage>
       </template>
     </StandardSlotted>
-    <FlexContainer :content="grid_contents[index]" class="justify-center">
+    <FlexContainer
+      :content="grid_contents.filter((e: { area: any; }) => e.area === area.slug)"
+      class="justify-center"
+    >
     </FlexContainer>
   </div>
 </template>
