@@ -100,14 +100,14 @@ function toggleOff() {
 
 function setActive() {
   elements.filter((el) => {
-    // let target = useRoute().fullPath.split("/")[1];
-    // let link = el.link.substring(1);
-    // el.active.value = false;
-    // if (
-    //   link === target ||
-    //   el.dropdownElements.some((e) => e.link.split("/")[1] === target)
-    // )
-    //   el.active.value = true;
+    let target = useRoute().fullPath.split("/")[1];
+    let link = el.link.substring(1);
+    el.active.value = false;
+    if (
+      link === target ||
+      el.dropdownElements.some((e) => e.link.split("/")[1] === target)
+    )
+      el.active.value = true;
   });
 }
 const route = useRoute();
