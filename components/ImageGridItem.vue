@@ -45,7 +45,7 @@ const props = defineProps({
           </FilledButton>
         </div>
         <p v-if="maindesc" class="text-sm w-full mb-auto">{{ maindesc }}</p>
-        <p class="font-bold m-auto">{{ maintext }}</p>
+        <p class="font-bold my-auto">{{ maintext }}</p>
       </div>
     </div>
   </template>
