@@ -110,7 +110,7 @@ if (area != null) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="grid_content" variant="secondary" />
+      <GridContainer :content="grid_content" />
     </template>
   </StandardSlotted>
 </template>

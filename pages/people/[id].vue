@@ -94,7 +94,7 @@ if (projects!.length > 0) {
       </div>
     </template>
     <template v-slot:second>
-      <GridContainer :content="adaptedData" class="mt-5" variant="secondary" />
+      <GridContainer :content="adaptedData" class="mt-5" />
     </template>
   </StandardSlotted>
 </template>

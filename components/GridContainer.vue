@@ -3,11 +3,6 @@ import { ContentItem } from "~/utils/Types";
 
 const props = defineProps({
   content: { type: Array<ContentItem>, required: true },
-  variant: {
-    type: Object as PropType<"default" | "secondary">,
-    required: false,
-    default: "default",
-  },
 });
 </script>
 
@@ -24,7 +19,6 @@ const props = defineProps({
       :rendermaindesc="item.rendermaindesc"
       :image="item.image"
       class="col-span-1 row-span-1"
-      :variant="variant"
     />
   </div>
 </template>
