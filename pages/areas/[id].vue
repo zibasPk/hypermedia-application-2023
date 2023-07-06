@@ -14,18 +14,24 @@ const area = d.value;
 const grid_content: ContentItem[] = [];
 if (area != null) {
   const projects = area.project;
-  projects.forEach((p) => {
+  for (let i = 0; i < projects.length; i++) {
+    const p = projects[i];
+    const { data: abs_proj } = await useFetch<ProjectDAO>(
+      "/api/projects/" + p.slug
+    );
+    if (abs_proj.value == null) continue;
+    let prog = abs_proj.value;
     grid_content.push({
       buttontext: "Project",
       buttonlink: "/projects/" + p.slug.toString(),
-      maintext: p.name ?? "",
+      maintext: prog.name ?? "",
       maindesc: "",
       image: {
-        src: p.section_1_image ?? "",
-        alt: "logo of project " + p.name ?? "",
+        src: prog.section_1_image ?? "",
+        alt: "logo of project " + prog.name ?? "",
       },
     });
-  });
+  }
 }
 </script>
 
