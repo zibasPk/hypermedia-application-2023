@@ -2,10 +2,11 @@
 import { Area as AreaDAO, Project as ProjectDAO } from "~/utils/DatabaseTypes";
 import { ContentItem, Consts } from "~/utils/Types";
 
-const { data: d } = await useFetch<AreaDAO[]>("/api/areas/with_projects");
+const { data: d } = await useFetch<AreaDAO[]>("/api/areas/");
 if (d.value == null) {
   navigateTo("/404");
 }
+
 let areas: AreaDAO[] = d.value ?? [];
 const backgroundImageHeader = {
   src: Consts.base_image_url + "WF Hero_3.webp",
@@ -14,23 +15,29 @@ const backgroundImageHeader = {
 
 let grid_contents: ContentItem[][] = [];
 if (d.value != null) {
-  areas.forEach((a) => {
+  for (const a of areas) {
     let arr: ContentItem[] = [];
-    a.project.forEach((p) => {
+    for (const p of a.project) {
+      const { data: abs_proj } = await useFetch<ProjectDAO>(
+        "/api/projects/" + p.slug
+      );
+      if (abs_proj.value == null) continue;
+      let project = abs_proj.value;
       arr.push({
         buttontext: "Project",
-        buttonlink: "/projects/" + p.slug,
-        maintext: p.name ?? "",
+        buttonlink: "/projects/" + project.slug,
+        maintext: project.name ?? "",
         maindesc: "",
         image: {
-          src: p.section_1_image,
-          alt: "logo of " + p.name,
+          src: project.section_1_image,
+          alt: "logo of " + project.name,
         },
       });
-    });
+    }
     grid_contents.push(arr);
-  });
+  }
 }
+console.log(grid_contents);
 </script>
 
 <template>
@@ -44,6 +51,7 @@ if (d.value != null) {
     >
     </TitleTextItem>
   </PageHeader>
+
   <div v-for="(area, index) in areas">
     <StandardSlotted :separator="false" class="pb-16 pt-10 md:pt-0">
       <template v-slot:first>
