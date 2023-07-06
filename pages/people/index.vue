@@ -88,7 +88,7 @@ if (adaptedData != null) {
     <template v-slot:first>
       <div>
         <TitleTextItem
-          title="Other Project Supervisors"
+          title="Project Supervisors"
           text="Our Project Supervisors bring a wealth of experience and industry knowledge to the table. They have a proven track record of identifying and nurturing promising startups, helping them scale and reach their full potential. With their sharp business acumen, they provide invaluable insights into market trends, competitive landscapes, and emerging technologies."
           additionalTitleClasses="text-primary"
           divCentered
