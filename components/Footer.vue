@@ -11,6 +11,7 @@ const items: Item[] = [
   { text: "Our People", link: "/people" },
   { text: "All projects", link: "/projects" },
   { text: "Top projects", link: "/top-projects" },
+  { text: "Contact us", link: "/contact" },
 ];
 </script>
 
