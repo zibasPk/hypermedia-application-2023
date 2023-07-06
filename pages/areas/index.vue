@@ -6,7 +6,8 @@ const backgroundImageHeader = {
   alt: "Areas of expertise hero image",
 };
 const { data } = await useFetch<Area[]>("/api/areas");
-let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
+//let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
+let areas = data.value;
 </script>
 <template>
   <PageHeader :image="backgroundImageHeader">
