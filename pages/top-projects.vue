@@ -49,7 +49,7 @@ if (top_projects == null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + project.section_1_image,
-          alt: project.name + ' image',
+          alt: 'logo of ' + project.name,
         }"
       ></FullsizeImage>
     </template>
@@ -68,7 +68,7 @@ if (top_projects == null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + project.section_1_image,
-          alt: project.name + ' image',
+          alt: 'logo of ' + project.name,
         }"
       ></FullsizeImage>
     </template>

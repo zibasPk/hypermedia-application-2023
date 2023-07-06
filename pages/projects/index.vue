@@ -20,7 +20,7 @@ if (d.value != null) {
         maindesc: "",
         image: {
           src: p.section_1_image,
-          alt: p.name + " image",
+          alt: "logo of " + p.name,
         },
       });
     });
@@ -46,7 +46,7 @@ if (d.value != null) {
         <FullsizeImage
           :img="{
             src: Consts.base_image_url + area.image,
-            alt: area.name + ' image',
+            alt: 'logo of the area' + area.name,
           }"
         ></FullsizeImage>
       </template>

@@ -39,7 +39,7 @@ if (projects!.length > 0) {
       rendermaindesc: false,
       image: {
         src: project.section_1_image,
-        alt: project.name + "image",
+        alt: "image of " + project.name,
       },
     };
   });
@@ -66,7 +66,10 @@ if (projects!.length > 0) {
         <img
           class="rounded m-auto object-cover h-full"
           :src="Consts.base_image_url + member?.image || ''"
-          :alt="member?.name + ' ' + member?.surname + ' image' || 'member'"
+          :alt="
+            'profile picture of ' + member?.name + ' ' + member?.surname ||
+            'member'
+          "
         />
       </div>
     </template>

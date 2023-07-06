@@ -168,7 +168,7 @@ onBeforeUnmount(() => {
         aria-controls="navbar-dropdown"
         aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only text-white bold">Open main menu</span>
         <svg
           class="w-6 h-6"
           aria-hidden="true"

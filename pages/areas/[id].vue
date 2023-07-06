@@ -22,7 +22,7 @@ if (area != null) {
       maindesc: "",
       image: {
         src: p.section_1_image ?? "",
-        alt: p.name ?? "",
+        alt: "logo of project " + p.name ?? "",
       },
     });
   });
@@ -54,7 +54,7 @@ if (area != null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + area?.section_1_image,
-          alt: 'image of ' + area?.section_1_title,
+          alt: 'image representing ' + area?.section_1_title,
         }"
       ></FullsizeImage>
     </template>
@@ -65,7 +65,7 @@ if (area != null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + area?.section_2_image,
-          alt: 'image of ' + area?.section_2_title,
+          alt: 'image representing ' + area?.section_2_title,
         }"
       ></FullsizeImage>
     </template>
@@ -92,7 +92,7 @@ if (area != null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + area?.section_3_image,
-          alt: 'image of ' + area?.section_3_title,
+          alt: 'image representing ' + area?.section_3_title,
         }"
       ></FullsizeImage>
     </template>

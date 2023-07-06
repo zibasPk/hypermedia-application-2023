@@ -19,7 +19,7 @@ const imageGridItemsArrayForAreas = areas.map(({ area }) => ({
   variant: "secondary",
   image: {
     src: area.image || "",
-    alt: area.name ? `${area.name} image` : "",
+    alt: area.name ? `logo for area ${area.name}` : "",
   },
 }));
 
@@ -42,7 +42,9 @@ if (project.supervisor != null) {
     variant: "default", // assuming you want this to be "default" for the supervisor
     image: {
       src: project.supervisor.image || "",
-      alt: project.supervisor.name ? `${project.supervisor.name} image` : "",
+      alt: project.supervisor.name
+        ? `picture of supervisor ${project.supervisor.name} ${project.supervisor.surname}`
+        : "",
     },
   };
 }
@@ -59,7 +61,7 @@ if (project.supervisor != null) {
           }"
         >
           <div class="font-bold text-3xl pb-2 text-secondarytext">
-            <p class="md:text-left">Areas</p>
+            <h3 class="md:text-left">Areas</h3>
           </div>
           <div
             class="grid auto-rows-fr place-items-start gap-4 xl:grid-cols-2 z-20"
@@ -77,7 +79,7 @@ if (project.supervisor != null) {
             />
           </div>
           <div class="font-bold text-3xl pt-10 pb-2 text-secondarytext">
-            <p class="text-left">Supervisor</p>
+            <h3 class="text-left">Supervisor</h3>
           </div>
           <div>
             <ImageGridItem
@@ -115,7 +117,7 @@ if (project.supervisor != null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + project.section_1_image,
-          alt: project.name + ' image',
+          alt: 'logo of ' + project.name,
         }"
       ></FullsizeImage>
     </template>
@@ -125,7 +127,7 @@ if (project.supervisor != null) {
       <FullsizeImage
         :img="{
           src: Consts.base_image_url + project.section_2_image,
-          alt: project.name + ' image',
+          alt: 'logo of project ' + project.name,
         }"
       ></FullsizeImage>
     </template>

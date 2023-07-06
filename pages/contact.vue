@@ -37,9 +37,22 @@
             Send us a message!
           </div>
           <div class="flex flex-col gap-10 text-sm">
-            <InputField value="Your name" />
-            <InputField value="Your email" />
-            <TextField value="Your message" class="h-20 resize-none" />
+            <label class="sr-only text-white bold" for="name">Your Name</label>
+            <InputField id="name" value="Your name" />
+
+            <label class="sr-only text-white bold" for="email"
+              >Your Email</label
+            >
+            <InputField id="email" value="Your email" />
+
+            <label class="sr-only text-white bold" for="message"
+              >Your Message</label
+            >
+            <TextField
+              id="message"
+              value="Your message"
+              class="h-20 resize-none"
+            />
           </div>
           <div class="flex w-full pt-28">
             <FilledButton link="#">
