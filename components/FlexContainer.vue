@@ -16,7 +16,6 @@ const props = defineProps<{
       :maindesc="item.maindesc"
       :rendermaindesc="item.rendermaindesc"
       :image="item.image"
-      variant="secondary"
     />
   </div>
 </template>

@@ -61,7 +61,6 @@ if (adaptedData != null) {
       <GridContainer
         :content="board"
         class="md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
-        variant="secondary"
       />
     </template>
   </StandardSlotted>
@@ -71,7 +70,6 @@ if (adaptedData != null) {
       <GridContainer
         :content="assembly"
         class="md:pt-0 md:pb-10 xl:pt-0 xl:m-auto m-auto"
-        variant="secondary"
       />
     </template>
     <template v-slot:second>
@@ -101,7 +99,6 @@ if (adaptedData != null) {
       <GridContainer
         :content="members"
         class="md:pt-0 xl:pt-0 xl:m-auto m-auto"
-        variant="secondary"
       />
     </template>
   </StandardSlotted>

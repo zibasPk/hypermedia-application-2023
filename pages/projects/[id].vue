@@ -16,7 +16,6 @@ const imageGridItemsArrayForAreas = areas.map(({ area }) => ({
   maintext: area.name || "",
   maindesc: "",
   rendermaindesc: true, // assuming you want this to be true for all areas
-  variant: "secondary",
   image: {
     src: area.image || "",
     alt: area.name ? `logo for area ${area.name}` : "",
@@ -29,7 +28,6 @@ let imageGridItemForSuper: {
   maintext: string;
   maindesc: string;
   rendermaindesc: boolean; // assuming you want this to be true for the supervisor
-  variant: string; // assuming you want this to be "default" for the supervisor
   image: { src: string; alt: string };
 };
 if (project.supervisor != null) {
@@ -39,7 +37,6 @@ if (project.supervisor != null) {
     maintext: project.supervisor.name + " " + project.supervisor.surname || "",
     maindesc: project.supervisor.role || "",
     rendermaindesc: true, // assuming you want this to be true for the supervisor
-    variant: "default", // assuming you want this to be "default" for the supervisor
     image: {
       src: project.supervisor.image || "",
       alt: project.supervisor.name
@@ -74,7 +71,6 @@ if (project.supervisor != null) {
               :maintext="item.maintext"
               :maindesc="item.maindesc"
               :rendermaindesc="item.rendermaindesc"
-              variant="secondary"
               :image="item.image"
             />
           </div>
@@ -89,7 +85,6 @@ if (project.supervisor != null) {
               :maintext="imageGridItemForSuper.maintext"
               :maindesc="imageGridItemForSuper.maindesc"
               :rendermaindesc="imageGridItemForSuper.rendermaindesc"
-              variant="secondary"
               :image="imageGridItemForSuper.image"
             />
           </div>
