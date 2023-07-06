@@ -7,6 +7,10 @@ if (d.value == null) {
   navigateTo("/404");
 }
 let areas: AreaDAO[] = d.value ?? [];
+const backgroundImageHeader = {
+  src: Consts.base_image_url + "WF Hero_3.webp",
+  alt: "All investement projects header background image",
+};
 
 let grid_contents: ContentItem[][] = [];
 if (d.value != null) {
@@ -30,6 +34,16 @@ if (d.value != null) {
 </script>
 
 <template>
+  <PageHeader :image="backgroundImageHeader">
+    <TitleTextItem
+      title="All our investement projects"
+      text="Here is a complete list of all our projects divided by area."
+      centered
+      additionalTextClasses="text-secondarytext"
+      additionalTitleClasses="text-secondarytext"
+    >
+    </TitleTextItem>
+  </PageHeader>
   <div v-for="(area, index) in areas">
     <StandardSlotted :separator="false" class="pb-16 pt-10 md:pt-0">
       <template v-slot:first>
