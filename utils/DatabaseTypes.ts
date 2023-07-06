@@ -2,7 +2,6 @@ export type Area = {
   slug: string; // BigInt is typically represented as a number in JavaScript/TypeScript
   name: string | null;
   description: string | null;
-  data1: number | null;
   short_description: string | null;
   image: string | null;
   project: { slug: string }[];

@@ -25,6 +25,7 @@ let areas = data.value?.sort((a, b) => (a.slug > b.slug ? 1 : 0));
     v-for="(area, index) in areas"
     separator
     :class="index % 2 ? 'flex-col-reverse' : ''"
+    :key="index"
   >
     <template v-slot:first v-if="(index + 1) % 2">
       <TitleTextItem

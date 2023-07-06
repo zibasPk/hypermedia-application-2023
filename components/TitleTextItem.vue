@@ -99,15 +99,6 @@ textStyle += " max-md::text-center";
           {{ props.buttonText }}
         </template>
       </FilledButton>
-      <OutlineButton
-        v-if="buttonText"
-        :link="props.buttonUrl"
-        v-bind:classes="topMargin ? 'w-44 mt-10' : 'w-44 mt-2'"
-      >
-        <template v-slot:content>
-          {{ props.buttonText }}
-        </template>
-      </OutlineButton>
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@ const route = useRoute();
 const id = route.params.id;
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
 const { data: p } = await useFetch("/api/projects/" + id);
-const { data: a } = await useFetch("/api/project_to_area/" + id);
+const { data: a } = await useFetch("/api/projects/" + id + "/areas/");
 let project = p.value as Project;
 const areas = a.value as { area: Area }[];
 
