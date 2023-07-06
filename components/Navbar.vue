@@ -99,10 +99,20 @@ function toggleOff() {
 }
 
 function setActive() {
-  elements.filter((el) => {
+  elements.forEach((el) => {
     let target = useRoute().fullPath.split("/")[1];
     let link = el.link.substring(1);
-    el.active.value = link === target;
+    el.active.value = false;
+    console.log(
+      el.text,
+      link === target ||
+        el.dropdownElements.some((e) => e.link.split("/")[1] === target)
+    );
+    if (
+      link === target ||
+      el.dropdownElements.some((e) => e.link.split("/")[1] === target)
+    )
+      el.active.value = true;
   });
 }
 const route = useRoute();
@@ -207,7 +217,7 @@ onBeforeUnmount(() => {
                   class="flex gap-2"
                   :class="[
                     element.active.value
-                      ? 'border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
+                      ? 'activo border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
                       : 'text-gray-700 md:text-gray-400',
                   ]"
                 >
@@ -221,7 +231,12 @@ onBeforeUnmount(() => {
               <button
                 v-if="element.dropdownElements.length != 0"
                 @click="toggle(element)"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md: max-md:hidden"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:w-auto max-md:hidden"
+                :class="
+                  element.active.value
+                    ? 'activo border-solid text-gray-700 md:text-white lg:text-white border-b-2 border-secondary'
+                    : 'text-gray-700 md:text-gray-400 md:border-0'
+                "
               >
                 <span
                   v-html="element.iconHTML"
