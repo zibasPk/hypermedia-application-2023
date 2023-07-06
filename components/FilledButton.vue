@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const props = defineProps(["link", "classes"]);
+const props = defineProps({
+  classes: { type: String, required: false },
+  link: { type: String, required: true },
+});
 </script>
 
 <template>

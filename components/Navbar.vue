@@ -103,11 +103,6 @@ function setActive() {
     let target = useRoute().fullPath.split("/")[1];
     let link = el.link.substring(1);
     el.active.value = false;
-    console.log(
-      el.text,
-      link === target ||
-        el.dropdownElements.some((e) => e.link.split("/")[1] === target)
-    );
     if (
       link === target ||
       el.dropdownElements.some((e) => e.link.split("/")[1] === target)
