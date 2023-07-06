@@ -18,7 +18,7 @@ if (top_projects == null) {
   >
     <div class="w-3/5 m-auto">
       <TitleTextItem
-        title="Top Projects"
+        title="Our Top Investments"
         text="Dive into our portfolio to discover our ground-breaking projects across various industries. Our work in Sustainable Energy, Health & Life Sciences, Fintech, and E-commerce demonstrates our dedication to innovation and impactful change."
         centered
         buttonText="Go To All Projects"
